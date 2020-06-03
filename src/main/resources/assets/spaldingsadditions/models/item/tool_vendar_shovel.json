@@ -1,0 +1,6 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "spaldingsadditions:items/tool_vendar_shovel"
+    }
+}

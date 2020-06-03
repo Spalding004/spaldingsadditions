@@ -1,0 +1,29 @@
+{
+"item.spaldingsadditions.vendar_chunk" = "Vendar Chunk",
+"item.spaldingsadditions.polishing_stone" = "Pumice Polishing Stone",
+
+#Tools
+
+"item.spaldingsadditions.tool_vendar_pickaxe" = "Vendar Pickaxe",
+
+
+"block.spaldingsadditions.marcasite" = "Marcasite",
+"block.spaldingsadditions.marcasite_smooth" = "Polished Marcasite",
+
+"block.spaldingsadditions.shale" = "Shale",
+"block.spaldingsadditions.shale_smooth" = "Polished Shale",
+
+"block.spaldingsadditions.apatite" = "Apatite",
+"block.spaldingsadditions.apatite_smooth" = "Polished Apatite",
+
+"block.spaldingsadditions.pumice" = "Pumice",
+
+"block.spaldingsadditions.vendar_ore" = "Vendar Ore",
+
+"block.spaldingsadditions.vendar_ore_dense" = "Vendar Ore",
+
+"itemGroup.mod_creative_tab" = "Spalding's Additions"
+
+
+
+}
