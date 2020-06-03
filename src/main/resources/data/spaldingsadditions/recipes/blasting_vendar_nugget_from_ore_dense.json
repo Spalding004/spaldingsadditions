@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "spaldingsadditions:vendar_ore_dense"
+  },
+  "result": {
+  "item": "spaldingsadditions:vendar_nugget",
+  "count": 3
+  },
+  "experience": 0.7,
+  "cookingtime": 100
+}

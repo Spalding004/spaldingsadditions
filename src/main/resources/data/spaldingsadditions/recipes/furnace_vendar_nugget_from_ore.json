@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "spaldingsadditions:vendar_ore"
+  },
+  "result": "spaldingsadditions:vendar_nugget",
+  "experience": 0.7,
+  "cookingtime": 100
+}
