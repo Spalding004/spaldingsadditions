@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " N ",
+    "ELE",
+    " P "
+  ],
+  "key": {
+    "N": {
+       "item": "spaldingsadditions:nether_pearl",
+     	 "data": 0
+    },
+    "E": {
+       "item": "spaldingsadditions:energetic_crystal",
+       "data": 0
+    },
+    "L": {
+       "item": "spaldingsadditions:reduced_lapis_ingot",
+       "data": 0
+    },
+    "P": {
+       "item": "minecraft:ender_pearl",
+       "data": 0
+    }
+  },
+  "result": {
+    "item": "spaldingsadditions:inert_crystal"
+  }
+}

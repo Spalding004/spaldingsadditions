@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "spaldingsadditions:reduced_lapis_block"
+		}
+	],
+	"result": {
+		"item": "spaldingsadditions:reduced_lapis_ingot",
+		"count": 9
+	}
+}

@@ -1,10 +1,18 @@
 {
 "item.spaldingsadditions.vendar_chunk" = "Vendar Chunk",
+"item.spaldingsadditions.vendar_nugget" = "Vendar Nugget",
+"item.spaldingsadditions.vendar_ingot" = "Vendar Ingot",
 "item.spaldingsadditions.polishing_stone" = "Pumice Polishing Stone",
 
 #Tools
 
 "item.spaldingsadditions.tool_vendar_pickaxe" = "Vendar Pickaxe",
+"item.spaldingsadditions.tool_vendar_axe" = "Vendar Axe",
+"item.spaldingsadditions.tool_vendar_sword" = "Vendar Sword",
+"item.spaldingsadditions.tool_vendar_shovel" = "Vendar Shovel",
+"item.spaldingsadditions.tool_vendar_hoe" = "Vendar Hoe",
+
+"item.spaldingsadditions.tool_enhanced_handle" = "Enhanced Tool Handle",
 
 
 "block.spaldingsadditions.marcasite" = "Marcasite",

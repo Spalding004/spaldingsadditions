@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "DDD",
+    "DPD",
+    "DDD"
+  ],
+  "key": {
+    "D": {
+      "item": "spaldingsadditions:attuned_pearl",
+      "data": 0
+    },
+    "P": {
+      "item": "minecraft:end_bricks",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "spaldingsadditions:inert_frame",
+    "count": 1
+  }
+}

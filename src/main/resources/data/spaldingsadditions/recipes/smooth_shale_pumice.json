@@ -1,0 +1,15 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "spaldingsadditions:shale"
+		},
+		{
+			"item": "spaldingsadditions:polishing_stone"
+		}
+	],
+	"result": {
+		"item": "spaldingsadditions:shale_smooth"
+		
+	}
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " V ",
+    "VCV",
+    " V "
+  ],
+  "key": {
+    "V": {
+       "type": "forge:ore_dict",
+      "ore": "ingotVendar"
+    },
+    "C": {
+       "item": "thermalexpansion:frame",
+       "data": 0
+    }
+  },
+  "result": {
+    "item": "spaldingsadditions:vendar_casing"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " V ",
+    "VIV",
+    " V "
+  ],
+  "key": {
+    "V": {
+       "type": "forge:ore_dict",
+      "ore": "ingotVendar"
+    },
+    "I": {
+       "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    }
+  },
+  "result": {
+    "item": "spaldingsadditions:vendar_gear"
+  }
+}

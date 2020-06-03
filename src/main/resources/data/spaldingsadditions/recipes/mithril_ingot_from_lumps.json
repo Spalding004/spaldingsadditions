@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SSS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "spaldingsadditions:vendar_nugget",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "spaldingsadditions:vendar_ingot",
+    "count": 1
+  }
+}
+

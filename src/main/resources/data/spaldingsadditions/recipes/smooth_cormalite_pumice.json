@@ -1,0 +1,15 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "spaldingsadditions:umber"
+		},
+		{
+			"item": "spaldingsadditions:polishing_stone"
+		}
+	],
+	"result": {
+		"item": "spaldingsadditions:umber_smooth"
+		
+	}
+}

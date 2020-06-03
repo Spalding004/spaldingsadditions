@@ -1,0 +1,13 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "spaldingsadditions:petrified_log"
+		}
+	],
+	"result": {
+		"item": "spaldingsadditions:petrified_planks",
+		"count": 4
+		
+	}
+}

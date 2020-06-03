@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SBS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "spaldingsadditions:end_essence",
+      "data": 0
+    },
+    "B": {
+      "item": "minecraft:netherrack",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "spaldingsadditions:endfected_a",
+    "count": 1
+  }
+}

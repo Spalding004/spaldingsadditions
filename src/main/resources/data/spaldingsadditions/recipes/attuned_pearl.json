@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "DDD",
+    "DPD",
+    "DDD"
+  ],
+  "key": {
+    "D": {
+      "item": "spaldingsadditions:end_essence",
+      "data": 0
+    },
+    "P": {
+      "item": "minecraft:ender_pearl",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "spaldingsadditions:attuned_pearl",
+    "count": 1
+  }
+}

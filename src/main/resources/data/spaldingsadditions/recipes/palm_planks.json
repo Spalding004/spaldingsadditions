@@ -1,0 +1,13 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "spaldingsadditions:palm_log"
+		}
+	],
+	"result": {
+		"item": "spaldingsadditions:palm_planks",
+		"count": 4
+		
+	}
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "VGV",
+    "G G",
+    "VGV"
+  ],
+  "key": {
+    "V": {
+       "type": "forge:ore_dict",
+      "ore": "ingotVendar"
+    },
+    "G": {
+       "type": "forge:ore_dict",
+      "ore": "blockGlass"
+    }
+  },
+  "result": {
+    "item": "spaldingsadditions:vendar_casing"
+  }
+}

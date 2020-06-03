@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "spaldingsadditions:marcasite"
+    }
+  },
+  "result": {
+    "item": "spaldingsadditions:marcasite_smooth",
+    "count": 4
+  }
+}

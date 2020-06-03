@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "QQQ",
+    "VCV",
+    "LZL"
+  ],
+  "key": {
+    "V": {
+       "type": "forge:ore_dict",
+      "ore": "ingotVendar"
+    },
+    "Q": {
+       "item": "minecraft:quartz",
+       "data": 0
+    },
+    "L": {
+       "item": "spaldingsadditions:reduced_lapis_ingot",
+       "data": 0
+    },
+    "Z": {
+       "item": "spaldingsadditions:dimensional_conductor",
+       "data": 0
+    },
+    "C": {
+       "item": "spaldingsadditions:vendar_casing",
+       "data": 0
+    }
+  },
+  "result": {
+    "item": "spaldingsadditions:dimensional_fabricator"
+  }
+}

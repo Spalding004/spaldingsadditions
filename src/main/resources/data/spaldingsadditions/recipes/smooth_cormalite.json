@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "spaldingsadditions:cormalite",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "spaldingsadditions:cormalite_smooth",
+    "count": 4
+  }
+}

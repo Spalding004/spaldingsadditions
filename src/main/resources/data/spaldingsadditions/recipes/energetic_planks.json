@@ -1,0 +1,13 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "spaldingsadditions:energetic_log"
+		}
+	],
+	"result": {
+		"item": "spaldingsadditions:energetic_planks",
+		"count": 4
+		
+	}
+}

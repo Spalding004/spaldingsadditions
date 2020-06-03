@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SSS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "spaldingsadditions:reduced_lapis_nugget",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "spaldingsadditions:reduced_lapis_ingot",
+    "count": 1
+  }
+}
+

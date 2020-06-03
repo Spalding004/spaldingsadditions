@@ -1,0 +1,13 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "spaldingsadditions:beech_log"
+		}
+	],
+	"result": {
+		"item": "spaldingsadditions:beech_planks",
+		"count": 4
+		
+	}
+}

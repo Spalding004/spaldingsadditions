@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NCN",
+    "GDG",
+    "XEX"
+  ],
+  "key": {
+    "N": {
+      "type": "forge:ore_dict",
+      "ore": "nuggetVendar"
+    },
+    "G": {
+      "type": "forge:ore_dict",
+      "ore": "nuggetGold"
+    },
+    "E": {
+      "type": "forge:ore_dict",
+      "ore": "gemDiamond"
+    },
+    "C": {
+      "item": "spaldingsadditions:energetic_crystal",
+      "data": 0
+    },
+    "D": {
+      "item": "spaldingsadditions:card_basic",
+      "data": 0
+    },
+    "X": {
+      "item": "minecraft:netherrack",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "spaldingsadditions:card_nether",
+    "count": 1
+  }
+}

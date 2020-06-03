@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BB",
+    "BB",
+    "BB"
+  ],
+  "key": {
+    "B": {
+      "item": "spaldingsadditions:beech_planks",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "spaldingsadditions:door_beech",
+    "count": 3
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S",
+    "S",
+    "H"
+  ],
+  "key": {
+    "S": {
+      "item": "spaldingsadditions:mithril_ingot",
+      "data": 0
+    },
+    "H": {
+      "item": "spaldingsadditions:tool_enhanced_handle",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "spaldingsadditions:tool_mithril_sword"
+  }
+}

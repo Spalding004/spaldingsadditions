@@ -1,0 +1,13 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "spaldingsadditions:yew_log"
+		}
+	],
+	"result": {
+		"item": "spaldingsadditions:yew_planks",
+		"count": 4
+		
+	}
+}

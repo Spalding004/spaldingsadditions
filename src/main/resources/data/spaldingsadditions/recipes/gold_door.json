@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BB",
+    "BB",
+    "BB"
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:gold_ingot",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "spaldingsadditions:door_gold",
+    "count": 1
+  }
+}

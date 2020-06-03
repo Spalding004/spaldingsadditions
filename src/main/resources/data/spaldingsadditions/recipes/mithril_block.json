@@ -1,0 +1,45 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "spaldingsadditions:mithril_ingot"
+			
+		},
+		{
+			"item": "spaldingsadditions:mithril_ingot"
+			
+		},
+		{
+			"item": "spaldingsadditions:mithril_ingot"
+			
+		},
+		{
+			"item": "spaldingsadditions:mithril_ingot"
+			
+		},
+		{
+			"item": "spaldingsadditions:mithril_ingot"
+			
+		},
+		{
+			"item": "spaldingsadditions:mithril_ingot"
+			
+		},
+		{
+			"item": "spaldingsadditions:mithril_ingot"
+			
+		},
+		{
+			"item": "spaldingsadditions:mithril_ingot"
+			
+		},
+		{
+			"item": "spaldingsadditions:mithril_ingot"
+			
+		}
+	],
+	"result": {
+		"item": "spaldingsadditions:mithril_block"
+		
+	}
+}

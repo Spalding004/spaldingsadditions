@@ -23,6 +23,11 @@ public class ItemDec {
 	public static final Item vendar_chunk = null;
 	public static final Item polishing_stone = null;
 	
+	public static final Item vendar_nugget = null;
+	public static final Item vendar_ingot = null;
+	
+	public static final Item tool_enhanced_handle = null;
+	
 	public static final Item tool_vendar_pickaxe = null;
 	public static final Item tool_vendar_axe = null;
 	public static final Item tool_vendar_hoe = null;
@@ -34,6 +39,10 @@ public class ItemDec {
 		
 		event.getRegistry().register(new Item(new Item.Properties().group(ModItemGroup.instance)).setRegistryName("vendar_chunk"));
 		event.getRegistry().register(new Item(new Item.Properties().group(ModItemGroup.instance)).setRegistryName("polishing_stone"));
+		event.getRegistry().register(new Item(new Item.Properties().group(ModItemGroup.instance)).setRegistryName("vendar_nugget"));
+		event.getRegistry().register(new Item(new Item.Properties().group(ModItemGroup.instance)).setRegistryName("vendar_ingot"));
+		
+		event.getRegistry().register(new Item(new Item.Properties().group(ModItemGroup.instance)).setRegistryName("tool_enhanced_handle"));
 		
 		event.getRegistry().register(new ModPickaxe("tool_vendar_pickaxe", ModItemTiers.VENDAR));
 		event.getRegistry().register(new ModAxe("tool_vendar_axe", ModItemTiers.VENDAR));

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BSB",
+    "SBS",
+    "BSB"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:coal",
+      "data": 0
+    },
+    "B": {
+      "item": "minecraft:stone",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "spaldingsadditions:voidstone_smooth",
+    "count": 5
+  }
+}

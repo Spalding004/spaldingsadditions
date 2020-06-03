@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BB",
+    "BB"
+  ],
+  "key": {
+   
+    "B": {
+      "item": "spaldingsadditions:voidstone_smooth",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "spaldingsadditions:voidstone_polished",
+    "count": 4
+  }
+}

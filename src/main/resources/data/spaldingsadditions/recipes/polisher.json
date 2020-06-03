@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "spaldingsadditions:pumice"
+		}
+	],
+	"result": {
+		"item": "spaldingsadditions:polisher",
+		"count": 6
+	}
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  D",
+    " V ",
+    "D  "
+  ],
+  "key": {
+    "V": {
+       "type": "forge:ore_dict",
+      "ore": "ingotVendar"
+    },
+    "D": {
+       "type": "forge:ore_dict",
+      "ore": "gemDiamond"
+    }
+  },
+  "result": {
+    "item": "spaldingsadditions:dimensional_conductor"
+  }
+}

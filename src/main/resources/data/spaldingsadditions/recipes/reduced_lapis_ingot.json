@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS"
+    
+  ],
+  "key": {
+    "S": {
+      "item": "spaldingsadditions:reduced_lapis_chunk",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "spaldingsadditions:reduced_lapis_ingot",
+    "count": 1
+  }
+}

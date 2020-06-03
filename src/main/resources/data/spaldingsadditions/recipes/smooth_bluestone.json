@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "spaldingsadditions:bluestone",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "spaldingsadditions:bluestone_smooth",
+    "count": 4
+  }
+}

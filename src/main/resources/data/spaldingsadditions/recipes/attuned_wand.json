@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  P",
+    " D ",
+    "D  "
+  ],
+  "key": {
+    "D": {
+      "item": "minecraft:stick",
+      "data": 0
+    },
+    "P": {
+      "item": "spaldingsadditions:attuned_pearl",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "spaldingsadditions:attuned_wand",
+    "count": 1
+  }
+}

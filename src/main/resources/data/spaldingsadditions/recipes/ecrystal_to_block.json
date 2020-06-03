@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "spaldingsadditions:energetic_crystal_block"
+		}
+	],
+	"result": {
+		"item": "spaldingsadditions:energetic_crystal",
+		"count": 9
+	}
+}

@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "LCR",
+    "LER",
+    "LCR"
+  ],
+  "key": {
+    "L": {
+       "item": "minecraft:dye",
+       "data": 4
+    },
+    "R": {
+       "item": "minecraft:redstone",
+       "data": 0
+    },
+    "C": {
+       "item": "spaldingsadditions:charged_carbon",
+       "data": 0
+    },
+    "E": {
+       "item": "spaldingsadditions:energetic_crystal",
+       "data": 0
+    }
+  },
+  "result": {
+    "item": "spaldingsadditions:interchanger"
+  }
+}

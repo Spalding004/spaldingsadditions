@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "spaldingsadditions:soilstone",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "spaldingsadditions:soilstone_brick",
+    "count": 4
+  }
+}

@@ -25,7 +25,8 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 @Mod.EventBusSubscriber(modid = Main.MOD_ID, bus = Bus.MOD)
 public class Main
 {
-    private static final Logger LOGGER = LogManager.getLogger();
+    @SuppressWarnings("unused")
+	private static final Logger LOGGER = LogManager.getLogger();
     public static final String MOD_ID = "spaldingsadditions";
     public static Main instance;
     

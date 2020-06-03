@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "spaldingsadditions:alunite",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "spaldingsadditions:alunite_smooth",
+    "count": 4
+  }
+}
