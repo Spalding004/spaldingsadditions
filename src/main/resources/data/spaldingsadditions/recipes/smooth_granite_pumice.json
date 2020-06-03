@@ -2,14 +2,13 @@
 	"type": "minecraft:crafting_shapeless",
 	"ingredients": [
 		{
-			"item": "minecraft:stone"
+			"item": "minecraft:granite"
 		},
 		{
 			"item": "spaldingsadditions:polishing_stone"
 		}
 	],
 	"result": {
-		"item": "minecraft:stone",
-			"data": 6
+		"item": "minecraft:polished_granite"
 	}
 }

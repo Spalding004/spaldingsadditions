@@ -2,15 +2,13 @@
 	"type": "minecraft:crafting_shapeless",
 	"ingredients": [
 		{
-			"item": "minecraft:stone",
-			"data": 1
+			"item": "minecraft:andesite"
 		},
 		{
 			"item": "spaldingsadditions:polisher"
 		}
 	],
 	"result": {
-		"item": "minecraft:stone",
-			"data": 2
+		"item": "minecraft:andesite"
 	}
 }
