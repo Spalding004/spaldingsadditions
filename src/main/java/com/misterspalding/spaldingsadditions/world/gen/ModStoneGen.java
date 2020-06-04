@@ -20,6 +20,7 @@ public class ModStoneGen {
 		for (Biome biome : ForgeRegistries.BIOMES) {
 			
 			ConfiguredPlacement<CountRangeConfig> config = Placement.COUNT_RANGE.configure(new CountRangeConfig(7, 20, 0, 120));
+			ConfiguredPlacement<CountRangeConfig> config_pumice = Placement.COUNT_RANGE.configure(new CountRangeConfig(5, 20, 0, 120));
 			ConfiguredPlacement<CountRangeConfig> config_shale = Placement.COUNT_RANGE.configure(new CountRangeConfig(7, 20, 0, 70));
 			ConfiguredPlacement<CountRangeConfig> config_vendar = Placement.COUNT_RANGE.configure(new CountRangeConfig(3, 12, 0, 40));
 			ConfiguredPlacement<CountRangeConfig> config_vendar2 = Placement.COUNT_RANGE.configure(new CountRangeConfig(200, 12, 0, 30));
@@ -37,7 +38,10 @@ public class ModStoneGen {
 					Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, 
 							BlockDec.APATITE.get().getDefaultState(), 33)).withPlacement(config));
 			
-			
+			biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, 
+					Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, 
+							BlockDec.PUMICE.get().getDefaultState(), 20)).withPlacement(config_pumice));
+						
 			
 			biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, 
 					Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, 

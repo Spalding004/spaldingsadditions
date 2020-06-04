@@ -6,12 +6,11 @@
   ],
   "key": {
     "S": {
-      "item": "spaldingsadditions:bluestone",
-      "data": 0
+      "item": "spaldingsadditions:apatite"
     }
   },
   "result": {
-    "item": "spaldingsadditions:bluestone_smooth",
+    "item": "spaldingsadditions:apatite_smooth",
     "count": 4
   }
 }
