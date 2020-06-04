@@ -3,14 +3,19 @@ package com.misterspalding.spaldingsadditions;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.misterspalding.spaldingsadditions.inits.BlockDec;
 import com.misterspalding.spaldingsadditions.inits.ItemDec;
 import com.misterspalding.spaldingsadditions.world.gen.ModStoneGen;
 
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -20,6 +25,7 @@ import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.IForgeRegistry;
 
 @Mod("spaldingsadditions")
 @Mod.EventBusSubscriber(modid = Main.MOD_ID, bus = Bus.MOD)
@@ -30,6 +36,8 @@ public class Main
     public static final String MOD_ID = "spaldingsadditions";
     public static Main instance;
     
+    
+    
     final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
     public Main() {
@@ -39,11 +47,29 @@ public class Main
     	modEventBus.addListener(this::processIMC);
     	modEventBus.addListener(this::doClientStuff);
         
+    	ItemDec.ITEMS.register(modEventBus);
+    	BlockDec.BLOCKS.register(modEventBus);
+    	
         instance = this;
 
         MinecraftForge.EVENT_BUS.register(this);
     }
 
+    @SubscribeEvent
+    public static void onRegisterItems(final RegistryEvent.Register<Item> event) {
+    	
+    	final IForgeRegistry<Item> registry = event.getRegistry();
+    	
+    	BlockDec.BLOCKS.getEntries().stream().map(RegistryObject::get).forEach(block ->  {
+    		final Item.Properties properties = new Item.Properties().group(ModItemGroup.instance);
+    		final BlockItem blockItem = new BlockItem(block, properties);
+    		blockItem.setRegistryName(block.getRegistryName());
+    		registry.register(blockItem);
+    		
+    	});
+    	
+    }
+    
     private void setup(final FMLCommonSetupEvent event)
     {
        
@@ -93,7 +119,7 @@ public class Main
     	@Override
     	public ItemStack createIcon() {
     		
-    		return new ItemStack(ItemDec.polishing_stone);
+    		return new ItemStack(ItemDec.POLISHING_STONE.get());
     		
     	}
     	

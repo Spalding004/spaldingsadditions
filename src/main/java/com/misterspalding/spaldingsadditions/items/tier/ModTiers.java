@@ -14,7 +14,7 @@ public class ModTiers {
 	
 	public enum ModItemTiers implements IItemTier {
 		VENDAR(3121, 9.0F, 2.5F, 4, 16, () -> {
-		return Ingredient.fromItems(ItemDec.vendar_chunk);
+		return Ingredient.fromItems(ItemDec.VENDAR_INGOT.get());
 	});
 		
 		private final int harvest;

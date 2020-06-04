@@ -7,7 +7,7 @@
   ],
   "key": {
     "S": {
-      "item": "spaldingsadditions:mithril_ingot",
+      "item": "spaldingsadditions:vendar_ingot",
       "data": 0
     },
     "H": {
@@ -16,6 +16,6 @@
     }
   },
   "result": {
-    "item": "spaldingsadditions:tool_mithril_hoe"
+    "item": "spaldingsadditions:tool_vendar_hoe"
   }
 }

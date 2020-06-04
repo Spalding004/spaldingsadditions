@@ -2,44 +2,44 @@
 	"type": "minecraft:crafting_shapeless",
 	"ingredients": [
 		{
-			"item": "spaldingsadditions:mithril_ingot"
+			"item": "spaldingsadditions:vendar_ingot"
 			
 		},
 		{
-			"item": "spaldingsadditions:mithril_ingot"
+			"item": "spaldingsadditions:vendar_ingot"
 			
 		},
 		{
-			"item": "spaldingsadditions:mithril_ingot"
+			"item": "spaldingsadditions:vendar_ingot"
 			
 		},
 		{
-			"item": "spaldingsadditions:mithril_ingot"
+			"item": "spaldingsadditions:vendar_ingot"
 			
 		},
 		{
-			"item": "spaldingsadditions:mithril_ingot"
+			"item": "spaldingsadditions:vendar_ingot"
 			
 		},
 		{
-			"item": "spaldingsadditions:mithril_ingot"
+			"item": "spaldingsadditions:vendar_ingot"
 			
 		},
 		{
-			"item": "spaldingsadditions:mithril_ingot"
+			"item": "spaldingsadditions:vendar_ingot"
 			
 		},
 		{
-			"item": "spaldingsadditions:mithril_ingot"
+			"item": "spaldingsadditions:vendar_ingot"
 			
 		},
 		{
-			"item": "spaldingsadditions:mithril_ingot"
+			"item": "spaldingsadditions:vendar_ingot"
 			
 		}
 	],
 	"result": {
-		"item": "spaldingsadditions:mithril_block"
+		"item": "spaldingsadditions:vendar_block"
 		
 	}
 }

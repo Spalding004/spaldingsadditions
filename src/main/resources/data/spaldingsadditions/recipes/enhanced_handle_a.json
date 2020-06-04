@@ -6,12 +6,10 @@
   ],
   "key": {
     "D": {
-      "item": "minecraft:diamond",
-      "data": 0
+      "item": "minecraft:diamond"
     },
     "L": {
-      "type": "forge:ore_dict",
-      "ore": "leather"
+     "item": "minecraft:leather"
     }
   },
   "result": {

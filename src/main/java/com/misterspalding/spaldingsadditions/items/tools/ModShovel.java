@@ -8,9 +8,9 @@ import net.minecraft.item.ShovelItem;
 
 public class ModShovel extends ShovelItem {
 
-	public ModShovel(String name, IItemTier tier) {
+	public ModShovel(IItemTier tier) {
 		super(tier, (int) tier.getAttackDamage(), -2.5F, new Item.Properties().group(ModItemGroup.instance));
-		this.setRegistryName(name);
+		
 		// TODO Auto-generated constructor stub
 	}
 

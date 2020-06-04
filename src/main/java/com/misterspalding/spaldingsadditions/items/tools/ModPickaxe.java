@@ -8,9 +8,9 @@ import net.minecraft.item.PickaxeItem;
 
 public class ModPickaxe extends PickaxeItem {
 
-	public ModPickaxe(String name, IItemTier tier) {
+	public ModPickaxe(IItemTier tier) {
 		super(tier, (int) tier.getAttackDamage(), -2.5F, new Item.Properties().group(ModItemGroup.instance));
-		this.setRegistryName(name);
+	
 		// TODO Auto-generated constructor stub
 	}
 

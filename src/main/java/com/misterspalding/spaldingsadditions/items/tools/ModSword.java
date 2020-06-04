@@ -8,9 +8,9 @@ import net.minecraft.item.SwordItem;
 
 public class ModSword extends SwordItem {
 
-	public ModSword(String name, IItemTier tier) {
+	public ModSword(IItemTier tier) {
 		super(tier, (int) tier.getAttackDamage(), -2.5F, new Item.Properties().group(ModItemGroup.instance));
-		this.setRegistryName(name);
+		
 		// TODO Auto-generated constructor stub
 	}
 

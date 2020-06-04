@@ -6,7 +6,7 @@ import net.minecraftforge.common.ToolType;
 
 public class ModStone extends Block {
 
-	public ModStone(String name) {
+	public ModStone() {
 		super(Block.Properties
 				.create(Material.ROCK)
 				.hardnessAndResistance(1.5F, 6F)
@@ -14,7 +14,7 @@ public class ModStone extends Block {
 				.harvestLevel(0)
 				);
 		
-		this.setRegistryName(name);
+	
 		
 		
 		

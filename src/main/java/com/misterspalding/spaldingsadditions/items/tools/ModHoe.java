@@ -8,9 +8,9 @@ import net.minecraft.item.Item;
 
 public class ModHoe extends HoeItem {
 
-	public ModHoe(String name, IItemTier tier) {
+	public ModHoe(IItemTier tier) {
 		super(tier, -2.5F, new Item.Properties().group(ModItemGroup.instance));
-		this.setRegistryName(name);
+		
 		// TODO Auto-generated constructor stub
 	}
 

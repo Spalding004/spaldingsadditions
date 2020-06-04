@@ -3,71 +3,33 @@ package com.misterspalding.spaldingsadditions.inits;
 import com.misterspalding.spaldingsadditions.Main;
 import com.misterspalding.spaldingsadditions.blocks.ModOre;
 import com.misterspalding.spaldingsadditions.blocks.ModStone;
-
 import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
-import net.minecraftforge.registries.ObjectHolder;
+import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 
-@Mod.EventBusSubscriber(modid = Main.MOD_ID, bus = Bus.MOD)	
-@ObjectHolder(Main.MOD_ID)
+
 public class BlockDec {
 	
-	public static final ModStone marcasite = null;
-	public static final ModStone marcasite_smooth = null;
-	public static final ModStone shale = null;
-	public static final ModStone shale_smooth = null;
-	public static final ModStone apatite = null;
-	public static final ModStone apatite_smooth = null;
+	public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, Main.MOD_ID);
+	 
+	//begin blocks
 	
-	public static final ModStone pumice = null;
+	public static final RegistryObject<Block> MARCASITE = BLOCKS.register("marcasite", () -> new ModStone());
+	public static final RegistryObject<Block> MARCASITE_SMOOTH = BLOCKS.register("marcasite_smooth", () -> new ModStone());
 	
-	public static final ModOre vendar_ore = null;
-	public static final ModOre vendar_ore_dense = null;
+	public static final RegistryObject<Block> SHALE = BLOCKS.register("shale", () -> new ModStone());
+	public static final RegistryObject<Block> SHALE_SMOOTH = BLOCKS.register("shale_smooth", () -> new ModStone());
+	
+	public static final RegistryObject<Block> APATITE = BLOCKS.register("apatite", () -> new ModStone());
+	public static final RegistryObject<Block> APATITE_SMOOTH = BLOCKS.register("apatite_smooth", () -> new ModStone());
+	
+	public static final RegistryObject<Block> PUMICE = BLOCKS.register("pumice", () -> new ModStone());
+	
+	public static final RegistryObject<Block> VENDAR_ORE = BLOCKS.register("vendar_ore", () -> new ModOre(3));
+	public static final RegistryObject<Block> VENDAR_ORE_DENSE = BLOCKS.register("vendar_ore_dense", () -> new ModOre(3));
 	
 
-	//Blocks
-	
-	@SubscribeEvent 
-	public static void registerBlocks(final RegistryEvent.Register<Block> event) {
-		event.getRegistry().register(new ModStone("marcasite"));
-		event.getRegistry().register(new ModStone("marcasite_smooth"));
-		event.getRegistry().register(new ModStone("shale"));
-		event.getRegistry().register(new ModStone("shale_smooth"));
-	
-		event.getRegistry().register(new ModStone("apatite"));
-		event.getRegistry().register(new ModStone("apatite_smooth"));
-
-		event.getRegistry().register(new ModStone("pumice"));
-		
-		event.getRegistry().register(new ModOre("vendar_ore", 3));
-		event.getRegistry().register(new ModOre("vendar_ore_dense", 3));
-	
-	}
-	
-	
-	//ItemBlocks
-	
-	@SubscribeEvent
-	public static void registerBlockItems(final RegistryEvent.Register<Item> event) {
-		event.getRegistry().register(new ModItemBlock(marcasite));
-		event.getRegistry().register(new ModItemBlock(marcasite_smooth));
-		event.getRegistry().register(new ModItemBlock(shale));
-		event.getRegistry().register(new ModItemBlock(shale_smooth));
-		
-		event.getRegistry().register(new ModItemBlock(apatite));
-		event.getRegistry().register(new ModItemBlock(apatite_smooth));
-
-		event.getRegistry().register(new ModItemBlock(pumice));
-		
-		event.getRegistry().register(new ModItemBlock(vendar_ore));
-		event.getRegistry().register(new ModItemBlock(vendar_ore_dense));
-		
-	}
-	
 	
 	
 }

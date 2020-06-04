@@ -29,28 +29,28 @@ public class ModStoneGen {
 			if(biome == Biomes.RIVER || biome == Biomes.OCEAN) {
 				biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, 
 						Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, 
-								BlockDec.shale.getDefaultState(), 20)).withPlacement(config_shale));
+								BlockDec.SHALE.get().getDefaultState(), 20)).withPlacement(config_shale));
 			}
 			//																				rarity, y-min, y-max offset, y-max???
 			
 			biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, 
 					Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, 
-							BlockDec.apatite.getDefaultState(), 33)).withPlacement(config));
+							BlockDec.APATITE.get().getDefaultState(), 33)).withPlacement(config));
 			
 			
 			
 			biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, 
 					Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, 
-							BlockDec.marcasite.getDefaultState(), 33)).withPlacement(config));
+							BlockDec.MARCASITE.get().getDefaultState(), 33)).withPlacement(config));
 			//ore-replacing ore
 			biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, 
 					Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.create("CUSTOM_STONE", null, new BlockMatcher(Blocks.STONE)), 
-							BlockDec.vendar_ore.getDefaultState(), 6)).withPlacement(config_vendar));
+							BlockDec.VENDAR_ORE.get().getDefaultState(), 6)).withPlacement(config_vendar));
 			
 			//ore-replacing ore
 			biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, 
-					Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.create("DENSE_VENDAR", null, new BlockMatcher(BlockDec.vendar_ore)), 
-							BlockDec.vendar_ore_dense.getDefaultState(), 4)).withPlacement(config_vendar2));
+					Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.create("DENSE_VENDAR", null, new BlockMatcher(BlockDec.VENDAR_ORE.get())), 
+							BlockDec.VENDAR_ORE_DENSE.get().getDefaultState(), 4)).withPlacement(config_vendar2));
 		}
 		
 		

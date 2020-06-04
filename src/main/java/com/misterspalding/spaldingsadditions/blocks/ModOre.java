@@ -6,7 +6,7 @@ import net.minecraftforge.common.ToolType;
 
 public class ModOre extends Block {
 
-	public ModOre(String name, int harvest) {
+	public ModOre(int harvest) {
 		super(Block.Properties
 				.create(Material.ROCK)
 				.hardnessAndResistance(1.5F+harvest, 6F)
@@ -14,7 +14,6 @@ public class ModOre extends Block {
 				.harvestLevel(harvest)
 				);
 		
-		this.setRegistryName(name);
 		
 		
 		
