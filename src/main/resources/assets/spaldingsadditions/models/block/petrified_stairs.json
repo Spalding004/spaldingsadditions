@@ -1,0 +1,8 @@
+{
+    "parent": "block/stairs",
+    "textures": {
+        "bottom": "spaldingsadditions:blocks/petrified_planks",
+        "top": "spaldingsadditions:blocks/petrified_planks",
+        "side": "spaldingsadditions:blocks/petrified_planks"
+    }
+}

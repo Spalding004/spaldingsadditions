@@ -4,8 +4,11 @@ import com.misterspalding.spaldingsadditions.Main;
 import com.misterspalding.spaldingsadditions.blocks.ModFenceBlock;
 import com.misterspalding.spaldingsadditions.blocks.ModOre;
 import com.misterspalding.spaldingsadditions.blocks.ModPlanks;
+import com.misterspalding.spaldingsadditions.blocks.ModStairsBlockStone;
 import com.misterspalding.spaldingsadditions.blocks.ModStairsBlockWood;
 import com.misterspalding.spaldingsadditions.blocks.ModStone;
+import com.misterspalding.spaldingsadditions.blocks.ModWallBlock;
+
 import net.minecraft.block.Block;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -43,7 +46,14 @@ public class BlockDec {
 	
 	
 	public static final RegistryObject<Block> PALM_PLANKS = BLOCKS.register("palm_planks", () -> new ModPlanks());
+	public static final RegistryObject<Block> PALM_STAIRS = BLOCKS.register("palm_stairs", () -> new ModStairsBlockWood(BlockDec.PALM_PLANKS.get()));
+	public static final RegistryObject<Block> PALM_FENCE = BLOCKS.register("palm_fence", () -> new ModFenceBlock());
+	
 	public static final RegistryObject<Block> YEW_PLANKS = BLOCKS.register("yew_planks", () -> new ModPlanks());
+	public static final RegistryObject<Block> YEW_STAIRS = BLOCKS.register("yew_stairs", () -> new ModStairsBlockWood(BlockDec.YEW_PLANKS.get()));
+	public static final RegistryObject<Block> YEW_FENCE = BLOCKS.register("yew_fence", () -> new ModFenceBlock());
 	
 	public static final RegistryObject<Block> PETRIFIED_PLANKS = BLOCKS.register("petrified_planks", () -> new ModStone());
+	public static final RegistryObject<Block> PETRIFIED_STAIRS = BLOCKS.register("petrified_stairs", () -> new ModStairsBlockStone(BlockDec.PETRIFIED_PLANKS.get()));
+	public static final RegistryObject<Block> PETRIFIED_WALL = BLOCKS.register("petrified_wall", () -> new ModWallBlock());
 }

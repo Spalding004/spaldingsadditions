@@ -1,6 +1,11 @@
 {
   "replace": false,
   "values": [
-  	"spaldingsadditions:beech_stairs"
+  	"spaldingsadditions:beech_stairs",
+  	
+  	"spaldingsadditions:yew_stairs",
+  	
+  	"spaldingsadditions:palm_stairs",
+  	"spaldingsadditions:petrified_stairs"
   ]
 }

@@ -2,6 +2,7 @@ package com.misterspalding.spaldingsadditions.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.FenceBlock;
+import net.minecraft.block.WallBlock;
 import net.minecraft.block.material.Material;
 import net.minecraftforge.common.ToolType;
 
@@ -9,13 +10,13 @@ import net.minecraftforge.common.ToolType;
  * @author mclai
  *
  */
-public class ModFenceBlock extends FenceBlock {
+public class ModWallBlock extends WallBlock {
 
-	public ModFenceBlock() {
+	public ModWallBlock() {
 		super(Block.Properties
-				.create(Material.WOOD)
-				.hardnessAndResistance(1F, 1.5F)
-				.harvestTool(ToolType.AXE)
+				.create(Material.ROCK)
+				
+				.harvestTool(ToolType.PICKAXE)
 				.harvestLevel(0)
 				);
 		

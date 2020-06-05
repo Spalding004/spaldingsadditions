@@ -1,0 +1,8 @@
+{
+    "parent": "block/stairs",
+    "textures": {
+        "bottom": "spaldingsadditions:blocks/palm_planks",
+        "top": "spaldingsadditions:blocks/palm_planks",
+        "side": "spaldingsadditions:blocks/palm_planks"
+    }
+}

@@ -9,7 +9,7 @@ modLoader="javafml" #mandatory
 
 loaderVersion="[31,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
 
-#issueTrackerURL="http://my.issue.tracker/" #optional
+issueTrackerURL="https://github.com/Spalding004/spaldingsadditions/issues" #optional
 
 [[mods]] #mandatory
 
@@ -17,7 +17,7 @@ modId="spaldingsadditions" #mandatory
 
 version="2.0" #mandatory
 
-displayName="Spalding's Additions" #mandatory
+displayName="Spalding's Additions: Lapis Discoveries" #mandatory
 
 #updateJSONURL="http://myurl.me/" #optional
 
@@ -30,7 +30,7 @@ displayName="Spalding's Additions" #mandatory
 authors="Spalding004/MisterSpalding" #optional
 
 description='''
-Adds stones, machines, mobs and a whole lot more!
+Adds stones, machines, mobs and a whole lot more with a focus on the inherently magical properties of Lapis Lazuli.
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.spaldingsadditions]] #optional
@@ -46,7 +46,7 @@ Adds stones, machines, mobs and a whole lot more!
     side="BOTH"
 
 # Here's another dependency
-[[dependencies.examplemod]]
+[[dependencies.spaldingsadditions]]
     modId="minecraft"
     mandatory=true
     versionRange="[1.15.2]"

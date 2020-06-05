@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-  	"spaldingsadditions:beech_fence"
+  	"spaldingsadditions:beech_fence",
+  	"spaldingsadditions:yew_fence",
+  	"spaldingsadditions:palm_fence"
   ]
 }
