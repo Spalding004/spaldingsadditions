@@ -1,8 +1,10 @@
 package com.misterspalding.spaldingsadditions.inits;
 
 import com.misterspalding.spaldingsadditions.Main;
+import com.misterspalding.spaldingsadditions.blocks.ModFenceBlock;
 import com.misterspalding.spaldingsadditions.blocks.ModOre;
 import com.misterspalding.spaldingsadditions.blocks.ModPlanks;
+import com.misterspalding.spaldingsadditions.blocks.ModStairsBlockWood;
 import com.misterspalding.spaldingsadditions.blocks.ModStone;
 import net.minecraft.block.Block;
 import net.minecraftforge.fml.RegistryObject;
@@ -34,8 +36,12 @@ public class BlockDec {
 	public static final RegistryObject<Block> VENDAR_ORE = BLOCKS.register("vendar_ore", () -> new ModOre(3));
 	public static final RegistryObject<Block> VENDAR_ORE_DENSE = BLOCKS.register("vendar_ore_dense", () -> new ModOre(3));
 	
-	//woood
+	//wood
 	public static final RegistryObject<Block> BEECH_PLANKS = BLOCKS.register("beech_planks", () -> new ModPlanks());
+	public static final RegistryObject<Block> BEECH_STAIRS = BLOCKS.register("beech_stairs", () -> new ModStairsBlockWood(BlockDec.BEECH_PLANKS.get()));
+	public static final RegistryObject<Block> BEECH_FENCE = BLOCKS.register("beech_fence", () -> new ModFenceBlock());
+	
+	
 	public static final RegistryObject<Block> PALM_PLANKS = BLOCKS.register("palm_planks", () -> new ModPlanks());
 	public static final RegistryObject<Block> YEW_PLANKS = BLOCKS.register("yew_planks", () -> new ModPlanks());
 	
