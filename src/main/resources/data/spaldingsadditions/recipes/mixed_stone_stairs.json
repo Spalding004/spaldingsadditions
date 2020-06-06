@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S  ",
+    "SS ",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "spaldingsadditions:mixed_stone",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "spaldingsadditions:mixed_stone",
+    "count": 8
+  }
+}

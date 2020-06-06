@@ -32,12 +32,27 @@ public class BlockDec {
 	public static final RegistryObject<Block> APATITE = BLOCKS.register("apatite", () -> new ModStone());
 	public static final RegistryObject<Block> APATITE_SMOOTH = BLOCKS.register("apatite_smooth", () -> new ModStone());
 	
+	public static final RegistryObject<Block> MIXED_STONE = BLOCKS.register("mixed_stone", () -> new ModStone());
+	public static final RegistryObject<Block> MIXED_STONE_STAIRS = BLOCKS.register("mixed_stone_stairs", () -> new ModStairsBlockStone(BlockDec.MIXED_STONE.get()));
+	public static final RegistryObject<Block> MIXED_STONE_WALL = BLOCKS.register("mixed_stone_wall", () -> new ModWallBlock());
+
+	
+	public static final RegistryObject<Block> ALUNITE = BLOCKS.register("alunite", () -> new ModStone());
+	public static final RegistryObject<Block> ALUNITE_SMOOTH = BLOCKS.register("alunite_smooth", () -> new ModStone());
+	
+	public static final RegistryObject<Block> UMBER = BLOCKS.register("umber", () -> new ModStone());
+	public static final RegistryObject<Block> UMBER_SMOOTH = BLOCKS.register("umber_smooth", () -> new ModStone());
+	
+	public static final RegistryObject<Block> CORMALITE = BLOCKS.register("cormalite", () -> new ModStone());
+	public static final RegistryObject<Block> CORMALITE_SMOOTH = BLOCKS.register("cormalite_smooth", () -> new ModStone());
+	
 	public static final RegistryObject<Block> PUMICE = BLOCKS.register("pumice", () -> new ModStone());
 	
 	
 	//ores
 	public static final RegistryObject<Block> VENDAR_ORE = BLOCKS.register("vendar_ore", () -> new ModOre(3));
 	public static final RegistryObject<Block> VENDAR_ORE_DENSE = BLOCKS.register("vendar_ore_dense", () -> new ModOre(3));
+	public static final RegistryObject<Block> UMBER_GOLD_ORE = BLOCKS.register("umber_gold_ore", () -> new ModOre(2));
 	
 	//wood
 	public static final RegistryObject<Block> BEECH_PLANKS = BLOCKS.register("beech_planks", () -> new ModPlanks());

@@ -17,6 +17,8 @@ public class ModStoneGen {
 
 	public static void GenerateOre() {
 		
+		
+		
 		for (Biome biome : ForgeRegistries.BIOMES) {
 			
 			ConfiguredPlacement<CountRangeConfig> config = Placement.COUNT_RANGE.configure(new CountRangeConfig(7, 20, 0, 120));
@@ -24,8 +26,9 @@ public class ModStoneGen {
 			ConfiguredPlacement<CountRangeConfig> config_shale = Placement.COUNT_RANGE.configure(new CountRangeConfig(7, 20, 0, 70));
 			ConfiguredPlacement<CountRangeConfig> config_vendar = Placement.COUNT_RANGE.configure(new CountRangeConfig(3, 12, 0, 40));
 			ConfiguredPlacement<CountRangeConfig> config_vendar2 = Placement.COUNT_RANGE.configure(new CountRangeConfig(200, 12, 0, 30));
-			
-			
+			ConfiguredPlacement<CountRangeConfig> config_umber = Placement.COUNT_RANGE.configure(new CountRangeConfig(7, 20, 0, 120));
+			ConfiguredPlacement<CountRangeConfig> config_alunite = Placement.COUNT_RANGE.configure(new CountRangeConfig(7, 20, 0, 120));
+			ConfiguredPlacement<CountRangeConfig> config_cormalite = Placement.COUNT_RANGE.configure(new CountRangeConfig(7, 20, 0, 120));
 			
 			if(biome == Biomes.RIVER || biome == Biomes.OCEAN) {
 				biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, 
@@ -46,6 +49,19 @@ public class ModStoneGen {
 			biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, 
 					Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, 
 							BlockDec.MARCASITE.get().getDefaultState(), 33)).withPlacement(config));
+			
+			biome.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, 
+					Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK, 
+							BlockDec.UMBER.get().getDefaultState(), 33)).withPlacement(config_umber));
+			
+			biome.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, 
+					Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK, 
+							BlockDec.ALUNITE.get().getDefaultState(), 33)).withPlacement(config_alunite));
+			
+			biome.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, 
+					Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK, 
+							BlockDec.CORMALITE.get().getDefaultState(), 33)).withPlacement(config_alunite));
+			
 			//ore-replacing ore
 			biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, 
 					Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.create("CUSTOM_STONE", null, new BlockMatcher(Blocks.STONE)), 

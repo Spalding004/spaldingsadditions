@@ -6,10 +6,8 @@ import net.minecraft.block.WallBlock;
 import net.minecraft.block.material.Material;
 import net.minecraftforge.common.ToolType;
 
-/**
- * @author mclai
- *
- */
+
+@SuppressWarnings("unused")
 public class ModWallBlock extends WallBlock {
 
 	public ModWallBlock() {

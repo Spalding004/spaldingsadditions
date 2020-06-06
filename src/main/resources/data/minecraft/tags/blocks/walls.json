@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-  	"spaldingsadditions:petrified_wall"
+  	"spaldingsadditions:petrified_wall",
+  	"spaldingsadditions:mixed_stone_wall"
   ]
 }

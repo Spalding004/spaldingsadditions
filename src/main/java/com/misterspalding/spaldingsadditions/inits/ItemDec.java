@@ -21,6 +21,7 @@ public class ItemDec {
 	 
 	//metal items
 	
+	public static final RegistryObject<Item> UMBER_GOLD_CHUNK = ITEMS.register("umber_gold_chunk", () -> new ModGenericItem());
 	public static final RegistryObject<Item> VENDAR_CHUNK = ITEMS.register("vendar_chunk", () -> new ModGenericItem());
 	public static final RegistryObject<Item> VENDAR_INGOT = ITEMS.register("vendar_ingot", () -> new ModGenericItem());
 	public static final RegistryObject<Item> VENDAR_NUGGET = ITEMS.register("vendar_nugget", () -> new ModGenericItem());

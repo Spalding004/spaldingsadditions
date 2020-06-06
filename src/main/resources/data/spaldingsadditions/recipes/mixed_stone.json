@@ -1,0 +1,36 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "spaldingsadditions:marcasite"
+		},
+		{
+			"item": "spaldingsadditions:alunite"
+		},
+		{
+			"item": "minecraft:diorite"
+		},
+		{
+			"item": "minecraft:granite"
+		},
+		{
+			"item": "minecraft:andesite"
+		},
+		{
+			"item": "minecraft:cobblestone"
+		},
+		{
+			"item": "minecraft:cobblestone"
+		},
+		{
+			"item": "minecraft:cobblestone"
+		},
+		{
+			"item": "minecraft:cobblestone"
+		}
+	],
+	"result": {
+		"item": "spaldingsadditions:mixed_stone",
+		"count": 9
+	}
+}

@@ -2,14 +2,14 @@
 	"type": "minecraft:crafting_shapeless",
 	"ingredients": [
 		{
-			"item": "spaldingsadditions:umber"
+			"item": "spaldingsadditions:cormalite"
 		},
 		{
 			"item": "spaldingsadditions:polishing_stone"
 		}
 	],
 	"result": {
-		"item": "spaldingsadditions:umber_smooth"
+		"item": "spaldingsadditions:cormalite_smooth"
 		
 	}
 }
