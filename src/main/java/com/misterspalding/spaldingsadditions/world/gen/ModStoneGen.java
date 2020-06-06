@@ -60,7 +60,7 @@ public class ModStoneGen {
 			
 			biome.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, 
 					Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK, 
-							BlockDec.CORMALITE.get().getDefaultState(), 33)).withPlacement(config_alunite));
+							BlockDec.CORMALITE.get().getDefaultState(), 33)).withPlacement(config_cormalite));
 			
 			//ore-replacing ore
 			biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, 

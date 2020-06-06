@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "spaldingsadditions:blocks/endfection_top_c",
+        "down": "spaldingsadditions:blocks/endfection_side",
+        "up": "spaldingsadditions:blocks/endfection_top_c",
+        "north": "spaldingsadditions:blocks/endfection_side_full",
+        "east": "spaldingsadditions:blocks/endfection_side_full",
+        "south": "spaldingsadditions:blocks/endfection_side_full",
+        "west": "spaldingsadditions:blocks/endfection_side_full"
+    }
+}

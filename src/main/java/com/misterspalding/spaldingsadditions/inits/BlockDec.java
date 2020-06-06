@@ -1,6 +1,9 @@
 package com.misterspalding.spaldingsadditions.inits;
 
 import com.misterspalding.spaldingsadditions.Main;
+import com.misterspalding.spaldingsadditions.blocks.ModEndcroachment;
+import com.misterspalding.spaldingsadditions.blocks.ModEndfectedOre;
+import com.misterspalding.spaldingsadditions.blocks.ModEndfection;
 import com.misterspalding.spaldingsadditions.blocks.ModFenceBlock;
 import com.misterspalding.spaldingsadditions.blocks.ModOre;
 import com.misterspalding.spaldingsadditions.blocks.ModPlanks;
@@ -47,6 +50,12 @@ public class BlockDec {
 	public static final RegistryObject<Block> CORMALITE_SMOOTH = BLOCKS.register("cormalite_smooth", () -> new ModStone());
 	
 	public static final RegistryObject<Block> PUMICE = BLOCKS.register("pumice", () -> new ModStone());
+	
+	public static final RegistryObject<Block> ENDCROACHED_NETHERRACK = BLOCKS.register("endcroached_netherrack", () -> new ModEndcroachment());
+	public static final RegistryObject<Block> ENDFECTED_NETHERRACK_A = BLOCKS.register("endfected_netherrack_a", () -> new ModEndfection("A"));
+	public static final RegistryObject<Block> ENDFECTED_NETHERRACK_B = BLOCKS.register("endfected_netherrack_b", () -> new ModEndfection("B"));
+	public static final RegistryObject<Block> ENDFECTED_NETHERRACK_C = BLOCKS.register("endfected_netherrack_c", () -> new ModEndfection("C"));
+	public static final RegistryObject<Block> ENDFECTED_NETHER_QUARTZ_ORE = BLOCKS.register("endfected_nether_quartz_ore", () -> new ModEndfectedOre());
 	
 	
 	//ores

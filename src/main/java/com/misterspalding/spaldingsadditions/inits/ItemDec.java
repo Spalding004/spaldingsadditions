@@ -26,6 +26,12 @@ public class ItemDec {
 	public static final RegistryObject<Item> VENDAR_INGOT = ITEMS.register("vendar_ingot", () -> new ModGenericItem());
 	public static final RegistryObject<Item> VENDAR_NUGGET = ITEMS.register("vendar_nugget", () -> new ModGenericItem());
 	
+	public static final RegistryObject<Item> FRACTURED_LAPIS = ITEMS.register("fractured_lapis", () -> new ModGenericItem());
+	public static final RegistryObject<Item> LAPIS_SHARD = ITEMS.register("lapis_shard", () -> new ModGenericItem());
+	
+	public static final RegistryObject<Item> REDUCED_LAPIS_NUGGET = ITEMS.register("reduced_lapis_nugget", () -> new ModGenericItem());
+	public static final RegistryObject<Item> REDUCED_LAPIS_INGOT = ITEMS.register("reduced_lapis_ingot", () -> new ModGenericItem());
+	
 	//tools
 	public static final RegistryObject<Item> TOOL_ENHANCED_HANDLE = ITEMS.register("tool_enhanced_handle", () -> new ModGenericItem());
 	
@@ -34,6 +40,9 @@ public class ItemDec {
 	public static final RegistryObject<Item> TOOL_VENDAR_AXE = ITEMS.register("tool_vendar_axe", () -> new ModAxe(ModItemTiers.VENDAR));
 	public static final RegistryObject<Item> TOOL_VENDAR_HOE = ITEMS.register("tool_vendar_hoe", () -> new ModHoe(ModItemTiers.VENDAR));
 	public static final RegistryObject<Item> TOOL_VENDAR_SHOVEL = ITEMS.register("tool_vendar_shovel", () -> new ModShovel(ModItemTiers.VENDAR));
+	
+	public static final RegistryObject<Item> TOOL_VENDAR_FRAKHAMMER = ITEMS.register("tool_vendar_frakhammer", () -> new ModGenericItem());
+	public static final RegistryObject<Item> IRON_FRAKHAMMER = ITEMS.register("iron_frakhammer", () -> new ModGenericItem());
 	
 	
 	
