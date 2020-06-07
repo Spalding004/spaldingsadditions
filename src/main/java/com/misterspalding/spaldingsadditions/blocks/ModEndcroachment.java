@@ -22,6 +22,7 @@ public class ModEndcroachment extends Block {
 				.harvestTool(ToolType.PICKAXE)
 				.harvestLevel(0)
 				.tickRandomly()
+				.lightValue(4)
 				);
 		
 	}
@@ -31,19 +32,19 @@ public class ModEndcroachment extends Block {
 	 public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random rand) {
 		
 		boolean shouldgrow = rand.nextInt(10) == 1;
-		boolean shouldSpread = rand.nextInt(10) > 4;
+		boolean shouldSpread = rand.nextInt(10) > 2;
 		
 		if (shouldgrow && worldIn.getBlockState(pos.up()).isAir(worldIn, pos)) {
 		int type = rand.nextInt(100);
-			if (type <= 90) {
+			if (type <= 69) {
 				worldIn.setBlockState(pos, BlockDec.ENDFECTED_NETHERRACK_C.get().getDefaultState());
 			} 
 			
-			if (type > 90 && type <= 95 ) {
+			if (type > 69 && type <= 85 ) {
 				worldIn.setBlockState(pos, BlockDec.ENDFECTED_NETHERRACK_A.get().getDefaultState());
 			} 
 
-			if (type > 95) {
+			if (type > 85) {
 				worldIn.setBlockState(pos, BlockDec.ENDFECTED_NETHERRACK_B.get().getDefaultState());
 			}
 			
@@ -57,7 +58,7 @@ public class ModEndcroachment extends Block {
 		
 		if (worldIn.getBlockState(pos).getBlock() ==  Blocks.NETHERRACK) {
 			
-			worldIn.setBlockState(pos, BlockDec.ENDCROACHED_NETHERRACK.get().getDefaultState());
+			//worldIn.setBlockState(pos, BlockDec.ENDCROACHED_NETHERRACK.get().getDefaultState());
 			
 		} 
 		

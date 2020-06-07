@@ -23,6 +23,7 @@ public class ModEndfectedOre extends Block {
 				.harvestTool(ToolType.PICKAXE)
 				.harvestLevel(0)
 				.tickRandomly()
+				.lightValue(7)
 				);
 		
 		
