@@ -30,8 +30,9 @@
 
 "block.spaldingsadditions.vendar_ore_dense" = "Vendar Ore",
 
-"itemGroup.mod_creative_tab" = "Spalding's Additions"
+"itemGroup.mod_creative_tab" = "Spalding's Additions",
 
+"death.attack.void_walking" = "%1$s felt the touch of the Void."
 
 
 }

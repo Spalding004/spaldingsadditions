@@ -3,14 +3,20 @@ package com.misterspalding.spaldingsadditions.blocks;
 import java.util.Random;
 
 import com.misterspalding.spaldingsadditions.inits.BlockDec;
+import com.misterspalding.spaldingsadditions.inits.DamagesDec;
 import com.misterspalding.spaldingsadditions.utils.ModHelpers;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.Entity;
+import net.minecraft.particles.ParticleTypes;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.ToolType;
 
 public class ModEndfection extends Block {
@@ -76,6 +82,57 @@ public class ModEndfection extends Block {
 		//	}
 		}
 		
+	}
+	
+	@OnlyIn(Dist.CLIENT)
+	   public void animateTick(BlockState stateIn, World worldIn, BlockPos pos, Random rand) {
+	      	int chance = rand.nextInt(25);
+		
+			if (chance == 1) {
+	         spawnParticles(worldIn, pos);
+	      }
+
+	   }
+	
+	private void spawnParticles(World worldIn, BlockPos pos) {
+	      Random random = worldIn.rand;
+	      for(int i = 0; i < 6; ++i) {
+	         double d1 = (double)((float)pos.getX() + random.nextFloat());
+	         double d2 = (double)((float)pos.getY() + random.nextFloat());
+	         double d3 = (double)((float)pos.getZ() + random.nextFloat());
+	         if (i == 0 && !worldIn.getBlockState(pos.up()).isOpaqueCube(worldIn, pos)) {
+	            d2 = (double)pos.getY() + 0.0625D + 1.0D;
+	         }
+
+	         if (i == 1 && !worldIn.getBlockState(pos.down()).isOpaqueCube(worldIn, pos)) {
+	            d2 = (double)pos.getY() - 0.0625D;
+	         }
+
+	         if (i == 2 && !worldIn.getBlockState(pos.south()).isOpaqueCube(worldIn, pos)) {
+	            d3 = (double)pos.getZ() + 0.0625D + 1.0D;
+	         }
+
+	         if (i == 3 && !worldIn.getBlockState(pos.north()).isOpaqueCube(worldIn, pos)) {
+	            d3 = (double)pos.getZ() - 0.0625D;
+	         }
+
+	         if (i == 4 && !worldIn.getBlockState(pos.east()).isOpaqueCube(worldIn, pos)) {
+	            d1 = (double)pos.getX() + 0.0625D + 1.0D;
+	         }
+
+	         if (i == 5 && !worldIn.getBlockState(pos.west()).isOpaqueCube(worldIn, pos)) {
+	            d1 = (double)pos.getX() - 0.0625D;
+	         }
+
+	         if (d1 < (double)pos.getX() || d1 > (double)(pos.getX() + 1) || d2 < 0.0D || d2 > (double)(pos.getY() + 1) || d3 < (double)pos.getZ() || d3 > (double)(pos.getZ() + 1)) {
+	            worldIn.addParticle(ParticleTypes.PORTAL, d1, d2, d3, 0.0D, -0.4D, 0.0D);
+	         }
+	      }
+	}
+	
+	@Override
+	public void onEntityWalk(World world, BlockPos pos, Entity entity) {
+		entity.attackEntityFrom(DamagesDec.VOID_WALKING, 2.0F);
 	}
 	
 }

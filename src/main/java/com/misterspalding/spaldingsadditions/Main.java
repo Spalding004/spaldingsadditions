@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.misterspalding.spaldingsadditions.inits.BiomeDec;
 import com.misterspalding.spaldingsadditions.inits.BlockDec;
+import com.misterspalding.spaldingsadditions.inits.DamagesDec;
 import com.misterspalding.spaldingsadditions.inits.ItemDec;
 import com.misterspalding.spaldingsadditions.world.gen.ModStoneGen;
 
@@ -49,6 +50,8 @@ public class Main
     	modEventBus.addListener(this::processIMC);
     	modEventBus.addListener(this::doClientStuff);
         
+    	DamagesDec.initDamages();
+    	
     	ItemDec.ITEMS.register(modEventBus);
     	BlockDec.BLOCKS.register(modEventBus);
     	//TileEntities go here
