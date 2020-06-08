@@ -3,6 +3,8 @@ package com.misterspalding.spaldingsadditions.blocks;
 import java.util.Random;
 import java.util.function.Supplier;
 
+import com.misterspalding.spaldingsadditions.world.feature.ModTree;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -26,17 +28,21 @@ public class ModSapling extends BushBlock implements IGrowable {
 	
 	protected static final VoxelShape SHAPE = Block.makeCuboidShape(2.0D, 0D, 2.0D, 14.0D, 12.0D, 14.0D);
 	
-	private final Tree tree;
+	private final Supplier<ModTree> tree;
 	
-	public ModSapling (Tree tree) {
-		super(Block.Properties.from(Blocks.OAK_SAPLING));
-		this.tree = tree;
-		
-		
-	}
+	
 
 	
 	
+	
+
+
+
+	public ModSapling(Supplier<ModTree> tree) {
+		super(Block.Properties.from(Blocks.OAK_SAPLING));
+		this.tree = tree;
+	}
+
 	@Override
 	public boolean canGrow(IBlockReader worldIn, BlockPos pos, BlockState state, boolean isClient) {
 		// TODO Auto-generated method stub
@@ -68,7 +74,7 @@ public class ModSapling extends BushBlock implements IGrowable {
 				
 			}
 			
-			this.tree.place(worldIn, worldIn.getChunkProvider().getChunkGenerator(), pos, state, rand);
+			this.tree.get().place(worldIn, worldIn.getChunkProvider().getChunkGenerator(), pos, state, rand);
 		}
 		
 	}

@@ -6,6 +6,7 @@ import org.apache.logging.log4j.Logger;
 import com.misterspalding.spaldingsadditions.inits.BiomeDec;
 import com.misterspalding.spaldingsadditions.inits.BlockDec;
 import com.misterspalding.spaldingsadditions.inits.DamagesDec;
+import com.misterspalding.spaldingsadditions.inits.FeaturesDec;
 import com.misterspalding.spaldingsadditions.inits.ItemDec;
 import com.misterspalding.spaldingsadditions.world.gen.ModStoneGen;
 import com.misterspalding.spaldingsadditions.world.gen.features.FeatureYewTree;
@@ -42,8 +43,7 @@ public class Main
     public static final String MOD_ID = "spaldingsadditions";
     public static Main instance;
     
-    public static Feature<FeatureYewTreeConfig> FEATURE_YEW_TREE = new FeatureYewTree(FeatureYewTreeConfig::deserialize);
-
+    
     
     final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
@@ -127,9 +127,8 @@ public class Main
     }
     
     @SubscribeEvent
-	  public static void registerFeatures(RegistryEvent.Register<Feature<?>> event) {
-	    IForgeRegistry<Feature<?>> registry = event.getRegistry();
-	    registry.register(FEATURE_YEW_TREE.setRegistryName(Main.MOD_ID, "yew_tree"));
+	  public static void onRegisterFeatures(RegistryEvent.Register<Feature<?>> event) {
+	  FeaturesDec.register(event);
 	  }
     
     public static class ModItemGroup extends ItemGroup {
@@ -143,7 +142,7 @@ public class Main
     	@Override
     	public ItemStack createIcon() {
     		
-    		return new ItemStack(ItemDec.POLISHING_STONE.get());
+    	return new ItemStack(ItemDec.FRACTURED_LAPIS.get());
     		
     	}
     	

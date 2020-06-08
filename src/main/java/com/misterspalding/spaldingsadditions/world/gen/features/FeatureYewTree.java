@@ -15,7 +15,7 @@ import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.gen.IWorldGenerationReader;
 import net.minecraft.world.gen.feature.AbstractTreeFeature;
 
-public class FeatureYewTree extends AbstractTreeFeature<FeatureYewTreeConfig> {
+public class FeatureYewTree extends  AbstractTreeFeature<FeatureYewTreeConfig> {
 	  public FeatureYewTree(Function<Dynamic<?>, FeatureYewTreeConfig> function) {
 	    super(function);
 	  }
@@ -24,7 +24,7 @@ public class FeatureYewTree extends AbstractTreeFeature<FeatureYewTreeConfig> {
 	  @Override
 	  protected boolean place(IWorldGenerationReader world, Random rand, BlockPos origin, Set<BlockPos> logs, Set<BlockPos> leaves, MutableBoundingBox box, FeatureYewTreeConfig config) {
 	    // Total log length
-	    int length = rand.nextInt(config.height_random) + config.height_base;
+	    int length = rand.nextInt(3) + config.baseHeight;
 
 	    // Axis
 	    Direction.Axis axis = rand.nextBoolean() ? Direction.Axis.X : Direction.Axis.Z;
