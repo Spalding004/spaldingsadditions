@@ -11,6 +11,7 @@ import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraft.world.gen.placement.ConfiguredPlacement;
 import net.minecraft.world.gen.placement.CountRangeConfig;
 import net.minecraft.world.gen.placement.Placement;
+import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModStoneGen {
@@ -32,7 +33,7 @@ public class ModStoneGen {
 			ConfiguredPlacement<CountRangeConfig> config_alunite = Placement.COUNT_RANGE.configure(new CountRangeConfig(7, 90, 0, 180));
 			ConfiguredPlacement<CountRangeConfig> config_cormalite = Placement.COUNT_RANGE.configure(new CountRangeConfig(7, 20, 0, 95));
 			
-			if(biome == Biomes.RIVER || biome == Biomes.OCEAN) {
+			if(biome == Biomes.RIVER || BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN)) {
 				biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, 
 						Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, 
 								BlockDec.SHALE.get().getDefaultState(), 33)).withPlacement(config_shale));

@@ -8,6 +8,8 @@ import com.misterspalding.spaldingsadditions.inits.BlockDec;
 import com.misterspalding.spaldingsadditions.inits.DamagesDec;
 import com.misterspalding.spaldingsadditions.inits.ItemDec;
 import com.misterspalding.spaldingsadditions.world.gen.ModStoneGen;
+import com.misterspalding.spaldingsadditions.world.gen.features.FeatureYewTree;
+import com.misterspalding.spaldingsadditions.world.gen.features.FeatureYewTreeConfig;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
@@ -17,6 +19,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.gen.feature.Feature;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -39,7 +42,8 @@ public class Main
     public static final String MOD_ID = "spaldingsadditions";
     public static Main instance;
     
-    
+    public static Feature<FeatureYewTreeConfig> FEATURE_YEW_TREE = new FeatureYewTree(FeatureYewTreeConfig::deserialize);
+
     
     final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
@@ -55,6 +59,8 @@ public class Main
     	ItemDec.ITEMS.register(modEventBus);
     	BlockDec.BLOCKS.register(modEventBus);
     	//TileEntities go here
+    	
+    	  
     	BiomeDec.BIOMES.register(modEventBus);
         instance = this;
 
@@ -119,6 +125,12 @@ public class Main
     	ModStoneGen.GenerateOre();
     	
     }
+    
+    @SubscribeEvent
+	  public static void registerFeatures(RegistryEvent.Register<Feature<?>> event) {
+	    IForgeRegistry<Feature<?>> registry = event.getRegistry();
+	    registry.register(FEATURE_YEW_TREE.setRegistryName(Main.MOD_ID, "yew_tree"));
+	  }
     
     public static class ModItemGroup extends ItemGroup {
     	

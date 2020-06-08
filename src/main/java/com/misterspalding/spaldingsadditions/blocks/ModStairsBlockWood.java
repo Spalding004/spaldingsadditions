@@ -1,5 +1,7 @@
 package com.misterspalding.spaldingsadditions.blocks;
 
+import com.misterspalding.spaldingsadditions.inits.FlammablesDec;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.block.material.Material;
@@ -21,7 +23,7 @@ public class ModStairsBlockWood extends StairsBlock {
 				);
 		
 	
-		
+		FlammablesDec.registerFlammable(this.getBlock(), 5, 20);
 		
 		
 	}

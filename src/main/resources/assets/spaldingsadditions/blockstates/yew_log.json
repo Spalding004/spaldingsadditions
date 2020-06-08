@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":  	{ "model": "spaldingsadditions:block/yew_log" },
+        "axis=z":   { "model": "spaldingsadditions:block/yew_log", "x": 90 },
+        "axis=x":   { "model": "spaldingsadditions:block/yew_log", "x": 90, "y": 90 }
+    }
+}

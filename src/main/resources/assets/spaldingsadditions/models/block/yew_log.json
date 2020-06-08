@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "spaldingsadditions:blocks/yew_top",
+        "side": "spaldingsadditions:blocks/yew_log"
+    }
+}

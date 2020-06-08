@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "spaldingsadditions:blocks/palm_top",
+        "side": "spaldingsadditions:blocks/palm_log"
+    }
+}

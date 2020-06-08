@@ -1,0 +1,7 @@
+
+{
+    "parent": "block/leaves",
+    "textures": {
+        "all": "spaldingsadditions:blocks/yew_leaves"
+    }
+}
