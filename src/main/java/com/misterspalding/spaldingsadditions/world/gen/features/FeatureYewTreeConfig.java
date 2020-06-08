@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
+import com.misterspalding.spaldingsadditions.inits.BlockDec;
 import com.mojang.datafixers.Dynamic;
 import com.mojang.datafixers.types.DynamicOps;
 
@@ -22,7 +23,7 @@ public class FeatureYewTreeConfig extends BaseTreeFeatureConfig implements IFeat
 	   public final List<TreeDecorator> decorators;
 	   public final int baseHeight;
 	   public transient boolean forcePlacement;
-	   protected net.minecraftforge.common.IPlantable sapling = (net.minecraftforge.common.IPlantable)net.minecraft.block.Blocks.OAK_SAPLING;
+	   protected net.minecraftforge.common.IPlantable sapling = (net.minecraftforge.common.IPlantable)BlockDec.YEW_SAPLING.get();
 
 	   protected FeatureYewTreeConfig(BlockStateProvider trunkProviderIn, BlockStateProvider leavesProviderIn, List<TreeDecorator> decoratorsIn, int baseHeightIn) {
 	      super(leavesProviderIn, leavesProviderIn, decoratorsIn, baseHeightIn);
@@ -62,7 +63,7 @@ public class FeatureYewTreeConfig extends BaseTreeFeatureConfig implements IFeat
 	   }
 
 	   public static <T> FeatureYewTreeConfig deserializeJungle(Dynamic<T> data) {
-	      return deserialize(data).setSapling((net.minecraftforge.common.IPlantable)net.minecraft.block.Blocks.JUNGLE_SAPLING);
+	      return deserialize(data).setSapling((net.minecraftforge.common.IPlantable)BlockDec.YEW_SAPLING.get());
 	   }
 
 	   public static class Builder {
@@ -70,7 +71,7 @@ public class FeatureYewTreeConfig extends BaseTreeFeatureConfig implements IFeat
 	      public final BlockStateProvider leavesProvider;
 	      private List<TreeDecorator> decorators = Lists.newArrayList();
 	      private int baseHeight = 0;
-	      protected net.minecraftforge.common.IPlantable sapling = (net.minecraftforge.common.IPlantable)net.minecraft.block.Blocks.OAK_SAPLING;
+	      protected net.minecraftforge.common.IPlantable sapling = (net.minecraftforge.common.IPlantable)BlockDec.YEW_SAPLING.get();
 
 	      public Builder(BlockStateProvider trunkProviderIn, BlockStateProvider leavesProviderIn) {
 	         this.trunkProvider = trunkProviderIn;

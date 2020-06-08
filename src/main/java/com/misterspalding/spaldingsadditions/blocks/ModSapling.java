@@ -14,10 +14,12 @@ import net.minecraft.block.trees.Tree;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.event.ForgeEventFactory;
@@ -30,42 +32,41 @@ public class ModSapling extends BushBlock implements IGrowable {
 	
 	private final Supplier<ModTree> tree;
 	
-	
-
-	
-	
-	
-
-
-
 	public ModSapling(Supplier<ModTree> tree) {
 		super(Block.Properties.from(Blocks.OAK_SAPLING));
 		this.tree = tree;
+		this.setDefaultState(this.stateContainer.getBaseState().with(STAGE, Integer.valueOf(0)));
+		
 	}
 
-	@Override
+	public boolean canBeReplacedByLogs(BlockState state, IWorldReader world, BlockPos pos)
+    {
+        return (isAir(state, world, pos) || state.isIn(BlockTags.LEAVES)) || this == Blocks.GRASS_BLOCK || state.isIn(net.minecraftforge.common.Tags.Blocks.DIRT)
+            || getBlock().isIn(BlockTags.LOGS) || getBlock().isIn(BlockTags.SAPLINGS) || this == Blocks.VINE;
+    }
+	
 	public boolean canGrow(IBlockReader worldIn, BlockPos pos, BlockState state, boolean isClient) {
 		// TODO Auto-generated method stub
 		return true;
 	}
 
-	@Override
+	
 	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
 		// TODO Auto-generated method stub
 		return SHAPE;
 	}
 
-	@Override
+	
 	public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, BlockState state) {
 		// TODO Auto-generated method stub
 		return (double)worldIn.rand.nextFloat() < 0.45D;
 	}
 
-	@Override
+	
 	public void grow(ServerWorld worldIn, Random rand, BlockPos pos, BlockState state) {
 		if(state.get(STAGE) == 0) {
 			
-			worldIn.setBlockState(pos, state.cycle(STAGE), 4);
+			worldIn.setBlockState(pos, state.cycle(STAGE), 2);
 			
 		} else {
 			if(!ForgeEventFactory.saplingGrowTree(worldIn, rand, pos)) {
@@ -73,7 +74,9 @@ public class ModSapling extends BushBlock implements IGrowable {
 				return;
 				
 			}
-			
+			//worldIn.removeBlock(pos, false);
+
+		    worldIn.setBlockState(pos, Blocks.DIRT.getDefaultState(), 1|2);
 			this.tree.get().place(worldIn, worldIn.getChunkProvider().getChunkGenerator(), pos, state, rand);
 		}
 		
@@ -82,7 +85,6 @@ public class ModSapling extends BushBlock implements IGrowable {
 
 
 	@SuppressWarnings("deprecation")
-	@Override
 	public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random rand) {
 		// TODO Auto-generated method stub
 		super.tick(state, worldIn, pos, rand);

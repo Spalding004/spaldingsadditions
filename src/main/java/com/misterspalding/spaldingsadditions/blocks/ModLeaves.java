@@ -21,7 +21,7 @@ public class ModLeaves extends LeavesBlock {
 		
 	
 		FlammablesDec.registerFlammable(this.getBlock(), 30, 60);
-		
+		 this.setDefaultState(this.stateContainer.getBaseState().with(DISTANCE, Integer.valueOf(7)).with(PERSISTENT, Boolean.valueOf(false)));
 		
 	}
 

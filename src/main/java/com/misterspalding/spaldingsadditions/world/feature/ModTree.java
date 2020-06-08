@@ -33,7 +33,7 @@ public abstract class ModTree {
 	         if (configuredfeature.place(worldIn, chunkGeneratorIn, randomIn, blockPosIn)) {
 	            return true;
 	         } else {
-	            worldIn.setBlockState(blockPosIn, blockStateIn, 4);
+	           // worldIn.setBlockState(blockPosIn, blockStateIn, 4);
 	            return false;
 	         }
 	      }

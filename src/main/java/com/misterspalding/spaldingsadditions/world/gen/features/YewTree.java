@@ -13,8 +13,8 @@ public class YewTree extends ModTree {
 
 	 public static final FeatureYewTreeConfig YEW_TREE_CONFIG = (new FeatureYewTreeConfig.Builder(
 			 new SimpleBlockStateProvider(BlockDec.YEW_LOG.get().getDefaultState()), 
-			 new SimpleBlockStateProvider(BlockDec.YEW_LOG.get().getDefaultState()))
-			 .baseHeight(10)
+			 new SimpleBlockStateProvider(BlockDec.YEW_LEAVES.get().getDefaultState()))
+			 .baseHeight(4)
 			 .setSapling((net.minecraftforge.common.IPlantable)BlockDec.YEW_SAPLING.get()).build());
 
 	@Override
