@@ -1,5 +1,7 @@
 package com.misterspalding.spaldingsadditions;
 
+import java.util.ArrayList;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -9,12 +11,10 @@ import com.misterspalding.spaldingsadditions.inits.DamagesDec;
 import com.misterspalding.spaldingsadditions.inits.FeaturesDec;
 import com.misterspalding.spaldingsadditions.inits.ItemDec;
 import com.misterspalding.spaldingsadditions.world.gen.ModStoneGen;
-import com.misterspalding.spaldingsadditions.world.gen.features.FeatureYewTree;
-import com.misterspalding.spaldingsadditions.world.gen.features.FeatureYewTreeConfig;
-
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -42,7 +42,7 @@ public class Main
 	private static final Logger LOGGER = LogManager.getLogger();
     public static final String MOD_ID = "spaldingsadditions";
     public static Main instance;
-    
+    public static ArrayList<Block> CUT_OUT_BLOCKS = new ArrayList<Block>();
     
     
     final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
