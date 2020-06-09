@@ -9,11 +9,14 @@ import com.misterspalding.spaldingsadditions.blocks.ModLeaves;
 import com.misterspalding.spaldingsadditions.blocks.ModLogs;
 import com.misterspalding.spaldingsadditions.blocks.ModOre;
 import com.misterspalding.spaldingsadditions.blocks.ModPlanks;
-import com.misterspalding.spaldingsadditions.blocks.ModSapling;
+import com.misterspalding.spaldingsadditions.blocks.ModSaplingPalm;
+import com.misterspalding.spaldingsadditions.blocks.ModSaplingYew;
 import com.misterspalding.spaldingsadditions.blocks.ModStairsBlockStone;
 import com.misterspalding.spaldingsadditions.blocks.ModStairsBlockWood;
 import com.misterspalding.spaldingsadditions.blocks.ModStone;
 import com.misterspalding.spaldingsadditions.blocks.ModWallBlock;
+import com.misterspalding.spaldingsadditions.world.feature.ModPalmTree;
+import com.misterspalding.spaldingsadditions.world.gen.features.PalmTree;
 import com.misterspalding.spaldingsadditions.world.gen.features.YewTree;
 
 import net.minecraft.block.Block;
@@ -75,17 +78,20 @@ public class BlockDec {
 	public static final RegistryObject<Block> BEECH_STAIRS = BLOCKS.register("beech_stairs", () -> new ModStairsBlockWood(BlockDec.BEECH_PLANKS.get()));
 	public static final RegistryObject<Block> BEECH_FENCE = BLOCKS.register("beech_fence", () -> new ModFenceBlock());
 	
+	
 	public static final RegistryObject<Block> PALM_LOG = BLOCKS.register("palm_log", () -> new ModLogs());
 	public static final RegistryObject<Block> PALM_PLANKS = BLOCKS.register("palm_planks", () -> new ModPlanks());
 	public static final RegistryObject<Block> PALM_STAIRS = BLOCKS.register("palm_stairs", () -> new ModStairsBlockWood(BlockDec.PALM_PLANKS.get()));
 	public static final RegistryObject<Block> PALM_FENCE = BLOCKS.register("palm_fence", () -> new ModFenceBlock());
+	public static final RegistryObject<Block> PALM_LEAVES = BLOCKS.register("palm_leaves", () -> new ModLeaves());
+	public static final RegistryObject<Block> PALM_SAPLING = BLOCKS.register("palm_sapling", () -> new ModSaplingPalm(() -> new PalmTree()));
 	
 	public static final RegistryObject<Block> YEW_LOG = BLOCKS.register("yew_log", () -> new ModLogs());
 	public static final RegistryObject<Block> YEW_PLANKS = BLOCKS.register("yew_planks", () -> new ModPlanks());
 	public static final RegistryObject<Block> YEW_STAIRS = BLOCKS.register("yew_stairs", () -> new ModStairsBlockWood(BlockDec.YEW_PLANKS.get()));
 	public static final RegistryObject<Block> YEW_FENCE = BLOCKS.register("yew_fence", () -> new ModFenceBlock());
 	public static final RegistryObject<Block> YEW_LEAVES = BLOCKS.register("yew_leaves", () -> new ModLeaves());
-	public static final RegistryObject<Block> YEW_SAPLING = BLOCKS.register("yew_sapling", () -> new ModSapling(() -> new YewTree()));
+	public static final RegistryObject<Block> YEW_SAPLING = BLOCKS.register("yew_sapling", () -> new ModSaplingYew(() -> new YewTree()));
 	
 	public static final RegistryObject<Block> PETRIFIED_PLANKS = BLOCKS.register("petrified_planks", () -> new ModStone());
 	public static final RegistryObject<Block> PETRIFIED_STAIRS = BLOCKS.register("petrified_stairs", () -> new ModStairsBlockStone(BlockDec.PETRIFIED_PLANKS.get()));

@@ -14,13 +14,13 @@ import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.gen.IWorldGenerationReader;
 import net.minecraft.world.gen.feature.AbstractTreeFeature;
 
-public class FeatureYewTree extends  AbstractTreeFeature<FeatureYewTreeConfig> {
-	  public FeatureYewTree(Function<Dynamic<?>, FeatureYewTreeConfig> function) {
+public class YewTreeFeature extends  AbstractTreeFeature<YewTreeFeatureConfig> {
+	  public YewTreeFeature(Function<Dynamic<?>, YewTreeFeatureConfig> function) {
 	    super(function);
 	  }
 	  
 	  @Override
-	  protected boolean place(IWorldGenerationReader world, Random rand, BlockPos origin, Set<BlockPos> logs, Set<BlockPos> leaves, MutableBoundingBox box, FeatureYewTreeConfig config) {
+	  protected boolean place(IWorldGenerationReader world, Random rand, BlockPos origin, Set<BlockPos> logs, Set<BlockPos> leaves, MutableBoundingBox box, YewTreeFeatureConfig config) {
 	  
 		  
 		  // Total log length

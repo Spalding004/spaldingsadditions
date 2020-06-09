@@ -16,16 +16,16 @@ import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
 import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.treedecorator.TreeDecorator;
 
-public class FeatureYewTreeConfig extends BaseTreeFeatureConfig implements IFeatureConfig {
+public class PalmTreeFeatureConfig extends BaseTreeFeatureConfig implements IFeatureConfig {
 
 	 public final BlockStateProvider trunkProvider;
 	   public final BlockStateProvider leavesProvider;
 	   public final List<TreeDecorator> decorators;
 	   public final int baseHeight;
 	   public transient boolean forcePlacement;
-	   protected net.minecraftforge.common.IPlantable sapling = (net.minecraftforge.common.IPlantable)BlockDec.YEW_SAPLING.get();
+	   protected net.minecraftforge.common.IPlantable sapling = (net.minecraftforge.common.IPlantable)BlockDec.PALM_SAPLING.get();
 
-	   protected FeatureYewTreeConfig(BlockStateProvider trunkProviderIn, BlockStateProvider leavesProviderIn, List<TreeDecorator> decoratorsIn, int baseHeightIn) {
+	   protected PalmTreeFeatureConfig(BlockStateProvider trunkProviderIn, BlockStateProvider leavesProviderIn, List<TreeDecorator> decoratorsIn, int baseHeightIn) {
 	      super(leavesProviderIn, leavesProviderIn, decoratorsIn, baseHeightIn);
 		  this.trunkProvider = trunkProviderIn;
 	      this.leavesProvider = leavesProviderIn;
@@ -45,7 +45,7 @@ public class FeatureYewTreeConfig extends BaseTreeFeatureConfig implements IFeat
 	      return new Dynamic<>(ops, ops.createMap(builder.build()));
 	   }
 
-	   protected FeatureYewTreeConfig setSapling(net.minecraftforge.common.IPlantable value) {
+	   protected PalmTreeFeatureConfig setSapling(net.minecraftforge.common.IPlantable value) {
 	      this.sapling = value;
 	      return this;
 	   }
@@ -54,42 +54,40 @@ public class FeatureYewTreeConfig extends BaseTreeFeatureConfig implements IFeat
 	       return this.sapling;
 	   }
 
-	   public static <T> FeatureYewTreeConfig deserialize(Dynamic<T> data) {
+	   public static <T> PalmTreeFeatureConfig deserialize(Dynamic<T> data) {
 	      BlockStateProviderType<?> blockstateprovidertype = Registry.BLOCK_STATE_PROVIDER_TYPE.getOrDefault(new ResourceLocation(data.get("trunk_provider").get("type").asString().orElseThrow(RuntimeException::new)));
 	      BlockStateProviderType<?> blockstateprovidertype1 = Registry.BLOCK_STATE_PROVIDER_TYPE.getOrDefault(new ResourceLocation(data.get("leaves_provider").get("type").asString().orElseThrow(RuntimeException::new)));
-	      return new FeatureYewTreeConfig(blockstateprovidertype.func_227399_a_(data.get("trunk_provider").orElseEmptyMap()), blockstateprovidertype1.func_227399_a_(data.get("leaves_provider").orElseEmptyMap()), data.get("decorators").asList((p_227374_0_) -> {
+	      return new PalmTreeFeatureConfig(blockstateprovidertype.func_227399_a_(data.get("trunk_provider").orElseEmptyMap()), blockstateprovidertype1.func_227399_a_(data.get("leaves_provider").orElseEmptyMap()), data.get("decorators").asList((p_227374_0_) -> {
 	         return Registry.TREE_DECORATOR_TYPE.getOrDefault(new ResourceLocation(p_227374_0_.get("type").asString().orElseThrow(RuntimeException::new))).func_227431_a_(p_227374_0_);
 	      }), data.get("base_height").asInt(0));
 	   }
 
-	   public static <T> FeatureYewTreeConfig deserializeJungle(Dynamic<T> data) {
-	      return deserialize(data).setSapling((net.minecraftforge.common.IPlantable)BlockDec.YEW_SAPLING.get());
-	   }
+	  
 
 	   public static class Builder {
 	      public final BlockStateProvider trunkProvider;
 	      public final BlockStateProvider leavesProvider;
 	      private List<TreeDecorator> decorators = Lists.newArrayList();
 	      private int baseHeight = 0;
-	      protected net.minecraftforge.common.IPlantable sapling = (net.minecraftforge.common.IPlantable)BlockDec.YEW_SAPLING.get();
+	      protected net.minecraftforge.common.IPlantable sapling = (net.minecraftforge.common.IPlantable)BlockDec.PALM_SAPLING.get();
 
 	      public Builder(BlockStateProvider trunkProviderIn, BlockStateProvider leavesProviderIn) {
 	         this.trunkProvider = trunkProviderIn;
 	         this.leavesProvider = leavesProviderIn;
 	      }
 
-	      public FeatureYewTreeConfig.Builder baseHeight(int baseHeightIn) {
+	      public PalmTreeFeatureConfig.Builder baseHeight(int baseHeightIn) {
 	         this.baseHeight = baseHeightIn;
 	         return this;
 	      }
 
-	      public FeatureYewTreeConfig.Builder setSapling(net.minecraftforge.common.IPlantable value) {
+	      public PalmTreeFeatureConfig.Builder setSapling(net.minecraftforge.common.IPlantable value) {
 	         this.sapling = value;
 	         return this;
 	      }
 
-	      public FeatureYewTreeConfig build() {
-	         return new FeatureYewTreeConfig(this.trunkProvider, this.leavesProvider, this.decorators, this.baseHeight).setSapling(sapling);
+	      public PalmTreeFeatureConfig build() {
+	         return new PalmTreeFeatureConfig(this.trunkProvider, this.leavesProvider, this.decorators, this.baseHeight).setSapling(sapling);
 	      }
 	   }
 }

@@ -4,7 +4,7 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
-import com.misterspalding.spaldingsadditions.world.gen.features.FeatureYewTreeConfig;
+import com.misterspalding.spaldingsadditions.world.gen.features.YewTreeFeatureConfig;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -16,20 +16,22 @@ import net.minecraft.world.gen.feature.ConfiguredFeature;
 
 
 
-public abstract class ModTree {
+public abstract class ModYewTree {
 
 	
 
-	 @Nullable
-	   protected abstract ConfiguredFeature<FeatureYewTreeConfig, ?> getTreeFeature(Random randomIn, boolean p_225546_2_);
+		@Nullable
+	   protected abstract ConfiguredFeature<YewTreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean p_225546_2_);
+	 
+	 
 
 	   public boolean place(IWorld worldIn, ChunkGenerator<?> chunkGeneratorIn, BlockPos blockPosIn, BlockState blockStateIn, Random randomIn) {
-	      ConfiguredFeature<FeatureYewTreeConfig, ?> configuredfeature = this.getTreeFeature(randomIn, this.place(worldIn, blockPosIn));
+	      ConfiguredFeature<YewTreeFeatureConfig, ?> configuredfeature = this.getTreeFeature(randomIn, this.place(worldIn, blockPosIn));
 	      if (configuredfeature == null) {
 	         return false;
 	      } else {
 	         worldIn.setBlockState(blockPosIn, Blocks.AIR.getDefaultState(), 4);
-	         ((FeatureYewTreeConfig)configuredfeature.config).forcePlacement();
+	         ((YewTreeFeatureConfig)configuredfeature.config).forcePlacement();
 	         if (configuredfeature.place(worldIn, chunkGeneratorIn, randomIn, blockPosIn)) {
 	            return true;
 	         } else {
