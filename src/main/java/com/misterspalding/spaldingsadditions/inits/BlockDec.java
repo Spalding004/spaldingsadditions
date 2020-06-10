@@ -9,13 +9,14 @@ import com.misterspalding.spaldingsadditions.blocks.ModLeaves;
 import com.misterspalding.spaldingsadditions.blocks.ModLogs;
 import com.misterspalding.spaldingsadditions.blocks.ModOre;
 import com.misterspalding.spaldingsadditions.blocks.ModPlanks;
-import com.misterspalding.spaldingsadditions.blocks.ModSaplingPalm;
-import com.misterspalding.spaldingsadditions.blocks.ModSaplingYew;
 import com.misterspalding.spaldingsadditions.blocks.ModStairsBlockStone;
 import com.misterspalding.spaldingsadditions.blocks.ModStairsBlockWood;
 import com.misterspalding.spaldingsadditions.blocks.ModStone;
 import com.misterspalding.spaldingsadditions.blocks.ModWallBlock;
-import com.misterspalding.spaldingsadditions.world.feature.ModPalmTree;
+import com.misterspalding.spaldingsadditions.blocks.saplings.ModSaplingBeech;
+import com.misterspalding.spaldingsadditions.blocks.saplings.ModSaplingPalm;
+import com.misterspalding.spaldingsadditions.blocks.saplings.ModSaplingYew;
+import com.misterspalding.spaldingsadditions.world.gen.features.BeechTree;
 import com.misterspalding.spaldingsadditions.world.gen.features.PalmTree;
 import com.misterspalding.spaldingsadditions.world.gen.features.YewTree;
 
@@ -75,9 +76,12 @@ public class BlockDec {
 
 	public static final RegistryObject<Block> BEECH_LOG = BLOCKS.register("beech_log", () -> new ModLogs());
 	public static final RegistryObject<Block> BEECH_PLANKS = BLOCKS.register("beech_planks", () -> new ModPlanks());
+	public static final RegistryObject<Block> BEECH_WOOD = BLOCKS.register("beech_wood", () -> new ModPlanks());
 	public static final RegistryObject<Block> BEECH_STAIRS = BLOCKS.register("beech_stairs", () -> new ModStairsBlockWood(BlockDec.BEECH_PLANKS.get()));
 	public static final RegistryObject<Block> BEECH_FENCE = BLOCKS.register("beech_fence", () -> new ModFenceBlock());
-	
+	public static final RegistryObject<Block> BEECH_LEAVES = BLOCKS.register("beech_leaves", () -> new ModLeaves());
+
+	public static final RegistryObject<Block> BEECH_SAPLING = BLOCKS.register("beech_sapling", () -> new ModSaplingBeech(() -> new BeechTree()));
 	
 	public static final RegistryObject<Block> PALM_LOG = BLOCKS.register("palm_log", () -> new ModLogs());
 	public static final RegistryObject<Block> PALM_PLANKS = BLOCKS.register("palm_planks", () -> new ModPlanks());

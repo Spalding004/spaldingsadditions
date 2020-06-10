@@ -39,7 +39,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 public class Main
 {
     @SuppressWarnings("unused")
-	private static final Logger LOGGER = LogManager.getLogger();
+	public static final Logger LOGGER = LogManager.getLogger();
     public static final String MOD_ID = "spaldingsadditions";
     public static Main instance;
     public static ArrayList<Block> CUT_OUT_BLOCKS = new ArrayList<Block>();

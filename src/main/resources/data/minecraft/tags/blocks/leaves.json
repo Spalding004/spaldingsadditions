@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
+  	"spaldingsadditions:yew_leaves",
+  	"spaldingsadditions:palm_leaves",
   	"spaldingsadditions:yew_leaves"
   	 ]
 }

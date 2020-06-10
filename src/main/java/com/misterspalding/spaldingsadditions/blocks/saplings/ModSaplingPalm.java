@@ -1,10 +1,10 @@
-package com.misterspalding.spaldingsadditions.blocks;
+package com.misterspalding.spaldingsadditions.blocks.saplings;
 
 import java.util.Random;
 import java.util.function.Supplier;
 
 import com.misterspalding.spaldingsadditions.Main;
-import com.misterspalding.spaldingsadditions.world.feature.ModYewTree;
+import com.misterspalding.spaldingsadditions.world.feature.ModPalmTree;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -24,15 +24,15 @@ import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.event.ForgeEventFactory;
 
-public class ModSaplingYew extends BushBlock implements IGrowable {
+public class ModSaplingPalm extends BushBlock implements IGrowable {
 	
 	public static final IntegerProperty STAGE = BlockStateProperties.STAGE_0_1;
 	
 	protected static final VoxelShape SHAPE = Block.makeCuboidShape(2.0D, 0D, 2.0D, 14.0D, 12.0D, 14.0D);
 	
-	private final Supplier<ModYewTree> tree;
+	private final Supplier<ModPalmTree> tree;
 	
-	public ModSaplingYew(Supplier<ModYewTree> tree) {
+	public ModSaplingPalm(Supplier<ModPalmTree> tree) {
 		super(Block.Properties.from(Blocks.OAK_SAPLING));
 		this.tree = tree;
 		this.setDefaultState(this.stateContainer.getBaseState().with(STAGE, Integer.valueOf(0)));

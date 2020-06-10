@@ -1,0 +1,7 @@
+
+{
+    "parent": "block/leaves",
+    "textures": {
+        "all": "spaldingsadditions:blocks/beech_leaves"
+    }
+}

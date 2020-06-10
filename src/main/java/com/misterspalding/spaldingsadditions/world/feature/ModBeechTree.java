@@ -4,7 +4,8 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
-import com.misterspalding.spaldingsadditions.world.gen.features.PalmTreeFeatureConfig;
+import com.misterspalding.spaldingsadditions.world.gen.features.BeechTreeFeatureConfig;
+
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.tags.BlockTags;
@@ -15,22 +16,22 @@ import net.minecraft.world.gen.feature.ConfiguredFeature;
 
 
 
-public abstract class ModPalmTree {
+public abstract class ModBeechTree {
 
 	
 
 		@Nullable
-	   protected abstract ConfiguredFeature<PalmTreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean p_225546_2_);
+	   protected abstract ConfiguredFeature<BeechTreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean p_225546_2_);
 	 
 	 
 
 	   public boolean place(IWorld worldIn, ChunkGenerator<?> chunkGeneratorIn, BlockPos blockPosIn, BlockState blockStateIn, Random randomIn) {
-	      ConfiguredFeature<PalmTreeFeatureConfig, ?> configuredfeature = this.getTreeFeature(randomIn, this.place(worldIn, blockPosIn));
+	      ConfiguredFeature<BeechTreeFeatureConfig, ?> configuredfeature = this.getTreeFeature(randomIn, this.place(worldIn, blockPosIn));
 	      if (configuredfeature == null) {
 	         return false;
 	      } else {
 	         worldIn.setBlockState(blockPosIn, Blocks.AIR.getDefaultState(), 4);
-	         ((PalmTreeFeatureConfig)configuredfeature.config).forcePlacement();
+	         ((BeechTreeFeatureConfig)configuredfeature.config).forcePlacement();
 	         if (configuredfeature.place(worldIn, chunkGeneratorIn, randomIn, blockPosIn)) {
 	            return true;
 	         } else {
