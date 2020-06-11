@@ -11,6 +11,8 @@ import com.misterspalding.spaldingsadditions.inits.DamagesDec;
 import com.misterspalding.spaldingsadditions.inits.FeaturesDec;
 import com.misterspalding.spaldingsadditions.inits.ItemDec;
 import com.misterspalding.spaldingsadditions.world.gen.ModStoneGen;
+import com.misterspalding.spaldingsadditions.world.gen.ModTreeGen;
+
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -123,6 +125,7 @@ public class Main
     public static void loadCompleteEvent(FMLLoadCompleteEvent event) {
     	
     	ModStoneGen.GenerateOre();
+    	//ModTreeGen.genTrees();
     	
     }
     
