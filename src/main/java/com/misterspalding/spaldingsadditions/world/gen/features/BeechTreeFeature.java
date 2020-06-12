@@ -4,18 +4,14 @@ import java.util.Random;
 import java.util.Set;
 import java.util.function.Function;
 
-import com.misterspalding.spaldingsadditions.Main;
 import com.misterspalding.spaldingsadditions.blocks.ModLogs;
 import com.misterspalding.spaldingsadditions.inits.BlockDec;
-import com.misterspalding.spaldingsadditions.utils.ModHelpers;
 import com.mojang.datafixers.Dynamic;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.pattern.BlockStateMatcher;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.BlockPos.Mutable;
 import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.gen.IWorldGenerationReader;
 import net.minecraft.world.gen.feature.AbstractTreeFeature;

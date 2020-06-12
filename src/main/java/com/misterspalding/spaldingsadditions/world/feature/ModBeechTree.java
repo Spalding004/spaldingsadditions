@@ -4,21 +4,15 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
-import com.misterspalding.spaldingsadditions.utils.ModHelpers;
 import com.misterspalding.spaldingsadditions.world.gen.features.BeechTreeFeatureConfig;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
-import net.minecraft.world.World;
-import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
-import net.minecraftforge.common.BiomeDictionary;
-import net.minecraftforge.common.BiomeDictionary.Type;
 
 
 
