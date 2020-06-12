@@ -2,7 +2,11 @@ package com.misterspalding.spaldingsadditions.utils;
 
 import java.util.Random;
 
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorld;
+import net.minecraft.world.World;
 
 public class ModHelpers {
 
@@ -56,5 +60,19 @@ public class ModHelpers {
 		}
 		return pos;
 	}
+	
+	
+	  public static int getGroundFromAbove(IWorld world, int x, int z) {
+          int y = 255;
+
+          Block blockAt;
+          for(boolean foundGround = false; !foundGround && y-- >= 0; foundGround = blockAt == Blocks.GRASS_BLOCK) {
+             blockAt = world.getBlockState(new BlockPos(x, y, z)).getBlock();
+          }
+
+          return y;
+       }
+	
+	
 	
 }

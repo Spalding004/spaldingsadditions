@@ -21,7 +21,7 @@ public class BiomeDec {
 	
 	public static void registerBiomes() {
 		
-		registerBiome(NETHER_ENDFECTION.get(), 20, BiomeManager.BiomeType.WARM, BiomeDictionary.Type.NETHER);
+		//registerBiome(NETHER_ENDFECTION.get(), 20, BiomeManager.BiomeType.WARM, BiomeDictionary.Type.NETHER);
 	}
 	
 	private static void registerBiome(Biome biome, int weight, BiomeManager.BiomeType type, BiomeDictionary.Type... types) {

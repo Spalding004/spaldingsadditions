@@ -27,6 +27,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -90,10 +91,15 @@ public class Main
     	
     }
     
-    private void setup(final FMLCommonSetupEvent event)
+    
+	private void setup(final FMLCommonSetupEvent event)
     {
-       
-      
+    	/*
+    	 * Deprecated with poor documentation... #ForgeLife
+    	 * 
+    	DeferredWorkQueue.runLater(ModStoneGen::GenerateOre);
+        DeferredWorkQueue.runLater(ModTreeGen::genTrees);
+        */
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
@@ -121,11 +127,19 @@ public class Main
       
     }
     
+   
+    
     @SubscribeEvent
     public static void loadCompleteEvent(FMLLoadCompleteEvent event) {
-    	
-    	ModStoneGen.GenerateOre();
-    	//ModTreeGen.genTrees();
+    	/*
+    	 * 
+    	 * Apparently the correct way to to do this is to use a deferred work queue BUT...
+    	 * 
+    	 * That method is deprecated with no real info on what is going to replace it.  We'll stick with this until it breaks.
+    	 * 
+    	 */
+    	ModTreeGen.genTrees();
+    	ModStoneGen.generateOre();
     	
     }
     

@@ -9,7 +9,7 @@ import net.minecraft.world.gen.placement.Placement;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.registries.ForgeRegistries;
 
-public class ModTreeGen {
+public class ModTreeGenAlt {
 
 	public static void genTrees() {
 		
@@ -18,10 +18,9 @@ public class ModTreeGen {
 		for (Biome biome : ForgeRegistries.BIOMES) {
 			
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.PLAINS))
-			biome.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, 
+			biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, 
 					FeaturesDec.FEATURE_BEECH_TREE.withConfiguration(BeechTree.BEECH_TREE_CONFIG)
-					.withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP
-					.configure(new AtSurfaceWithExtraConfig(0, 0.005F, 1))));
+					.withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(0, 0.01F, 1))));
 		}
 		
 		

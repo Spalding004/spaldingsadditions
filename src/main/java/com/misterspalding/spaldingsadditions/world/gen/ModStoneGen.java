@@ -16,7 +16,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModStoneGen {
 
-	public static void GenerateOre() {
+	public static void generateOre() {
 		
 		
 		

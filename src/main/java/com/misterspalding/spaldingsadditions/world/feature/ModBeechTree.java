@@ -4,15 +4,21 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
+import com.misterspalding.spaldingsadditions.utils.ModHelpers;
 import com.misterspalding.spaldingsadditions.world.gen.features.BeechTreeFeatureConfig;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
+import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
+import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.common.BiomeDictionary.Type;
 
 
 
@@ -23,16 +29,18 @@ public abstract class ModBeechTree {
 		@Nullable
 	   protected abstract ConfiguredFeature<BeechTreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean p_225546_2_);
 	 
-	 
+		
 
+		          
+		 
 	   public boolean place(IWorld worldIn, ChunkGenerator<?> chunkGeneratorIn, BlockPos blockPosIn, BlockState blockStateIn, Random randomIn) {
 	      ConfiguredFeature<BeechTreeFeatureConfig, ?> configuredfeature = this.getTreeFeature(randomIn, this.place(worldIn, blockPosIn));
 	      if (configuredfeature == null) {
 	         return false;
 	      } else {
 	         worldIn.setBlockState(blockPosIn, Blocks.AIR.getDefaultState(), 4);
-	         ((BeechTreeFeatureConfig)configuredfeature.config).forcePlacement();
-	         if (configuredfeature.place(worldIn, chunkGeneratorIn, randomIn, blockPosIn)) {
+	        // ((BeechTreeFeatureConfig)configuredfeature.config).forcePlacement();
+	         if (configuredfeature.place(worldIn, chunkGeneratorIn, randomIn, blockPosIn) && worldIn.getBlockState(blockPosIn.down()) == Blocks.GRASS.getDefaultState()) {
 	            return true;
 	         } else {
 	           // worldIn.setBlockState(blockPosIn, blockStateIn, 4);

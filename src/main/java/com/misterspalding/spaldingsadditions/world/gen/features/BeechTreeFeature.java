@@ -25,9 +25,16 @@ public class BeechTreeFeature extends  AbstractTreeFeature<BeechTreeFeatureConfi
 	    super(function);
 	  }
 	  
+	  
+	  
 	  @Override
 	  protected boolean place(IWorldGenerationReader worldIn, Random rand, BlockPos origin, Set<BlockPos> logs, Set<BlockPos> leaves, MutableBoundingBox box, BeechTreeFeatureConfig config) {
 	  
+		  if (rand.nextInt(2000) == 0) {
+			  
+			  return true;
+			  
+		  } else {
 		  
 		 BlockPos.Mutable pos = new BlockPos.Mutable(origin);
 		  BlockState log = config.trunkProvider.getBlockState(rand, pos);
@@ -428,6 +435,7 @@ public class BeechTreeFeature extends  AbstractTreeFeature<BeechTreeFeatureConfi
 		  	
 		  	
 	    return true;
+	  }
 	  }
 	  
 	  public static void generateLeafPod(BlockPos target, BlockState leaf, IWorldGenerationReader worldIn) {
