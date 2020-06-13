@@ -4,7 +4,7 @@ import java.util.Random;
 
 import com.misterspalding.spaldingsadditions.inits.BlockDec;
 import com.misterspalding.spaldingsadditions.inits.FeaturesDec;
-import com.misterspalding.spaldingsadditions.world.feature.ModYewTree;
+import com.misterspalding.spaldingsadditions.world.feature.tree.ModYewTree;
 
 import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.feature.ConfiguredFeature;

@@ -10,7 +10,9 @@ import com.misterspalding.spaldingsadditions.inits.BlockDec;
 import com.misterspalding.spaldingsadditions.inits.DamagesDec;
 import com.misterspalding.spaldingsadditions.inits.FeaturesDec;
 import com.misterspalding.spaldingsadditions.inits.ItemDec;
+import com.misterspalding.spaldingsadditions.inits.PlacementsDec;
 import com.misterspalding.spaldingsadditions.world.gen.ModStoneGen;
+import com.misterspalding.spaldingsadditions.world.gen.ModStructGen;
 import com.misterspalding.spaldingsadditions.world.gen.ModTreeGen;
 
 import net.minecraftforge.fml.common.Mod;
@@ -27,6 +29,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -64,6 +67,7 @@ public class Main
     	
     	  
     	BiomeDec.BIOMES.register(modEventBus);
+    	MinecraftForge.EVENT_BUS.register(PlacementsDec.ENDFECTION);
         instance = this;
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -88,17 +92,16 @@ public class Main
     public static void onRegisterBiomes(final RegistryEvent.Register<Biome> event) {
     	BiomeDec.registerBiomes();
     	
+    	
     }
     
     
 	private void setup(final FMLCommonSetupEvent event)
     {
-    	/*
-    	 * Deprecated with poor documentation... #ForgeLife
-    	 * 
-    	DeferredWorkQueue.runLater(ModStoneGen::GenerateOre);
+    	
+    	DeferredWorkQueue.runLater(ModStoneGen::generateOre);
         DeferredWorkQueue.runLater(ModTreeGen::genTrees);
-        */
+        DeferredWorkQueue.runLater(ModStructGen::genStructs);
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
@@ -136,10 +139,14 @@ public class Main
     	 * 
     	 * That method is deprecated with no real info on what is going to replace it.  We'll stick with this until it breaks.
     	 * 
-    	 */
+    	
     	ModTreeGen.genTrees();
     	ModStoneGen.generateOre();
-    	
+    	ModStructGen.genStructs();
+    	 *
+    	 *Update: it broke.
+    	 *
+    	 */
     }
     
     @SubscribeEvent

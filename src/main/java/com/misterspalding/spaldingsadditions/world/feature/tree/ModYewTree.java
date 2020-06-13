@@ -1,4 +1,4 @@
-package com.misterspalding.spaldingsadditions.world.feature;
+package com.misterspalding.spaldingsadditions.world.feature.tree;
 
 import java.util.Random;
 

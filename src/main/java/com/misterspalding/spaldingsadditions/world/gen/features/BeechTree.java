@@ -4,7 +4,8 @@ import java.util.Random;
 
 import com.misterspalding.spaldingsadditions.inits.BlockDec;
 import com.misterspalding.spaldingsadditions.inits.FeaturesDec;
-import com.misterspalding.spaldingsadditions.world.feature.ModBeechTree;
+import com.misterspalding.spaldingsadditions.world.feature.tree.ModBeechTree;
+
 import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 

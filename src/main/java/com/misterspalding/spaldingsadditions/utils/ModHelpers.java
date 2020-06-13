@@ -72,6 +72,15 @@ public class ModHelpers {
           return y;
        }
 	
-	
+	  public static int getGroundFromAboveNether(IWorld world, int x, int z) {
+          int y = 80;
+
+          Block blockAt;
+          for(boolean foundGround = false; !foundGround && y-- >= 0; foundGround = blockAt == Blocks.NETHERRACK) {
+             blockAt = world.getBlockState(new BlockPos(x, y, z)).getBlock();
+          }
+
+          return y;
+       }
 	
 }

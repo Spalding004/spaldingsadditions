@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.function.Supplier;
 
 import com.misterspalding.spaldingsadditions.Main;
-import com.misterspalding.spaldingsadditions.world.feature.ModPalmTree;
+import com.misterspalding.spaldingsadditions.world.feature.tree.ModPalmTree;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
