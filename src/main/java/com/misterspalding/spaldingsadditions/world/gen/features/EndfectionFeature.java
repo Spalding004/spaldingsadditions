@@ -5,6 +5,7 @@ import java.util.function.Function;
 
 import com.misterspalding.spaldingsadditions.Main;
 import com.misterspalding.spaldingsadditions.inits.BlockDec;
+import com.misterspalding.spaldingsadditions.utils.ModHelpers;
 import com.mojang.datafixers.Dynamic;
 
 import net.minecraft.block.BlockState;
@@ -31,7 +32,7 @@ public class EndfectionFeature extends  Feature<NoFeatureConfig> {
 	  public boolean place(IWorld world, ChunkGenerator<? extends GenerationSettings> generator, Random rand, BlockPos origin, NoFeatureConfig config) {
 	      if (world.isAirBlock(origin.up()) && world.getBlockState(origin).getBlock() == Blocks.NETHERRACK) {
 	    	  
-	    	  BlockPos pos = new BlockPos.Mutable(origin.down());
+	    	  BlockPos pos = new BlockPos.Mutable(origin);
 		 		 BlockState base = BlockDec.ENDCROACHED_NETHERRACK.get().getDefaultState();
 		 		 BlockState fill1 = Blocks.END_STONE.getDefaultState();
 		 		 BlockState fill2 = Blocks.END_STONE_BRICKS.getDefaultState();
@@ -39,14 +40,14 @@ public class EndfectionFeature extends  Feature<NoFeatureConfig> {
 		 		 
 		 		
 		 		 
-		 		 if (rand.nextInt(500) == 0) {
+		 		 if (rand.nextInt(10) == 0) {
 		 		 
 		 		 int offsetx = 0;
 		 		 int offsety = 0;
 		 		 
 		 		 int height = 4;
 		 		 
-		 		 int pillars = 1 + rand.nextInt(3);
+		 		 int pillars = 2 + rand.nextInt(3);
 		 		 
 		 		 
 		 		 
@@ -80,6 +81,7 @@ public class EndfectionFeature extends  Feature<NoFeatureConfig> {
 
 	private void generatePillar(int height, int offsetx, int offsety, BlockPos target, IWorldGenerationReader world, BlockState base, BlockState fill1, BlockState fill2, BlockState cover, Random rand) {
 		Main.LOGGER.info("Attempting to spawn pillar with height " + height + " @ " + target);
+	
 		world.setBlockState(target, base, 1|2);
 		world.setBlockState(target.north(), base, 1|2);
 		world.setBlockState(target.south(), base, 1|2);
@@ -91,11 +93,21 @@ public class EndfectionFeature extends  Feature<NoFeatureConfig> {
 		world.setBlockState(target.south().east(), base, 1|2);
 		world.setBlockState(target.north().west(), base, 1|2);
 		
+		world.setBlockState(target.north().down(), cover, 1|2);
+		world.setBlockState(target.south().down(), cover, 1|2);
+		world.setBlockState(target.east().down(), cover, 1|2);
+		world.setBlockState(target.west().down(), cover, 1|2);
+		
+		world.setBlockState(target.north().east().down(), cover, 1|2);
+		world.setBlockState(target.south().west().down(), cover, 1|2);
+		world.setBlockState(target.south().east().down(), cover, 1|2);
+		world.setBlockState(target.north().west().down(), cover, 1|2);
+		
 		world.setBlockState(target.down(), base, 1|2);
 		
 		for(int z = 0; z < height; z++) {
 			
-			if (rand.nextInt(50) > 10 + z*5) {
+			if (rand.nextInt(50) > 5 + z*3) {
 				
 				world.setBlockState(target.up(z), fill1, 1|2);
 				

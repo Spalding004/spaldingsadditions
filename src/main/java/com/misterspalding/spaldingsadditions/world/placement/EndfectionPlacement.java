@@ -35,7 +35,7 @@ public class EndfectionPlacement  extends Placement<NoPlacementConfig> {
 	         
 	         if (l > 20) {
 	            //int i1 = l;
-	            int i1 = l + 1;
+	            int i1 = l + 2;
 	            return new BlockPos(j, i1, k);
 	         } else {
 	            return null;
