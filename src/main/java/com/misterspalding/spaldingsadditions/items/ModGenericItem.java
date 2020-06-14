@@ -1,6 +1,6 @@
 package com.misterspalding.spaldingsadditions.items;
 
-import com.misterspalding.spaldingsadditions.Main.ModItemGroup;
+import com.misterspalding.spaldingsadditions.SpaldingsAdditions.ModItemGroup;
 
 import net.minecraft.item.Item;
 

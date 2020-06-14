@@ -1,6 +1,6 @@
 package com.misterspalding.spaldingsadditions.inits;
 
-import com.misterspalding.spaldingsadditions.Main;
+import com.misterspalding.spaldingsadditions.SpaldingsAdditions;
 import com.misterspalding.spaldingsadditions.world.biomes.nether.BiomeEndfection;
 
 import net.minecraft.world.biome.Biome;
@@ -13,7 +13,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class BiomeDec {
 
-	public static final DeferredRegister<Biome> BIOMES = new DeferredRegister<>(ForgeRegistries.BIOMES, Main.MOD_ID);
+	public static final DeferredRegister<Biome> BIOMES = new DeferredRegister<>(ForgeRegistries.BIOMES, SpaldingsAdditions.MOD_ID);
 	
 	public static final RegistryObject<Biome> NETHER_ENDFECTION = BIOMES.register("nether_endfection", () -> new BiomeEndfection());
 	

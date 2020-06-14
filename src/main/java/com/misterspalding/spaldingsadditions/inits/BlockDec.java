@@ -1,6 +1,6 @@
 package com.misterspalding.spaldingsadditions.inits;
 
-import com.misterspalding.spaldingsadditions.Main;
+import com.misterspalding.spaldingsadditions.SpaldingsAdditions;
 import com.misterspalding.spaldingsadditions.blocks.ModEndcroachment;
 import com.misterspalding.spaldingsadditions.blocks.ModEndfectedOre;
 import com.misterspalding.spaldingsadditions.blocks.ModEndfection;
@@ -28,7 +28,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class BlockDec {
 	
-	public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, Main.MOD_ID);
+	public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, SpaldingsAdditions.MOD_ID);
 	 
 	//begin blocks
 	

@@ -1,6 +1,6 @@
 package com.misterspalding.spaldingsadditions.items.tools;
 
-import com.misterspalding.spaldingsadditions.Main.ModItemGroup;
+import com.misterspalding.spaldingsadditions.SpaldingsAdditions.ModItemGroup;
 
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.IItemTier;

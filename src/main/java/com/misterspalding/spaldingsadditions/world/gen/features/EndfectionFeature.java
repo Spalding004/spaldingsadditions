@@ -3,7 +3,7 @@ package com.misterspalding.spaldingsadditions.world.gen.features;
 import java.util.Random;
 import java.util.function.Function;
 
-import com.misterspalding.spaldingsadditions.Main;
+import com.misterspalding.spaldingsadditions.SpaldingsAdditions;
 import com.misterspalding.spaldingsadditions.inits.BlockDec;
 import com.mojang.datafixers.Dynamic;
 
@@ -79,7 +79,7 @@ public class EndfectionFeature extends  Feature<NoFeatureConfig> {
 
 
 	private void generatePillar(int height, int offsetx, int offsety, BlockPos target, IWorldGenerationReader world, BlockState base, BlockState fill1, BlockState fill2, BlockState cover, Random rand) {
-		Main.LOGGER.info("Attempting to spawn pillar with height " + height + " @ " + target);
+		SpaldingsAdditions.LOGGER.info("Attempting to spawn pillar with height " + height + " @ " + target);
 	
 		world.setBlockState(target, base, 1|2);
 		world.setBlockState(target.north(), base, 1|2);

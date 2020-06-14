@@ -1,6 +1,6 @@
 package com.misterspalding.spaldingsadditions.inits;
 
-import com.misterspalding.spaldingsadditions.Main;
+import com.misterspalding.spaldingsadditions.SpaldingsAdditions;
 import com.misterspalding.spaldingsadditions.items.ModGenericItem;
 import com.misterspalding.spaldingsadditions.items.tier.ModTiers.ModItemTiers;
 import com.misterspalding.spaldingsadditions.items.tools.ModAxe;
@@ -17,7 +17,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class ItemDec {
 	
-	public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, Main.MOD_ID);
+	public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, SpaldingsAdditions.MOD_ID);
 	 
 	//metal items
 	

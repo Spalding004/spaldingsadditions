@@ -1,6 +1,6 @@
 package com.misterspalding.spaldingsadditions.inits;
 
-import com.misterspalding.spaldingsadditions.Main;
+import com.misterspalding.spaldingsadditions.SpaldingsAdditions;
 import com.misterspalding.spaldingsadditions.world.gen.features.BeechTreeFeature;
 import com.misterspalding.spaldingsadditions.world.gen.features.BeechTreeFeatureConfig;
 import com.misterspalding.spaldingsadditions.world.gen.features.EndfectionFeature;
@@ -25,11 +25,11 @@ public class FeaturesDec {
 	public static void register(RegistryEvent.Register<Feature<?>> event) {
 		IForgeRegistry<Feature<?>> registry = event.getRegistry();
 	    
-		registry.register(FEATURE_YEW_TREE.setRegistryName(Main.MOD_ID, "yew_tree"));
-		registry.register(FEATURE_PALM_TREE.setRegistryName(Main.MOD_ID, "palm_tree"));
+		registry.register(FEATURE_YEW_TREE.setRegistryName(SpaldingsAdditions.MOD_ID, "yew_tree"));
+		registry.register(FEATURE_PALM_TREE.setRegistryName(SpaldingsAdditions.MOD_ID, "palm_tree"));
 
-		registry.register(FEATURE_BEECH_TREE.setRegistryName(Main.MOD_ID, "beech_tree"));
-		registry.register(FEATURE_ENDFECTION.setRegistryName(Main.MOD_ID, "endfection"));
+		registry.register(FEATURE_BEECH_TREE.setRegistryName(SpaldingsAdditions.MOD_ID, "beech_tree"));
+		registry.register(FEATURE_ENDFECTION.setRegistryName(SpaldingsAdditions.MOD_ID, "endfection"));
 	}
 	
 }

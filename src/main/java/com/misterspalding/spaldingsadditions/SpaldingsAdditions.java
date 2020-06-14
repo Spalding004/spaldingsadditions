@@ -7,7 +7,6 @@ import javax.annotation.Nonnull;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.misterspalding.spaldingsadditions.events.loot_modifiers.IronFortuneModifier;
 import com.misterspalding.spaldingsadditions.inits.BiomeDec;
 import com.misterspalding.spaldingsadditions.inits.BlockDec;
 import com.misterspalding.spaldingsadditions.inits.DamagesDec;
@@ -46,19 +45,19 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 @SuppressWarnings("deprecation")
 @Mod("spaldingsadditions")
-@Mod.EventBusSubscriber(modid = Main.MOD_ID, bus = Bus.MOD)
-public class Main
+@Mod.EventBusSubscriber(modid = SpaldingsAdditions.MOD_ID, bus = Bus.MOD)
+public class SpaldingsAdditions
 {
     @SuppressWarnings("unused")
 	public static final Logger LOGGER = LogManager.getLogger();
     public static final String MOD_ID = "spaldingsadditions";
-    public static Main instance;
+    public static SpaldingsAdditions instance;
     public static ArrayList<Block> CUT_OUT_BLOCKS = new ArrayList<Block>();
     
     
     final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-    public Main() {
+    public SpaldingsAdditions() {
         
     	modEventBus.addListener(this::setup);
     	modEventBus.addListener(this::enqueueIMC);
@@ -69,7 +68,7 @@ public class Main
     	
     	ItemDec.ITEMS.register(modEventBus);
     	BlockDec.BLOCKS.register(modEventBus);
-    	//TileEntities go here
+    
     	
     	  
     	BiomeDec.BIOMES.register(modEventBus);
@@ -114,12 +113,7 @@ public class Main
        
     }
 
-    @SubscribeEvent
-    public static void registerModifierSerializers(@Nonnull final RegistryEvent.Register<GlobalLootModifierSerializer<?>> event) {
-        
-            event.getRegistry().register(new IronFortuneModifier.Serializer().setRegistryName(new ResourceLocation(Main.MOD_ID,"fortunate_iron")));
-        
-    }
+    
     
     private void enqueueIMC(final InterModEnqueueEvent event)
     {

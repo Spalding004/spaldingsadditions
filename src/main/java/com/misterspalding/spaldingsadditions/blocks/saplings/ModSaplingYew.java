@@ -3,7 +3,7 @@ package com.misterspalding.spaldingsadditions.blocks.saplings;
 import java.util.Random;
 import java.util.function.Supplier;
 
-import com.misterspalding.spaldingsadditions.Main;
+import com.misterspalding.spaldingsadditions.SpaldingsAdditions;
 import com.misterspalding.spaldingsadditions.world.feature.tree.ModYewTree;
 
 import net.minecraft.block.Block;
@@ -36,7 +36,7 @@ public class ModSaplingYew extends BushBlock implements IGrowable {
 		super(Block.Properties.from(Blocks.OAK_SAPLING));
 		this.tree = tree;
 		this.setDefaultState(this.stateContainer.getBaseState().with(STAGE, Integer.valueOf(0)));
-		Main.CUT_OUT_BLOCKS.add(this);
+		SpaldingsAdditions.CUT_OUT_BLOCKS.add(this);
 	}
 
 	public boolean canBeReplacedByLogs(BlockState state, IWorldReader world, BlockPos pos)
