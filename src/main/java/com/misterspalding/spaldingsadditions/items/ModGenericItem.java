@@ -9,7 +9,6 @@ public class ModGenericItem extends Item {
 	public ModGenericItem() {
 		super(new Item.Properties().group(ModItemGroup.instance));
 		
-		
 	}
 	
 }

@@ -26,6 +26,9 @@ public class ItemDec {
 	public static final RegistryObject<Item> VENDAR_INGOT = ITEMS.register("vendar_ingot", () -> new ModGenericItem());
 	public static final RegistryObject<Item> VENDAR_NUGGET = ITEMS.register("vendar_nugget", () -> new ModGenericItem());
 	
+	public static final RegistryObject<Item> IRON_CHUNK = ITEMS.register("iron_chunk", () -> new ModGenericItem());
+	public static final RegistryObject<Item> GOLD_CHUNK = ITEMS.register("gold_chunk", () -> new ModGenericItem());
+	
 	public static final RegistryObject<Item> END_ESSENCE = ITEMS.register("end_essence", () -> new ModGenericItem());
 		
 	public static final RegistryObject<Item> FRACTURED_LAPIS = ITEMS.register("fractured_lapis", () -> new ModGenericItem());

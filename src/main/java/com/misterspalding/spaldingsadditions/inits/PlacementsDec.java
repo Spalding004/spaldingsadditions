@@ -5,27 +5,20 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Function;
 import java.util.stream.Stream;
 
-import com.misterspalding.spaldingsadditions.Main;
 import com.misterspalding.spaldingsadditions.world.placement.EndfectionPlacement;
 import com.mojang.datafixers.Dynamic;
 
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IWorld;
-import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.GenerationSettings;
-import net.minecraft.world.gen.GenerationStage.Decoration;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.IFeatureConfig;
-import net.minecraft.world.gen.placement.ChorusPlant;
-import net.minecraft.world.gen.placement.ConfiguredPlacement;
 import net.minecraft.world.gen.placement.IPlacementConfig;
 import net.minecraft.world.gen.placement.NoPlacementConfig;
 import net.minecraft.world.gen.placement.Placement;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
 
 public abstract class PlacementsDec <DC extends IPlacementConfig> extends net.minecraftforge.registries.ForgeRegistryEntry<Placement<?>> {
 
@@ -34,6 +27,7 @@ public abstract class PlacementsDec <DC extends IPlacementConfig> extends net.mi
 	
 	   private final Function<Dynamic<?>, ? extends DC> configFactory;
 	
+	@SuppressWarnings({ "unchecked", "deprecation" })
 	public static <T extends IPlacementConfig, G extends Placement<T>> G register(String key, G p_214999_1_) {
 	      return (G)(Registry.<Placement<?>>register(Registry.DECORATOR, key, p_214999_1_));
 	   }

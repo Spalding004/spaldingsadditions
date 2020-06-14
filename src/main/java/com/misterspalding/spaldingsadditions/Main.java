@@ -2,9 +2,12 @@ package com.misterspalding.spaldingsadditions;
 
 import java.util.ArrayList;
 
+import javax.annotation.Nonnull;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.misterspalding.spaldingsadditions.events.loot_modifiers.IronFortuneModifier;
 import com.misterspalding.spaldingsadditions.inits.BiomeDec;
 import com.misterspalding.spaldingsadditions.inits.BlockDec;
 import com.misterspalding.spaldingsadditions.inits.DamagesDec;
@@ -23,9 +26,11 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -39,6 +44,7 @@ import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 
+@SuppressWarnings("deprecation")
 @Mod("spaldingsadditions")
 @Mod.EventBusSubscriber(modid = Main.MOD_ID, bus = Bus.MOD)
 public class Main
@@ -108,6 +114,13 @@ public class Main
        
     }
 
+    @SubscribeEvent
+    public static void registerModifierSerializers(@Nonnull final RegistryEvent.Register<GlobalLootModifierSerializer<?>> event) {
+        
+            event.getRegistry().register(new IronFortuneModifier.Serializer().setRegistryName(new ResourceLocation(Main.MOD_ID,"fortunate_iron")));
+        
+    }
+    
     private void enqueueIMC(final InterModEnqueueEvent event)
     {
         // some example code to dispatch IMC to another mod

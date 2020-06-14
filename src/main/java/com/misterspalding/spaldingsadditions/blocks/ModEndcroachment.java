@@ -31,36 +31,37 @@ public class ModEndcroachment extends Block {
 	@Override
 	 public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random rand) {
 		
-		boolean shouldgrow = rand.nextInt(10) == 1;
-		boolean shouldSpread = rand.nextInt(10) > 2;
+		boolean shouldgrow = true;
+		boolean shouldSpread = false;
+		boolean didspread = false;
 		
 		if (shouldgrow && worldIn.getBlockState(pos.up()).isAir(worldIn, pos)) {
 		int type = rand.nextInt(100);
-			if (type <= 69) {
+			if (type <= 75) {
 				worldIn.setBlockState(pos, BlockDec.ENDFECTED_NETHERRACK_C.get().getDefaultState());
 			} 
 			
-			if (type > 69 && type <= 85 ) {
+			if (type > 75 && type <= 90 ) {
 				worldIn.setBlockState(pos, BlockDec.ENDFECTED_NETHERRACK_A.get().getDefaultState());
 			} 
 
-			if (type > 85) {
+			if (type > 90) {
 				worldIn.setBlockState(pos, BlockDec.ENDFECTED_NETHERRACK_B.get().getDefaultState());
 			}
 			
 		}
 		
-		if (shouldSpread) {
+		if (shouldSpread && !didspread) {
 		
 		pos = ModHelpers.getRandomAdjacentBlock(pos);
 			
 		
 		
-		if (worldIn.getBlockState(pos).getBlock() ==  Blocks.NETHERRACK) {
+		if (worldIn.getBlockState(pos).getBlock() ==  Blocks.NETHERRACK && worldIn.getBlockState(pos.up()).isAir(worldIn, pos)) {
 			
-			//worldIn.setBlockState(pos, BlockDec.ENDCROACHED_NETHERRACK.get().getDefaultState());
-			
-		} 
+			worldIn.setBlockState(pos, BlockDec.ENDCROACHED_NETHERRACK.get().getDefaultState());
+			didspread = true;
+			} 
 		
 		
 		}

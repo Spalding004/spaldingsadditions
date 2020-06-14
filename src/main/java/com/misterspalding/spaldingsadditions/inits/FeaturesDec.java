@@ -9,7 +9,6 @@ import com.misterspalding.spaldingsadditions.world.gen.features.PalmTreeFeatureC
 import com.misterspalding.spaldingsadditions.world.gen.features.YewTreeFeature;
 import com.misterspalding.spaldingsadditions.world.gen.features.YewTreeFeatureConfig;
 
-import net.minecraft.world.gen.feature.ChorusPlantFeature;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraftforge.event.RegistryEvent;
@@ -21,8 +20,8 @@ public class FeaturesDec {
 	public static final Feature<YewTreeFeatureConfig> FEATURE_YEW_TREE = new YewTreeFeature(YewTreeFeatureConfig::deserialize);
 	public static final Feature<BeechTreeFeatureConfig> FEATURE_BEECH_TREE = new BeechTreeFeature(BeechTreeFeatureConfig::deserialize);
 	public static final Feature<NoFeatureConfig> FEATURE_ENDFECTION = new EndfectionFeature(NoFeatureConfig::deserialize);
-//	public static final Feature<NoFeatureConfig> CHORUS_PLANT = register("chorus_plant", new ChorusPlantFeature(NoFeatureConfig::deserialize));
-	  
+
+	
 	public static void register(RegistryEvent.Register<Feature<?>> event) {
 		IForgeRegistry<Feature<?>> registry = event.getRegistry();
 	    

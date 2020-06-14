@@ -7,7 +7,6 @@ import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.BiomeManager.BiomeEntry;
-import net.minecraftforge.common.BiomeManager.BiomeType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -23,6 +22,7 @@ public class BiomeDec {
 		//registerBiome(NETHER_ENDFECTION.get(), 20, BiomeManager.BiomeType.WARM, BiomeDictionary.Type.NETHER);
 	}
 	
+	@SuppressWarnings("unused")
 	private static void registerBiome(Biome biome, int weight, BiomeManager.BiomeType type, BiomeDictionary.Type... types) {
 		
 		

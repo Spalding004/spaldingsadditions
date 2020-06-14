@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "spaldingsadditions:coal_ore_redstone"
+  },
+  "result": "minecraft:redstone",
+  "experience": 0.7,
+  "cookingtime": 75
+}

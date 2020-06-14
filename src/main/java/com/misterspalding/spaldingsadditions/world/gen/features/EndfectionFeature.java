@@ -5,7 +5,6 @@ import java.util.function.Function;
 
 import com.misterspalding.spaldingsadditions.Main;
 import com.misterspalding.spaldingsadditions.inits.BlockDec;
-import com.misterspalding.spaldingsadditions.utils.ModHelpers;
 import com.mojang.datafixers.Dynamic;
 
 import net.minecraft.block.BlockState;
@@ -54,7 +53,7 @@ public class EndfectionFeature extends  Feature<NoFeatureConfig> {
 		 		 for (int y = 0; y < pillars; y++) {
 		 			 
 		 			 height = 4 + rand.nextInt(3);
-		 			 offsetx = rand.nextInt(4) -2;
+		 			 offsetx = rand.nextInt(4 + y) -1;
 		 			 
 		 			 offsety = rand.nextInt(4) -2;
 		 			 

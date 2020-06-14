@@ -1,8 +1,18 @@
 {
-"item.spaldingsadditions.vendar_chunk" = "Vendar Chunk",
+#Items
+
+"item.spaldingsadditions.vendar_chunk" = "Vendar Ore Chunk",
+"item.spaldingsadditions.iron_chunk" = "Iron Ore Chunk",
+"item.spaldingsadditions.gold_chunk" = "Gold Ore Chunk",
+"item.spaldingsadditions.umber_gold_chunk" = "Umber Gold Ore Chunk",
 "item.spaldingsadditions.vendar_nugget" = "Vendar Nugget",
 "item.spaldingsadditions.vendar_ingot" = "Vendar Ingot",
 "item.spaldingsadditions.polishing_stone" = "Pumice Polishing Stone",
+"item.spaldingsadditions.end_essence" = "End Essence",
+"item.spaldingsadditions.fractured_lapis" = "Fractured Lapis Lazuli",
+"item.spaldingsadditions.lapis_shard" = "Lapis Lazuli Shard",
+"item.spaldingsadditions.reduced_lapis_nugget" = "Reduced Lapis Nugget",
+"item.spaldingsadditions.reduced_lapis_ingot" = "Reduced Lapis Ingot",
 
 #Tools
 
@@ -13,11 +23,25 @@
 "item.spaldingsadditions.tool_vendar_hoe" = "Vendar Hoe",
 "item.spaldingsadditions.tool_vendar_frakhammer" = "Vendar Frakhammer",
 
+"item.spaldingsadditions.tool_iron_frakhammer" = "Iron Frakhammer",
+
 "item.spaldingsadditions.tool_enhanced_handle" = "Enhanced Tool Handle",
 
+#Blocks
 
 "block.spaldingsadditions.marcasite" = "Marcasite",
 "block.spaldingsadditions.marcasite_smooth" = "Polished Marcasite",
+
+
+"block.spaldingsadditions.alunite" = "Alunite",
+"block.spaldingsadditions.alunite_smooth" = "Polished alunite",
+
+
+"block.spaldingsadditions.umber" = "Umber",
+"block.spaldingsadditions.umber_smooth" = "Polished Umber",
+
+"block.spaldingsadditions.cormalite" = "Cormalite",
+"block.spaldingsadditions.cormalite_smooth" = "Polished Cormalite",
 
 "block.spaldingsadditions.shale" = "Shale",
 "block.spaldingsadditions.shale_smooth" = "Polished Shale",
@@ -27,9 +51,54 @@
 
 "block.spaldingsadditions.pumice" = "Pumice",
 
-"block.spaldingsadditions.vendar_ore" = "Vendar Ore",
+"block.spaldingsadditions.endcroached_netherrack" = "Endcroached Netherrack",
+"block.spaldingsadditions.endfected_netherrack_a" = "Endfected Netherrack",
+"block.spaldingsadditions.endfected_netherrack_b" = "Endfected Netherrack",
+"block.spaldingsadditions.endfected_netherrack_c" = "Endfected Netherrack",
+"block.spaldingsadditions.endfected_nether_quartz_ore" = "Endfected Nether Quartz Ore",
 
+"block.spaldingsadditions.coal_ore_diamond" = "Diamond-Riddled Coal Ore",
+"block.spaldingsadditions.coal_ore_emerald" = "Emerald-Riddled Coal Ore",
+"block.spaldingsadditions.coal_ore_redstone" = "Redstone-Riddled Coal Ore",
+"block.spaldingsadditions.coal_ore_iron" = "Iron-Riddled Coal Ore",
+"block.spaldingsadditions.coal_ore_gold" = "Gold-Riddled Coal Ore",
+"block.spaldingsadditions.coal_ore_Lapis" = "Lapis Lazuli-Riddled Coal Ore",
+
+"block.spaldingsadditions.mixed_stone" = "Mixed Stone",
+"block.spaldingsadditions.mixed_stone_stairs" = "Mixed Stone Stairs",
+"block.spaldingsadditions.mixed_stone_wall" = "Mixed Stone Wall",
+
+"block.spaldingsadditions.vendar_ore" = "Vendar Ore",
+"block.spaldingsadditions.umber_gold_ore" = "Umber Gold Ore",
 "block.spaldingsadditions.vendar_ore_dense" = "Vendar Ore",
+
+"block.spaldingsadditions.beech_log" = "Copper Beech Wood",
+"block.spaldingsadditions.beech_leaves" = "Copper Beech Leaves",
+"block.spaldingsadditions.beech_stairs" = "Copper Beech Stairs",
+"block.spaldingsadditions.beech_sapling" = "Copper Beech Sapling",
+"block.spaldingsadditions.beech_planks" = "Copper Beech Planks",
+"block.spaldingsadditions.beech_fence" = "Copper Beech Fence",
+
+"block.spaldingsadditions.yew_log" = "Yew Wood",
+"block.spaldingsadditions.yew_leaves" = "Yew Leaves",
+"block.spaldingsadditions.yew_stairs" = "Yew Stairs",
+"block.spaldingsadditions.yew_sapling" = "Yew Sapling",
+"block.spaldingsadditions.yew_planks" = "Yew Planks",
+"block.spaldingsadditions.yew_fence" = "Yew Fence",
+
+"block.spaldingsadditions.palm_log" = "Ancient Palm Wood",
+"block.spaldingsadditions.palm_leaves" = "Ancient Palm Leaves",
+"block.spaldingsadditions.palm_stairs" = "Ancient Palm Stairs",
+"block.spaldingsadditions.palm_sapling" = "Ancient Palm Sapling",
+"block.spaldingsadditions.palm_planks" = "Ancient Palm Planks",
+"block.spaldingsadditions.palm_fence" = "Ancient Palm Fence",
+
+"block.spaldingsadditions.petrified_log" = "Petrified Wood",
+"block.spaldingsadditions.petrified_planks" = "Petrified Wood Planks",
+"block.spaldingsadditions.petrified_wall" = "Petrified Wood Wall",
+"block.spaldingsadditions.petrified_stairs" = "Petrified Wood Stairs",
+
+#MISC
 
 "itemGroup.mod_creative_tab" = "Spalding's Additions",
 
