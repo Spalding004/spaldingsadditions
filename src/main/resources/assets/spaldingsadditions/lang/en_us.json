@@ -66,7 +66,7 @@
 "block.spaldingsadditions.coal_ore_redstone" = "Redstone-Riddled Coal Ore",
 "block.spaldingsadditions.coal_ore_iron" = "Iron-Riddled Coal Ore",
 "block.spaldingsadditions.coal_ore_gold" = "Gold-Riddled Coal Ore",
-"block.spaldingsadditions.coal_ore_Lapis" = "Lapis Lazuli-Riddled Coal Ore",
+"block.spaldingsadditions.coal_ore_lapis" = "Lapis Lazuli-Riddled Coal Ore",
 
 "block.spaldingsadditions.mixed_stone" = "Mixed Stone",
 "block.spaldingsadditions.mixed_stone_stairs" = "Mixed Stone Stairs",

@@ -2,7 +2,8 @@
 	"type": "minecraft:crafting_shapeless",
 	"ingredients": [
 		{
-			"item": "spaldingsadditions:tool_vendar_frakhammer"
+			"item": "spaldingsadditions:tool_vendar_frakhammer",
+			"data": 32767
 		},
 		{
 			"item": "minecraft:lapis_lazuli"

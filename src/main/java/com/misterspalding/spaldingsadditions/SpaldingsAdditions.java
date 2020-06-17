@@ -7,6 +7,7 @@ import javax.annotation.Nonnull;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.misterspalding.spaldingsadditions.events.loot_modifiers.SpecialDropsModifier;
 import com.misterspalding.spaldingsadditions.inits.BiomeDec;
 import com.misterspalding.spaldingsadditions.inits.BlockDec;
 import com.misterspalding.spaldingsadditions.inits.DamagesDec;
@@ -136,6 +137,12 @@ public class SpaldingsAdditions
       
     }
     
+    @SubscribeEvent
+    public static void registerModifierSerializers(@Nonnull final RegistryEvent.Register<GlobalLootModifierSerializer<?>> event) {
+        
+            event.getRegistry().register(new SpecialDropsModifier.Serializer().setRegistryName(new ResourceLocation(SpaldingsAdditions.MOD_ID,"special_drops")));
+            
+    }
    
     
     @SubscribeEvent

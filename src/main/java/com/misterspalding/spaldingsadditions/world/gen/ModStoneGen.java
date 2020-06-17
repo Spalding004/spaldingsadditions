@@ -2,8 +2,6 @@ package com.misterspalding.spaldingsadditions.world.gen;
 
 import com.misterspalding.spaldingsadditions.inits.BlockDec;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.pattern.BlockMatcher;
 import net.minecraft.world.biome.Biome;
@@ -44,7 +42,7 @@ public class ModStoneGen {
 			ConfiguredPlacement<CountRangeConfig> config_coal_emerald = Placement.COUNT_RANGE.configure(new CountRangeConfig(35, 1, 0, 64));
 			
 			ConfiguredPlacement<CountRangeConfig> config_emerald = Placement.COUNT_RANGE.configure(new CountRangeConfig(1, 1, 0, 16));
-			
+			ConfiguredPlacement<CountRangeConfig> config_indirium = Placement.COUNT_RANGE.configure(new CountRangeConfig(3, 1, 0, 45));
 			/*
 			 * 
 		
@@ -112,6 +110,11 @@ public class ModStoneGen {
 			biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, 
 					Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, 
 							BlockDec.MARCASITE.get().getDefaultState(), 33)).withPlacement(config_marcasite));
+			
+			biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, 
+					Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, 
+							BlockDec.INDIRIUM_ORE.get().getDefaultState(), 6)).withPlacement(config_indirium));
+			
 			
 			biome.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, 
 					Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK, 

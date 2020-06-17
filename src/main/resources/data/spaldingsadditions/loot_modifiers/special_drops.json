@@ -1,0 +1,10 @@
+{
+  "type": "spaldingsadditions:special_drops",
+  "conditions": [
+    {
+      "condition": "minecraft:match_tool"
+      
+          
+    }
+  ]
+}

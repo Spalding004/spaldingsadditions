@@ -51,8 +51,8 @@ public class ItemDec {
 	public static final RegistryObject<Item> TOOL_VENDAR_HOE = ITEMS.register("tool_vendar_hoe", () -> new ModHoe(ModItemTiers.VENDAR));
 	public static final RegistryObject<Item> TOOL_VENDAR_SHOVEL = ITEMS.register("tool_vendar_shovel", () -> new ModShovel(ModItemTiers.VENDAR));
 	
-	public static final RegistryObject<Item> TOOL_VENDAR_FRAKHAMMER = ITEMS.register("tool_vendar_frakhammer", () -> new ModFrakHammer());
-	public static final RegistryObject<Item> IRON_FRAKHAMMER = ITEMS.register("iron_frakhammer", () -> new ModFrakHammer());
+	public static final RegistryObject<Item> TOOL_VENDAR_FRAKHAMMER = ITEMS.register("tool_vendar_frakhammer", () -> new ModFrakHammer(512));
+	public static final RegistryObject<Item> IRON_FRAKHAMMER = ITEMS.register("iron_frakhammer", () -> new ModFrakHammer(126));
 	
 	
 	

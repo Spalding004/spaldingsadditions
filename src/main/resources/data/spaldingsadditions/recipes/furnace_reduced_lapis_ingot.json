@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "spaldingsadditions:fractured_lapis"
+  },
+  "result": "spaldingsadditions:reduced_lapis_ingot",
+  "experience": 0.7,
+  "cookingtime": 200
+}
