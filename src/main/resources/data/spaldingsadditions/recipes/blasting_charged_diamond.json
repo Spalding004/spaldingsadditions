@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "spaldingsadditions:charged_carbon"
+  },
+  "result": "minecraft:diamond",
+  "experience": 0.7,
+  "cookingtime": 100
+}

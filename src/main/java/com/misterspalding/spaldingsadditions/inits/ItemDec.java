@@ -33,7 +33,11 @@ public class ItemDec {
 	public static final RegistryObject<Item> END_ESSENCE = ITEMS.register("end_essence", () -> new ModGenericItem());
 	
 	public static final RegistryObject<Item> CHARGED_CARBON = ITEMS.register("charged_carbon", () -> new ModGenericItem());
-		
+	public static final RegistryObject<Item> ENERGETIC_CRYSTAL = ITEMS.register("energetic_crystal", () -> new ModGenericItem());
+	public static final RegistryObject<Item> REPLICATING_CRYSTAL = ITEMS.register("replicating_crystal", () -> new ModGenericItem());
+
+	public static final RegistryObject<Item> INERT_CRYSTAL = ITEMS.register("inert_crystal", () -> new ModGenericItem());
+	
 	public static final RegistryObject<Item> FRACTURED_LAPIS = ITEMS.register("fractured_lapis", () -> new ModGenericItem());
 	public static final RegistryObject<Item> LAPIS_SHARD = ITEMS.register("lapis_shard", () -> new ModGenericItem());
 	
