@@ -6,7 +6,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraftforge.common.Tags.Items;
 
 public class ModLeaves extends LeavesBlock {
 

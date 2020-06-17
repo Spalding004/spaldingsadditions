@@ -14,6 +14,10 @@
 "item.spaldingsadditions.reduced_lapis_nugget" = "Reduced Lapis Nugget",
 "item.spaldingsadditions.reduced_lapis_ingot" = "Reduced Lapis Ingot",
 
+"item.spaldingsadditions.indirium_nugget" = "Indirium Nugget",
+"item.spaldingsadditions.indirium_ingot" = "Indirium Ingot",
+"item.spaldingsadditions.indirium_chunk" = "Indirium Chunk",
+
 #Tools
 
 "item.spaldingsadditions.tool_vendar_pickaxe" = "Vendar Pickaxe",
@@ -71,6 +75,7 @@
 "block.spaldingsadditions.vendar_ore" = "Vendar Ore",
 "block.spaldingsadditions.umber_gold_ore" = "Umber Gold Ore",
 "block.spaldingsadditions.vendar_ore_dense" = "Vendar Ore",
+"block.spaldingsadditions.indirium_ore" = "Indirium Ore",
 
 "block.spaldingsadditions.beech_log" = "Copper Beech Wood",
 "block.spaldingsadditions.beech_leaves" = "Copper Beech Leaves",

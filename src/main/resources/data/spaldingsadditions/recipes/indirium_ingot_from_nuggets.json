@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SSS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "spaldingsadditions:indirium_nugget"
+    }
+  },
+  "result": {
+    "item": "spaldingsadditions:indirium_ingot",
+    "count": 1
+  }
+}
+

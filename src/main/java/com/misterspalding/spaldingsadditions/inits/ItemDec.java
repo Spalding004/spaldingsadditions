@@ -1,6 +1,7 @@
 package com.misterspalding.spaldingsadditions.inits;
 
 import com.misterspalding.spaldingsadditions.SpaldingsAdditions;
+import com.misterspalding.spaldingsadditions.items.ModFrakHammer;
 import com.misterspalding.spaldingsadditions.items.ModGenericItem;
 import com.misterspalding.spaldingsadditions.items.tier.ModTiers.ModItemTiers;
 import com.misterspalding.spaldingsadditions.items.tools.ModAxe;
@@ -34,6 +35,10 @@ public class ItemDec {
 	public static final RegistryObject<Item> FRACTURED_LAPIS = ITEMS.register("fractured_lapis", () -> new ModGenericItem());
 	public static final RegistryObject<Item> LAPIS_SHARD = ITEMS.register("lapis_shard", () -> new ModGenericItem());
 	
+	public static final RegistryObject<Item> INDIRIUM_CHUNK = ITEMS.register("indirium_chunk", () -> new ModGenericItem());
+	public static final RegistryObject<Item> INDIRIUM_INGOT = ITEMS.register("indirium_ingot", () -> new ModGenericItem());
+	public static final RegistryObject<Item> INDIRIUM_NUGGET = ITEMS.register("indirium_nugget", () -> new ModGenericItem());
+	
 	public static final RegistryObject<Item> REDUCED_LAPIS_NUGGET = ITEMS.register("reduced_lapis_nugget", () -> new ModGenericItem());
 	public static final RegistryObject<Item> REDUCED_LAPIS_INGOT = ITEMS.register("reduced_lapis_ingot", () -> new ModGenericItem());
 	
@@ -46,8 +51,8 @@ public class ItemDec {
 	public static final RegistryObject<Item> TOOL_VENDAR_HOE = ITEMS.register("tool_vendar_hoe", () -> new ModHoe(ModItemTiers.VENDAR));
 	public static final RegistryObject<Item> TOOL_VENDAR_SHOVEL = ITEMS.register("tool_vendar_shovel", () -> new ModShovel(ModItemTiers.VENDAR));
 	
-	public static final RegistryObject<Item> TOOL_VENDAR_FRAKHAMMER = ITEMS.register("tool_vendar_frakhammer", () -> new ModGenericItem());
-	public static final RegistryObject<Item> IRON_FRAKHAMMER = ITEMS.register("iron_frakhammer", () -> new ModGenericItem());
+	public static final RegistryObject<Item> TOOL_VENDAR_FRAKHAMMER = ITEMS.register("tool_vendar_frakhammer", () -> new ModFrakHammer());
+	public static final RegistryObject<Item> IRON_FRAKHAMMER = ITEMS.register("iron_frakhammer", () -> new ModFrakHammer());
 	
 	
 	

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "spaldingsadditions:indirium_chunk"
+  },
+  "result": {
+  "item": "spaldingsadditions:indirium_ingot",
+  "count": 1
+  },
+  "experience": 0.7,
+  "cookingtime": 100
+}

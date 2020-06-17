@@ -17,7 +17,7 @@ modId="spaldingsadditions" #mandatory
 
 version="2.0" #mandatory
 
-displayName="Spalding's Additions: Lapis Discoveries" #mandatory
+displayName="Spalding's Additions" #mandatory
 
 #updateJSONURL="http://myurl.me/" #optional
 

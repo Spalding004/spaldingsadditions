@@ -1,0 +1,15 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "spaldingsadditions:iron_frakhammer"
+		},
+		{
+			"item": "minecraft:lapis_lazuli"
+		}
+	],
+	"result": {
+		"item": "spaldingsadditions:lapis_shard",
+		"count": 9
+	}
+}

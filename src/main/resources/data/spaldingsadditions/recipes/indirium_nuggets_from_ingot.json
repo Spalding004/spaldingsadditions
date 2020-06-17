@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "spaldingsadditions:indirium_ingot"
+		}
+	],
+	"result": {
+		"item": "spaldingsadditions:indirium_nugget",
+		"count": 9
+	}
+}
