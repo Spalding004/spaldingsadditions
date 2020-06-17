@@ -71,10 +71,21 @@ public class SpecialDropsModifier extends LootModifier {
     	Random random = new Random();
     	
     	
+    	
+    	
     	String checkedOre = "indirium";
     	if (broken.contains(checkedOre+"_ore")) {
     		
     		listReturn.add(new ItemStack(ItemDec.INDIRIUM_CHUNK.get(), 1 + random.nextInt(1 + enchant)));
+    		
+    		return listReturn;
+    	}
+    	
+    	
+    	if (broken.contains("coal") && !broken.contains("coal_ore_")) {
+    		listReturn = (ArrayList<ItemStack>) generatedLoot;
+    		if (random.nextInt(20+enchant*2) >= 19) listReturn.add(new ItemStack(ItemDec.CHARGED_CARBON.get()));
+    		
     		
     		return listReturn;
     	}
@@ -86,6 +97,7 @@ public class SpecialDropsModifier extends LootModifier {
     		
     		listReturn.add(new ItemStack(Items.DIAMOND, 1 + random.nextInt(1 + enchant)));
     		listReturn.add(new ItemStack(Items.COAL, 1 + random.nextInt(1 + enchant)));
+    		if (random.nextInt(20+enchant*2) >= 19) listReturn.add(new ItemStack(ItemDec.CHARGED_CARBON.get()));
     		return listReturn;
     	}
     	
@@ -94,6 +106,7 @@ public class SpecialDropsModifier extends LootModifier {
     		
     		listReturn.add(new ItemStack(Items.EMERALD, 1 + random.nextInt(1 + enchant)));
     		listReturn.add(new ItemStack(Items.COAL, 1 + random.nextInt(1 + enchant)));
+    		if (random.nextInt(20+enchant*2) >= 19) listReturn.add(new ItemStack(ItemDec.CHARGED_CARBON.get()));
     		return listReturn;
     	}
     	
@@ -102,6 +115,7 @@ public class SpecialDropsModifier extends LootModifier {
     		
     		listReturn.add(new ItemStack(Items.LAPIS_LAZULI, 3+random.nextInt(3) + 3*random.nextInt(1 + enchant)));
     		listReturn.add(new ItemStack(Items.COAL, 1 + random.nextInt(1 + enchant)));
+    		if (random.nextInt(20+enchant*2) >= 19) listReturn.add(new ItemStack(ItemDec.CHARGED_CARBON.get()));
     		return listReturn;
     	}
     	
@@ -110,6 +124,7 @@ public class SpecialDropsModifier extends LootModifier {
     		
     		listReturn.add(new ItemStack(Items.REDSTONE, 4 + random.nextInt(2) + 4*random.nextInt(1 + enchant)));
     		listReturn.add(new ItemStack(Items.COAL, 1 + random.nextInt(1 + enchant)));
+    		if (random.nextInt(20+enchant*2) >= 19) listReturn.add(new ItemStack(ItemDec.CHARGED_CARBON.get()));
     		return listReturn;
     	}
     	
@@ -121,7 +136,7 @@ public class SpecialDropsModifier extends LootModifier {
     		} else {
     		listReturn.add(new ItemStack(ItemDec.IRON_CHUNK.get(), 1 + random.nextInt(1 + enchant)));
     		}
-    		
+    		if (random.nextInt(20+enchant*2) >= 19) listReturn.add(new ItemStack(ItemDec.CHARGED_CARBON.get()));
     		listReturn.add(new ItemStack(Items.COAL, 1 + random.nextInt(1 + enchant)));
     		return listReturn;
     	}
@@ -134,7 +149,7 @@ public class SpecialDropsModifier extends LootModifier {
     		} else {
     		listReturn.add(new ItemStack(ItemDec.GOLD_CHUNK.get(), 1 + random.nextInt(1 + enchant)));
     		}
-    		
+    		if (random.nextInt(20+enchant*2) >= 19) listReturn.add(new ItemStack(ItemDec.CHARGED_CARBON.get()));
     		listReturn.add(new ItemStack(Items.COAL, 1 + random.nextInt(1 + enchant)));
     		return listReturn;
     	}

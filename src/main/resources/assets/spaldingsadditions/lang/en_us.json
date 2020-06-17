@@ -16,7 +16,9 @@
 
 "item.spaldingsadditions.indirium_nugget" = "Indirium Nugget",
 "item.spaldingsadditions.indirium_ingot" = "Indirium Ingot",
-"item.spaldingsadditions.indirium_chunk" = "Indirium Chunk",
+"item.spaldingsadditions.indirium_chunk" = "Indirium Ore Chunk",
+
+"item.spaldingsadditions.charged_carbon" = "Charged Carbon",
 
 #Tools
 
