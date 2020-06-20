@@ -1,7 +1,10 @@
 package com.misterspalding.spaldingsadditions.utils;
 
 import com.misterspalding.spaldingsadditions.SpaldingsAdditions;
+import com.misterspalding.spaldingsadditions.client.gui.PalmChestScreen;
+import com.misterspalding.spaldingsadditions.inits.ContainersDec;
 
+import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraftforge.api.distmarker.Dist;
@@ -13,11 +16,14 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 @Mod.EventBusSubscriber(modid = SpaldingsAdditions.MOD_ID, bus = Bus.MOD, value = Dist.CLIENT)
 public class ClientEventBusSubscriber {
 	
+	
+	
+	
 	@SubscribeEvent
 	public static void clientSetup(FMLClientSetupEvent event) {
 		
 		registerCutouts();
-		
+		ScreenManager.registerFactory(ContainersDec.PALM_CHEST.get(), PalmChestScreen::new);
 		
 	}
 	

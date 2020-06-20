@@ -1,6 +1,7 @@
 package com.misterspalding.spaldingsadditions.inits;
 
 import com.misterspalding.spaldingsadditions.SpaldingsAdditions;
+import com.misterspalding.spaldingsadditions.blocks.ModChest;
 import com.misterspalding.spaldingsadditions.blocks.ModEndcroachment;
 import com.misterspalding.spaldingsadditions.blocks.ModEndfectedOre;
 import com.misterspalding.spaldingsadditions.blocks.ModEndfection;
@@ -13,6 +14,7 @@ import com.misterspalding.spaldingsadditions.blocks.ModStairsBlockStone;
 import com.misterspalding.spaldingsadditions.blocks.ModStairsBlockWood;
 import com.misterspalding.spaldingsadditions.blocks.ModStone;
 import com.misterspalding.spaldingsadditions.blocks.ModWallBlock;
+import com.misterspalding.spaldingsadditions.blocks.machines.ModFabricator;
 import com.misterspalding.spaldingsadditions.blocks.saplings.ModSaplingBeech;
 import com.misterspalding.spaldingsadditions.blocks.saplings.ModSaplingPalm;
 import com.misterspalding.spaldingsadditions.blocks.saplings.ModSaplingYew;
@@ -30,7 +32,7 @@ public class BlockDec {
 	
 	public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, SpaldingsAdditions.MOD_ID);
 	 
-	//begin blocks
+	public static final RegistryObject<Block> PALM_CHEST = BLOCKS.register("palm_chest", () -> new ModChest());
 	
 	
 	//stones
@@ -111,4 +113,8 @@ public class BlockDec {
 	public static final RegistryObject<Block> PETRIFIED_PLANKS = BLOCKS.register("petrified_planks", () -> new ModStone());
 	public static final RegistryObject<Block> PETRIFIED_STAIRS = BLOCKS.register("petrified_stairs", () -> new ModStairsBlockStone(BlockDec.PETRIFIED_PLANKS.get()));
 	public static final RegistryObject<Block> PETRIFIED_WALL = BLOCKS.register("petrified_wall", () -> new ModWallBlock());
+	
+	//machines
+	public static final RegistryObject<Block> FABRICATOR = BLOCKS.register("fabricator", () -> new ModFabricator());
+	
 }

@@ -10,10 +10,14 @@ import org.apache.logging.log4j.Logger;
 import com.misterspalding.spaldingsadditions.events.loot_modifiers.SpecialDropsModifier;
 import com.misterspalding.spaldingsadditions.inits.BiomeDec;
 import com.misterspalding.spaldingsadditions.inits.BlockDec;
+import com.misterspalding.spaldingsadditions.inits.ContainersDec;
 import com.misterspalding.spaldingsadditions.inits.DamagesDec;
 import com.misterspalding.spaldingsadditions.inits.FeaturesDec;
 import com.misterspalding.spaldingsadditions.inits.ItemDec;
 import com.misterspalding.spaldingsadditions.inits.PlacementsDec;
+import com.misterspalding.spaldingsadditions.inits.TileEntityDec;
+import com.misterspalding.spaldingsadditions.recipes.RecipeDec;
+import com.misterspalding.spaldingsadditions.tileentities.FabricatorTile;
 import com.misterspalding.spaldingsadditions.world.gen.ModStoneGen;
 import com.misterspalding.spaldingsadditions.world.gen.ModStructGen;
 import com.misterspalding.spaldingsadditions.world.gen.ModTreeGen;
@@ -26,6 +30,7 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.Feature;
@@ -43,6 +48,7 @@ import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.registries.IForgeRegistry;
+import net.minecraftforge.registries.IForgeRegistryEntry;
 
 @SuppressWarnings("deprecation")
 @Mod("spaldingsadditions")
@@ -69,7 +75,9 @@ public class SpaldingsAdditions
     	
     	ItemDec.ITEMS.register(modEventBus);
     	BlockDec.BLOCKS.register(modEventBus);
-    
+    	RecipeDec.RECIPE_SERIALIZERS.register(modEventBus);
+    	TileEntityDec.TILES.register(modEventBus);
+        ContainersDec.CONTAINERS.register(modEventBus);
     	
     	  
     	BiomeDec.BIOMES.register(modEventBus);
@@ -93,6 +101,8 @@ public class SpaldingsAdditions
     	});
     	
     }
+    
+   
     
     @SubscribeEvent
     public static void onRegisterBiomes(final RegistryEvent.Register<Biome> event) {

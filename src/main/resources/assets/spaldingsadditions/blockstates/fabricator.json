@@ -1,0 +1,11 @@
+{
+  "variants": 
+    {
+        "facing=north": { "model": "spaldingsadditions:block/fabricator" },
+        "facing=east": { "model": "spaldingsadditions:block/fabricator", "y": 90 },
+        "facing=south": { "model": "spaldingsadditions:block/fabricator", "y": 180 },
+        "facing=west": { "model": "spaldingsadditions:block/fabricator", "y": 270 },
+        "facing=up": { "model": "spaldingsadditions:block/fabricator", "x": -90 },
+      	"facing=down": { "model": "spaldingsadditions:block/fabricator", "x": 90 }
+    }
+}

@@ -1,0 +1,19 @@
+package com.misterspalding.spaldingsadditions.blocks.machines;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+
+public class ModMachine extends Block {
+
+	public ModMachine() {
+		super(Block.Properties
+				.create(Material.IRON)
+				);
+		
+	
+		
+		
+		
+	}
+
+}
