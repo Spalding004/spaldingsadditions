@@ -2,20 +2,27 @@ package com.misterspalding.spaldingsadditions.tileentities;
 
 import java.util.Optional;
 
+import javax.annotation.Nonnull;
+
+import com.misterspalding.spaldingsadditions.containers.FabricatorContainer;
 import com.misterspalding.spaldingsadditions.fuels.LapalFuels;
 import com.misterspalding.spaldingsadditions.inits.TileEntityDec;
 import com.misterspalding.spaldingsadditions.recipes.FabricatorRecipe;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.ItemStackHelper;
+import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.NonNullList;
+import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.items.ItemStackHandler;
 
 public class FabricatorTile extends TileEntity implements ITickableTileEntity, ISidedInventory {
 
@@ -33,11 +40,17 @@ public class FabricatorTile extends TileEntity implements ITickableTileEntity, I
 	private double fuelRemaining;
 	private double maxFuel;
 
+	public final ItemStackHandler inventory;
+	protected final LazyOptional<ItemStackHandler> inventoryCapability;
+
 	private int num_slots = 4;
 	private NonNullList<ItemStack> fabricatorContents = NonNullList.withSize(num_slots, ItemStack.EMPTY);
 
 	public FabricatorTile(TileEntityType<?> tileEntityTypeIn) {
 		super(tileEntityTypeIn);
+
+		this.inventory = createItemStackHandler(num_slots);
+		this.inventoryCapability = LazyOptional.of(() -> this.inventory);
 
 	}
 
@@ -48,6 +61,31 @@ public class FabricatorTile extends TileEntity implements ITickableTileEntity, I
 	@Override
 	public int getSizeInventory() {
 		return num_slots;
+	}
+
+	private ItemStackHandler createItemStackHandler(int size) {
+		return new ItemStackHandler(size) {
+			@Override
+			public boolean isItemValid(int slot, @Nonnull ItemStack stack) {
+				return isItemValidForSlot(slot, stack);
+			}
+
+			@Override
+			public int getSlotLimit(int slot) {
+
+				if (slot == SLOT_INPUT) {
+					return 1;
+				}
+
+				return 64;
+			}
+
+			@Override
+			protected void onContentsChanged(int slot) {
+				super.onContentsChanged(slot);
+				markDirty();
+			}
+		};
 	}
 
 	@Override
@@ -118,11 +156,11 @@ public class FabricatorTile extends TileEntity implements ITickableTileEntity, I
 	}
 
 	public NonNullList<ItemStack> getInventoryForRecipe() {
-		
+
 		return fabricatorContents;
-		
+
 	}
-	
+
 	@Override
 	public int[] getSlotsForFace(Direction side) {
 		if (side == Direction.DOWN) {
@@ -157,7 +195,7 @@ public class FabricatorTile extends TileEntity implements ITickableTileEntity, I
 
 			this.fuelRemaining = 0;
 			if (!this.fabricatorContents.get(SLOT_FUEL).isEmpty()) {
-				ItemStack fuel = this.fabricatorContents.get(SLOT_FUEL).getStack();
+				ItemStack fuel = this.fabricatorContents.get(SLOT_FUEL);
 				fuel.shrink(1);
 				ItemStack containerItem = fuel.getItem().getContainerItem(fuel.copy());
 				if (!containerItem.isEmpty()) {
@@ -174,33 +212,88 @@ public class FabricatorTile extends TileEntity implements ITickableTileEntity, I
 		}
 
 	}
-	//CrusherRecipe recipe = world.getRecipeManager().getRecipe(CrusherRecipe.crushing, inventory, world).orElse(null);
-	 
-	
-	private void trySmelt() {
-		
-		//Inventory inventory = new Inventory();
-		FabricatorRecipe recipe = world.getRecipeManager().getRecipe(FabricatorRecipe.recipeType, inventory, world);
-		
-		
-		if(!this.fabricatorContents.get(SLOT_INPUT).isEmpty() && !this.fabricatorContents.get(SLOT_CARD).isEmpty()) {
-			ItemStack targetOutput = recipe.getResult();
-			if (this.targetProcessTime == 0) {
-				
-				
-				if (!targetOutput.isEmpty()) {
-					
-					this.targetProcessTime = recipe.getProcessTime();
-					
-				}
-				
-				
-			}
-			
-			
-			
+
+	public FabricatorRecipe getRecipe() {
+		Inventory recipeInventory = new Inventory(this.inventory.getStackInSlot(SLOT_INPUT));
+		switch (recipeInventory.toString()) {
+
+		case "nether_card":
+			return world == null ? null
+					: world.getRecipeManager().getRecipe(FabricatorRecipe.nether_card, recipeInventory, world)
+							.orElse(null);
+
+		case "end_card":
+			return world == null ? null
+					: world.getRecipeManager().getRecipe(FabricatorRecipe.end_card, recipeInventory, world)
+							.orElse(null);
+
+		default:
+			return world == null ? null
+					: world.getRecipeManager().getRecipe(FabricatorRecipe.basic_card, recipeInventory, world)
+							.orElse(null);
 		}
-		
+	}
+
+	private void trySmelt() {
+
+		Boolean should_output = false;
+
+		ItemStack input_slot_stack = this.fabricatorContents.get(SLOT_INPUT);
+		ItemStack output_slot_stack = this.fabricatorContents.get(SLOT_OUTPUT);
+
+		if (!this.fabricatorContents.get(SLOT_INPUT).isEmpty() && !this.fabricatorContents.get(SLOT_CARD).isEmpty()) {
+
+			FabricatorRecipe recipe = getRecipe();
+
+			ItemStack targetOutput = recipe.getResult();
+
+			if (this.targetProcessTime == 0) {
+
+				if (!targetOutput.isEmpty()) {
+
+					this.targetProcessTime = recipe.getProcessTime();
+
+				}
+
+			}
+
+			if (this.inventory.getStackInSlot(SLOT_OUTPUT).isEmpty()
+					|| this.inventory.getStackInSlot(SLOT_OUTPUT) == targetOutput) {
+				++this.currentProcessTime;
+				should_output = true;
+			}
+			if (this.currentProcessTime >= this.targetProcessTime) {
+
+				if (should_output) {
+
+					if (output_slot_stack.isEmpty()) {
+
+						this.fabricatorContents.set(SLOT_OUTPUT, targetOutput);
+
+					} else if (output_slot_stack == targetOutput) {
+
+						output_slot_stack.grow(1);
+
+					}
+
+					input_slot_stack.shrink(1);
+				}
+
+				this.currentProcessTime = 0;
+				should_output = false;
+			}
+
+		}
+
+	}
+
+	public String getGuiID() {
+		return "spaldingsadditions:fabricator";
+	}
+
+	protected Container createMenu(int id, PlayerInventory player) {
+
+		return new FabricatorContainer(id, player, this);
 	}
 
 }

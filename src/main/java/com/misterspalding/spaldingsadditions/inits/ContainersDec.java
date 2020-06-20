@@ -18,4 +18,7 @@ public class ContainersDec {
 	public static final RegistryObject<ContainerType<PalmChestContainer>> PALM_CHEST = CONTAINERS
 			.register("palm_chest", () -> IForgeContainerType.create(PalmChestContainer::new));
 	
+	public static final RegistryObject<ContainerType<PalmChestContainer>> FABRICATOR = CONTAINERS
+			.register("fabricator_container", () -> IForgeContainerType.create(PalmChestContainer::new));
+	
 }

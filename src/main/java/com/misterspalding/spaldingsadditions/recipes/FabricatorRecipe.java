@@ -23,7 +23,9 @@ import net.minecraftforge.registries.ForgeRegistryEntry;
 
 public class FabricatorRecipe implements IRecipe<IInventory> {
 
-    public static final IRecipeType<FabricatorRecipe> recipeType = IRecipeType.register("fabricator");
+    public static final IRecipeType<FabricatorRecipe> basic_card = IRecipeType.register("fabricator_basic");
+    public static final IRecipeType<FabricatorRecipe> nether_card = IRecipeType.register("fabricator_nether");
+    public static final IRecipeType<FabricatorRecipe> end_card = IRecipeType.register("fabricator_end");
     public static final Serializer serializer = new Serializer();
 
     private final ResourceLocation recipeId;
@@ -55,9 +57,9 @@ public class FabricatorRecipe implements IRecipe<IInventory> {
     @Override
     public boolean matches(IInventory inv, World worldIn) {
         ItemStack stack = inv.getStackInSlot(0);
-        ItemStack stack2 = inv.getStackInSlot(1);
         
-        return card.test(stack) && input.test(stack2);
+        
+        return card.test(stack);
     }
 
     @Override
@@ -100,15 +102,13 @@ public class FabricatorRecipe implements IRecipe<IInventory> {
             FabricatorRecipe recipe = new FabricatorRecipe(recipeId);
 
             recipe.input = Ingredient.deserialize(json.get("input"));
-            recipe.card = Ingredient.deserialize(json.get("card"));
+           
            
             for (ItemStack stack : recipe.input.getMatchingStacks()) {
                 if (!ingredientList.contains(stack.getItem())) ingredientList.add(stack.getItem());
             }
             
-            for (ItemStack stack : recipe.card.getMatchingStacks()) {
-                if (!ingredientList.contains(stack.getItem())) ingredientList.add(stack.getItem());
-            }
+           
 
             ResourceLocation fluidResourceLocation = ResourceLocation.create(JSONUtils.getString(json.get("result").getAsJsonObject(), "output", "minecraft:empty"), ':');
             int itemAmount = JSONUtils.getInt(json.get("result").getAsJsonObject(), "amount", 0);
