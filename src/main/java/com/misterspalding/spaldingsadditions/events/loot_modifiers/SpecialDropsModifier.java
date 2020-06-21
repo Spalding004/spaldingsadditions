@@ -70,10 +70,26 @@ public class SpecialDropsModifier extends LootModifier {
     	ArrayList<ItemStack> listReturn = new ArrayList<ItemStack>();
     	Random random = new Random();
     	
+    	String checkedOre = "vendar";
+    	if (broken.contains(checkedOre+"_ore")) {
+    		
+    		listReturn.add(new ItemStack(ItemDec.VENDAR_CHUNK.get(), 1 + random.nextInt(1 + enchant)));
+    		
+    		return listReturn;
+    	}
     	
     	
+    	checkedOre = "vendar";
+    	if (broken.contains(checkedOre+"_ore_dense")) {
+    		
+    		listReturn.add(new ItemStack(ItemDec.VENDAR_CHUNK.get(), 3 + random.nextInt(1 + enchant)));
+    		
+    		return listReturn;
+    	}
     	
-    	String checkedOre = "indirium";
+    	   	
+    	
+    	checkedOre = "indirium";
     	if (broken.contains(checkedOre+"_ore")) {
     		
     		listReturn.add(new ItemStack(ItemDec.INDIRIUM_CHUNK.get(), 1 + random.nextInt(1 + enchant)));

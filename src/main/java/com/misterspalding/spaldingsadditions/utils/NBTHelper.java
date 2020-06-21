@@ -19,12 +19,12 @@ public class NBTHelper {
 		}
 		
 		if(o instanceof FabricatorTile) {
-			return writeFabricator((FabricatorTile)o);
+	//		return writeFabricator((FabricatorTile)o);
 		}
 		
 		return null;
 	}
-	
+ /*	
 	private static CompoundNBT writeFabricator(FabricatorTile o) {
 		CompoundNBT compound = new CompoundNBT();
 		compound.putInt("x", o.x);
@@ -32,7 +32,7 @@ public class NBTHelper {
 		compound.putInt("z", o.z);
 		return compound;
 	}
-	
+	*/
 	private static CompoundNBT writeItemStack(ItemStack i) {
 		CompoundNBT nbt = new CompoundNBT();
 		nbt.putInt("count", i.getCount());

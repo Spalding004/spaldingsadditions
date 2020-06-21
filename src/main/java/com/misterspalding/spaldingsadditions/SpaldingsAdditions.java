@@ -53,150 +53,136 @@ import net.minecraftforge.registries.IForgeRegistryEntry;
 @SuppressWarnings("deprecation")
 @Mod("spaldingsadditions")
 @Mod.EventBusSubscriber(modid = SpaldingsAdditions.MOD_ID, bus = Bus.MOD)
-public class SpaldingsAdditions
-{
-    @SuppressWarnings("unused")
+public class SpaldingsAdditions {
 	public static final Logger LOGGER = LogManager.getLogger();
-    public static final String MOD_ID = "spaldingsadditions";
-    public static SpaldingsAdditions instance;
-    public static ArrayList<Block> CUT_OUT_BLOCKS = new ArrayList<Block>();
-    
-    
-    final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+	public static final String MOD_ID = "spaldingsadditions";
+	public static SpaldingsAdditions instance;
+	public static ArrayList<Block> CUT_OUT_BLOCKS = new ArrayList<Block>();
 
-    public SpaldingsAdditions() {
-        
-    	modEventBus.addListener(this::setup);
-    	modEventBus.addListener(this::enqueueIMC);
-    	modEventBus.addListener(this::processIMC);
-    	modEventBus.addListener(this::doClientStuff);
-        
-    	DamagesDec.initDamages();
-    	
-    	ItemDec.ITEMS.register(modEventBus);
-    	BlockDec.BLOCKS.register(modEventBus);
-    	RecipeDec.RECIPE_SERIALIZERS.register(modEventBus);
-    	TileEntityDec.TILES.register(modEventBus);
-        ContainersDec.CONTAINERS.register(modEventBus);
-    	
-    	  
-    	BiomeDec.BIOMES.register(modEventBus);
-    	MinecraftForge.EVENT_BUS.register(PlacementsDec.ENDFECTION);
-        instance = this;
+	final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        MinecraftForge.EVENT_BUS.register(this);
-    }
+	public SpaldingsAdditions() {
 
-    @SubscribeEvent
-    public static void onRegisterItems(final RegistryEvent.Register<Item> event) {
-    	
-    	final IForgeRegistry<Item> registry = event.getRegistry();
-    	
-    	BlockDec.BLOCKS.getEntries().stream().map(RegistryObject::get).forEach(block ->  {
-    		final Item.Properties properties = new Item.Properties().group(ModItemGroup.instance);
-    		final BlockItem blockItem = new BlockItem(block, properties);
-    		blockItem.setRegistryName(block.getRegistryName());
-    		registry.register(blockItem);
-    		
-    	});
-    	
-    }
-    
-   
-    
-    @SubscribeEvent
-    public static void onRegisterBiomes(final RegistryEvent.Register<Biome> event) {
-    	BiomeDec.registerBiomes();
-    	
-    	
-    }
-    
-    
-	private void setup(final FMLCommonSetupEvent event)
-    {
-    	
-    	DeferredWorkQueue.runLater(ModStoneGen::generateOre);
-        DeferredWorkQueue.runLater(ModTreeGen::genTrees);
-        DeferredWorkQueue.runLater(ModStructGen::genStructs);
-    }
+		modEventBus.addListener(this::setup);
+		modEventBus.addListener(this::enqueueIMC);
+		modEventBus.addListener(this::processIMC);
+		modEventBus.addListener(this::doClientStuff);
 
-    private void doClientStuff(final FMLClientSetupEvent event) {
-       
-    }
+		DamagesDec.initDamages();
 
-    
-    
-    private void enqueueIMC(final InterModEnqueueEvent event)
-    {
-        // some example code to dispatch IMC to another mod
-   //     InterModComms.sendTo("examplemod", "helloworld", () -> { LOGGER.info("Hello world from the MDK"); return "Hello world";});
-    }
+		ItemDec.ITEMS.register(modEventBus);
+		BlockDec.BLOCKS.register(modEventBus);
+		RecipeDec.RECIPE_SERIALIZERS.register(modEventBus);
+		 TileEntityDec.TILES.register(modEventBus);
+		 ContainersDec.CONTAINERS.register(modEventBus);
 
-    private void processIMC(final InterModProcessEvent event)
-    {
-        // some example code to receive and process InterModComms from other mods
-      /*  LOGGER.info("Got IMC {}", event.getIMCStream().
-                map(m->m.getMessageSupplier().get()).
-                collect(Collectors.toList()));
-                */
-    }
-    
-    
-    @SubscribeEvent
-    public void onServerStarting(FMLServerStartingEvent event) {
-      
-    }
-    
-    @SubscribeEvent
-    public static void registerModifierSerializers(@Nonnull final RegistryEvent.Register<GlobalLootModifierSerializer<?>> event) {
-        
-            event.getRegistry().register(new SpecialDropsModifier.Serializer().setRegistryName(new ResourceLocation(SpaldingsAdditions.MOD_ID,"special_drops")));
-            
-    }
-   
-    
-    @SubscribeEvent
-    public static void loadCompleteEvent(FMLLoadCompleteEvent event) {
-    	/*
-    	 * 
-    	 * Apparently the correct way to to do this is to use a deferred work queue BUT...
-    	 * 
-    	 * That method is deprecated with no real info on what is going to replace it.  We'll stick with this until it breaks.
-    	 * 
-    	
-    	ModTreeGen.genTrees();
-    	ModStoneGen.generateOre();
-    	ModStructGen.genStructs();
-    	 *
-    	 *Update: it broke.
-    	 *
-    	 */
-    }
-    
-    @SubscribeEvent
-	  public static void onRegisterFeatures(RegistryEvent.Register<Feature<?>> event) {
-	  FeaturesDec.register(event);
-	  }
-    
-    public static class ModItemGroup extends ItemGroup {
-    	
-    	private ModItemGroup(int index, String label) {
-    		
-    		super(index, label);
-    		
-    	}
-    	
-    	@Override
-    	public ItemStack createIcon() {
-    		
-    	return new ItemStack(ItemDec.FRACTURED_LAPIS.get());
-    		
-    	}
-    	
-    	public static final ModItemGroup instance = new ModItemGroup(ItemGroup.GROUPS.length, "mod_creative_tab");
-    	
-    }
-    
-    
+		BiomeDec.BIOMES.register(modEventBus);
+		MinecraftForge.EVENT_BUS.register(PlacementsDec.ENDFECTION);
+		instance = this;
+
+		MinecraftForge.EVENT_BUS.register(this);
+	}
+
+	@SubscribeEvent
+	public static void onRegisterItems(final RegistryEvent.Register<Item> event) {
+
+		final IForgeRegistry<Item> registry = event.getRegistry();
+
+		BlockDec.BLOCKS.getEntries().stream().map(RegistryObject::get).forEach(block -> {
+			final Item.Properties properties = new Item.Properties().group(ModItemGroup.instance);
+			final BlockItem blockItem = new BlockItem(block, properties);
+			blockItem.setRegistryName(block.getRegistryName());
+			registry.register(blockItem);
+
+		});
+
+	}
+
+	@SubscribeEvent
+	public static void onRegisterBiomes(final RegistryEvent.Register<Biome> event) {
+		BiomeDec.registerBiomes();
+
+	}
+
+	private void setup(final FMLCommonSetupEvent event) {
+
+		DeferredWorkQueue.runLater(ModStoneGen::generateOre);
+		DeferredWorkQueue.runLater(ModTreeGen::genTrees);
+		DeferredWorkQueue.runLater(ModStructGen::genStructs);
+	}
+
+	private void doClientStuff(final FMLClientSetupEvent event) {
+
+	}
+
+	private void enqueueIMC(final InterModEnqueueEvent event) {
+		// some example code to dispatch IMC to another mod
+		// InterModComms.sendTo("examplemod", "helloworld", () -> { LOGGER.info("Hello
+		// world from the MDK"); return "Hello world";});
+	}
+
+	private void processIMC(final InterModProcessEvent event) {
+		// some example code to receive and process InterModComms from other mods
+		/*
+		 * LOGGER.info("Got IMC {}", event.getIMCStream().
+		 * map(m->m.getMessageSupplier().get()). collect(Collectors.toList()));
+		 */
+	}
+
+	@SubscribeEvent
+	public void onServerStarting(FMLServerStartingEvent event) {
+
+	}
+
+	@SubscribeEvent
+	public static void registerModifierSerializers(
+			@Nonnull final RegistryEvent.Register<GlobalLootModifierSerializer<?>> event) {
+
+		event.getRegistry().register(new SpecialDropsModifier.Serializer()
+				.setRegistryName(new ResourceLocation(SpaldingsAdditions.MOD_ID, "special_drops")));
+
+	}
+
+	@SubscribeEvent
+	public static void loadCompleteEvent(FMLLoadCompleteEvent event) {
+		/*
+		 * 
+		 * Apparently the correct way to to do this is to use a deferred work queue
+		 * BUT...
+		 * 
+		 * That method is deprecated with no real info on what is going to replace it.
+		 * We'll stick with this until it breaks.
+		 * 
+		 * 
+		 * ModTreeGen.genTrees(); ModStoneGen.generateOre(); ModStructGen.genStructs();
+		 *
+		 * Update: it broke.
+		 *
+		 */
+	}
+
+	@SubscribeEvent
+	public static void onRegisterFeatures(RegistryEvent.Register<Feature<?>> event) {
+		FeaturesDec.register(event);
+	}
+
+	public static class ModItemGroup extends ItemGroup {
+
+		private ModItemGroup(int index, String label) {
+
+			super(index, label);
+
+		}
+
+		@Override
+		public ItemStack createIcon() {
+
+			return new ItemStack(ItemDec.FRACTURED_LAPIS.get());
+
+		}
+
+		public static final ModItemGroup instance = new ModItemGroup(ItemGroup.GROUPS.length, "mod_creative_tab");
+
+	}
 
 }

@@ -89,7 +89,9 @@ public class FabricatorRecipe implements IRecipe<IInventory> {
 
     @Override
     public IRecipeType<?> getType() {
-        return recipeType;
+     //   return recipeType;
+    	//TODO add switch state on recipe type... does this even get called?
+    	return basic_card;
     }
 
     public static class Serializer extends ForgeRegistryEntry<IRecipeSerializer<?>> implements IRecipeSerializer<FabricatorRecipe> {
