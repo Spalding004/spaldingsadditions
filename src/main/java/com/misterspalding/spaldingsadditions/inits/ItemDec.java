@@ -64,7 +64,9 @@ public class ItemDec {
 	
 	
 	//other items
-	public static final RegistryObject<Item> CARD_BASIC = ITEMS.register("basic_card", () -> new ModDimensionalCard());
+	public static final RegistryObject<Item> CARD_BASIC = ITEMS.register("basic_card", () -> new ModDimensionalCard(654));
+	public static final RegistryObject<Item> CARD_NETHER = ITEMS.register("nether_card", () -> new ModDimensionalCard(458));
+	public static final RegistryObject<Item> CARD_END = ITEMS.register("end_card", () -> new ModDimensionalCard(485));
 	
 	public static final RegistryObject<Item> POLISHING_STONE = ITEMS.register("polishing_stone", () -> new ModGenericItem());
 	

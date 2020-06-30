@@ -4,48 +4,48 @@ import java.util.Objects;
 
 import com.misterspalding.spaldingsadditions.inits.BlockDec;
 import com.misterspalding.spaldingsadditions.inits.ContainersDec;
+import com.misterspalding.spaldingsadditions.slots.SlotDimCard;
+import com.misterspalding.spaldingsadditions.slots.SlotLapisFuel;
+import com.misterspalding.spaldingsadditions.slots.SlotOutput;
 import com.misterspalding.spaldingsadditions.tileentities.FabricatorTile;
-import com.misterspalding.spaldingsadditions.tileentities.PalmChestTile;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.Slot;
-import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IWorldPosCallable;
 
-public class FabricatorContainer extends Container {
+public class FabricatorContainer extends CommonContainer {
 
 	public final FabricatorTile tileEntity;
 	private final IWorldPosCallable canInteractWithCallable;
 
 	public FabricatorContainer(final int windowID, final PlayerInventory playerInv, final FabricatorTile tileEntity) {
-		super(ContainersDec.FABRICATOR.get(), windowID);
+		super(ContainersDec.FABRICATOR.get(), windowID, 4);
 		this.tileEntity = tileEntity;
 		this.canInteractWithCallable = IWorldPosCallable.of(tileEntity.getWorld(), tileEntity.getPos());
 
-		// Chest Invent
+		// Machine Invent
 
-		int startX = 8;
-		int startY = 18;
-		int slotSizeGrown = 18;
-		for (int row = 0; row < 3; ++row) {
-			for (int col = 0; col < 9; ++col) {
-				this.addSlot(new Slot(tileEntity, (row * 9) + col, startX + (col * slotSizeGrown),
-						startY + (row * slotSizeGrown)));
-
-			}
-		}
+			//card
+				this.addSlot(new SlotDimCard(tileEntity, 1, 9, 44));
+				//input
+				this.addSlot(new SlotLapisFuel(tileEntity, 3, 151, 44));
+				//fuel
+				this.addSlot(new Slot(tileEntity, 0, 50, 44));
+				
+				//output
+				this.addSlot(new SlotOutput(tileEntity, 2, 109, 44));
+			
 
 		// Player invent
 		int startPlayerY = 84;
 		for (int row = 0; row < 3; ++row) {
 			for (int col = 0; col < 9; ++col) {
 
-				this.addSlot(new Slot(playerInv, 9 + (row * 9) + col, startX + col * slotSizeGrown,
-						startPlayerY + row * slotSizeGrown));
+				this.addSlot(new Slot(playerInv, 9 + (row * 9) + col, 8 + col * 18,
+						startPlayerY + row * 18));
 
 			}
 
@@ -54,7 +54,7 @@ public class FabricatorContainer extends Container {
 			int hotbarY = 142;
 			for (int col = 0; col < 9; ++col) {
 
-				this.addSlot(new Slot(playerInv, col, startX + col * slotSizeGrown, hotbarY));
+				this.addSlot(new Slot(playerInv, col, 8 + col * 18, hotbarY));
 
 			}
 		}
@@ -66,7 +66,7 @@ public class FabricatorContainer extends Container {
 		Objects.requireNonNull(playerInvent, "Player inventory cannot be null!");
 		Objects.requireNonNull(data, "Data cannot be null!");
 		final TileEntity te = playerInvent.player.world.getTileEntity(data.readBlockPos());
-		if (te instanceof PalmChestTile) {
+		if (te instanceof FabricatorTile) {
 			return (FabricatorTile) te;
 		}
 		throw new IllegalStateException("Tile Entity " + te + " is not correct!");
@@ -79,30 +79,10 @@ public class FabricatorContainer extends Container {
 
 	@Override
 	public boolean canInteractWith(PlayerEntity playerIn) {
-		return isWithinUsableDistance(canInteractWithCallable, playerIn, BlockDec.PALM_CHEST.get());
+		return isWithinUsableDistance(canInteractWithCallable, playerIn, BlockDec.FABRICATOR.get());
 	}
 
-	@Override
-	public ItemStack transferStackInSlot(PlayerEntity playerIn, int index) {
-		ItemStack itemstack = ItemStack.EMPTY;
-		Slot slot = this.inventorySlots.get(index);
-		if (slot != null && slot.getHasStack()) {
-			ItemStack itemstack1 = slot.getStack();
-			itemstack = itemstack1.copy();
-			if (index < 36) {
-				if (!this.mergeItemStack(itemstack1, 27, this.inventorySlots.size(), true)) {
-					return ItemStack.EMPTY;
-				}
-			} else if (!this.mergeItemStack(itemstack1, 0, 27, false)) {
-				return ItemStack.EMPTY;
-			}
-
-			if (itemstack1.isEmpty()) {
-				slot.putStack(ItemStack.EMPTY);
-			} else {
-				slot.onSlotChanged();
-			}
-		}
-		return itemstack;
-	}
+	
+	
+	
 }

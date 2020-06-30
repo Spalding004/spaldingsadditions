@@ -1,5 +1,9 @@
 package com.misterspalding.spaldingsadditions.fuels;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.misterspalding.spaldingsadditions.SpaldingsAdditions;
 import com.misterspalding.spaldingsadditions.inits.BlockDec;
 import com.misterspalding.spaldingsadditions.inits.ItemDec;
 
@@ -9,6 +13,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 
 public class LapalFuels {
+
 	public static double getFuelStr(ItemStack fuel) {
 		Item item = fuel.getItem();
 		double str = 0.0D;
@@ -32,6 +37,6 @@ public class LapalFuels {
 			str = 75.0D;
 		}
 
-		return str;
+		return str * 100;
 	}
 }

@@ -8,6 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.misterspalding.spaldingsadditions.events.loot_modifiers.SpecialDropsModifier;
+import com.misterspalding.spaldingsadditions.fuels.LapalFuels;
 import com.misterspalding.spaldingsadditions.inits.BiomeDec;
 import com.misterspalding.spaldingsadditions.inits.BlockDec;
 import com.misterspalding.spaldingsadditions.inits.ContainersDec;
@@ -16,7 +17,6 @@ import com.misterspalding.spaldingsadditions.inits.FeaturesDec;
 import com.misterspalding.spaldingsadditions.inits.ItemDec;
 import com.misterspalding.spaldingsadditions.inits.PlacementsDec;
 import com.misterspalding.spaldingsadditions.inits.TileEntityDec;
-import com.misterspalding.spaldingsadditions.recipes.RecipeDec;
 import com.misterspalding.spaldingsadditions.tileentities.FabricatorTile;
 import com.misterspalding.spaldingsadditions.world.gen.ModStoneGen;
 import com.misterspalding.spaldingsadditions.world.gen.ModStructGen;
@@ -71,11 +71,12 @@ public class SpaldingsAdditions {
 		DamagesDec.initDamages();
 
 		ItemDec.ITEMS.register(modEventBus);
+		
 		BlockDec.BLOCKS.register(modEventBus);
-		RecipeDec.RECIPE_SERIALIZERS.register(modEventBus);
+		
 		 TileEntityDec.TILES.register(modEventBus);
 		 ContainersDec.CONTAINERS.register(modEventBus);
-
+		
 		BiomeDec.BIOMES.register(modEventBus);
 		MinecraftForge.EVENT_BUS.register(PlacementsDec.ENDFECTION);
 		instance = this;
@@ -95,6 +96,7 @@ public class SpaldingsAdditions {
 			registry.register(blockItem);
 
 		});
+		
 
 	}
 
@@ -109,6 +111,7 @@ public class SpaldingsAdditions {
 		DeferredWorkQueue.runLater(ModStoneGen::generateOre);
 		DeferredWorkQueue.runLater(ModTreeGen::genTrees);
 		DeferredWorkQueue.runLater(ModStructGen::genStructs);
+		
 	}
 
 	private void doClientStuff(final FMLClientSetupEvent event) {

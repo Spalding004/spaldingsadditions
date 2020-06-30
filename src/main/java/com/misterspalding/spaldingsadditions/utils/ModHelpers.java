@@ -9,6 +9,8 @@ import net.minecraft.world.IWorld;
 
 public class ModHelpers {
 
+	
+	
 	public static BlockPos getRandomAdjacentBlock(BlockPos pos) {
 		Random rand = new Random();
 		int checkLayer = rand.nextInt(3);

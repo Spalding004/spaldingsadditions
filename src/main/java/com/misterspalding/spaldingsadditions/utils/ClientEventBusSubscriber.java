@@ -1,6 +1,7 @@
 package com.misterspalding.spaldingsadditions.utils;
 
 import com.misterspalding.spaldingsadditions.SpaldingsAdditions;
+import com.misterspalding.spaldingsadditions.client.gui.FabricatorScreen;
 import com.misterspalding.spaldingsadditions.client.gui.PalmChestScreen;
 import com.misterspalding.spaldingsadditions.inits.ContainersDec;
 
@@ -24,6 +25,7 @@ public class ClientEventBusSubscriber {
 		
 		registerCutouts();
 		ScreenManager.registerFactory(ContainersDec.PALM_CHEST.get(), PalmChestScreen::new);
+		ScreenManager.registerFactory(ContainersDec.FABRICATOR.get(), FabricatorScreen::new);
 		
 	}
 	

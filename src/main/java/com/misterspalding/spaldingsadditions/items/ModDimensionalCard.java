@@ -6,8 +6,11 @@ import net.minecraft.item.Item;
 
 public class ModDimensionalCard extends Item {
 
-	public ModDimensionalCard() {
-		super(new Item.Properties().group(ModItemGroup.instance));
+	public ModDimensionalCard(int i) {
+		super(new Item.Properties().group(ModItemGroup.instance)
+				.maxStackSize(1)
+				.maxDamage(i));
+	
 		
 	}
 	

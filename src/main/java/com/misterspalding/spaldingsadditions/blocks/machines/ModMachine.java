@@ -8,7 +8,7 @@ public class ModMachine extends Block {
 	public ModMachine() {
 		super(Block.Properties
 				.create(Material.IRON)
-				);
+				.hardnessAndResistance(.8f));
 		
 	
 		

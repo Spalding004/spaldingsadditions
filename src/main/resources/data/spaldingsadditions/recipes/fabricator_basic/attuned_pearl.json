@@ -1,11 +1,8 @@
 {
-  "type": "spaldingsadditions:fabricator",
+  "type": "spaldingsadditions:fabricator_basic",
   "input": {
     "item": "minecraft:apple"
-  },
-   "card": {
-    "item": "spaldingsadditions:basic_card"
-  },
+  }
   "result": {
     "output": "minecraft:emerald",
     "amount": 1

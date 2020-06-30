@@ -1,6 +1,7 @@
 package com.misterspalding.spaldingsadditions.inits;
 
 import com.misterspalding.spaldingsadditions.SpaldingsAdditions;
+import com.misterspalding.spaldingsadditions.containers.FabricatorContainer;
 import com.misterspalding.spaldingsadditions.containers.PalmChestContainer;
 
 import net.minecraft.inventory.container.ContainerType;
@@ -18,7 +19,7 @@ public class ContainersDec {
 	public static final RegistryObject<ContainerType<PalmChestContainer>> PALM_CHEST = CONTAINERS
 			.register("palm_chest", () -> IForgeContainerType.create(PalmChestContainer::new));
 	
-	public static final RegistryObject<ContainerType<PalmChestContainer>> FABRICATOR = CONTAINERS
-			.register("fabricator_container", () -> IForgeContainerType.create(PalmChestContainer::new));
+	public static final RegistryObject<ContainerType<FabricatorContainer>> FABRICATOR = CONTAINERS
+			.register("fabricator_container", () -> IForgeContainerType.create(FabricatorContainer::new));
 	
 }
