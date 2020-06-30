@@ -1,6 +1,6 @@
 package com.misterspalding.spaldingsadditions.slots;
 
-import com.misterspalding.spaldingsadditions.items.ModDimensionalCard;
+import com.misterspalding.spaldingsadditions.objects.items.ModDimensionalCard;
 
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.container.Slot;

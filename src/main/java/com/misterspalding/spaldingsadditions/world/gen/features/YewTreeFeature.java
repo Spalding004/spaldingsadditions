@@ -3,7 +3,8 @@ package com.misterspalding.spaldingsadditions.world.gen.features;
 import java.util.Random;
 import java.util.Set;
 import java.util.function.Function;
-import com.misterspalding.spaldingsadditions.blocks.ModLogs;
+
+import com.misterspalding.spaldingsadditions.objects.blocks.ModLogs;
 import com.mojang.datafixers.Dynamic;
 
 import net.minecraft.block.BlockState;

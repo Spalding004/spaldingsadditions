@@ -2,7 +2,6 @@ package com.misterspalding.spaldingsadditions.client.gui;
 
 import com.misterspalding.spaldingsadditions.SpaldingsAdditions;
 import com.misterspalding.spaldingsadditions.containers.FabricatorContainer;
-import com.misterspalding.spaldingsadditions.containers.PalmChestContainer;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;

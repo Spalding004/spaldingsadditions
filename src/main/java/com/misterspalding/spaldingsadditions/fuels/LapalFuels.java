@@ -1,10 +1,5 @@
 package com.misterspalding.spaldingsadditions.fuels;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.misterspalding.spaldingsadditions.SpaldingsAdditions;
-import com.misterspalding.spaldingsadditions.inits.BlockDec;
 import com.misterspalding.spaldingsadditions.inits.ItemDec;
 
 import net.minecraft.block.Blocks;

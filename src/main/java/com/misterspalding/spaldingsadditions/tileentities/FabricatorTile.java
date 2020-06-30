@@ -43,6 +43,7 @@ public class FabricatorTile extends TileEntity
 	private double targetProcessTime;
 	private double currentProcessTime;
 	private double fuelRemaining;
+	@SuppressWarnings("unused")
 	private double maxFuel;
 
 	FabricatorRecipesOverworld recipeInstanceNormal = FabricatorRecipesOverworld.instance();
@@ -412,6 +413,7 @@ public class FabricatorTile extends TileEntity
 		this.targetProcessTime = f;
 	}
 
+	@SuppressWarnings("unused")
 	private boolean isStackAir(ItemStack input) {
 
 		return input.getItem() == Items.AIR;

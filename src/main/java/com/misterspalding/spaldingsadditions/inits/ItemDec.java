@@ -1,15 +1,15 @@
 package com.misterspalding.spaldingsadditions.inits;
 
 import com.misterspalding.spaldingsadditions.SpaldingsAdditions;
-import com.misterspalding.spaldingsadditions.items.ModDimensionalCard;
-import com.misterspalding.spaldingsadditions.items.ModFrakHammer;
-import com.misterspalding.spaldingsadditions.items.ModGenericItem;
-import com.misterspalding.spaldingsadditions.items.tier.ModTiers.ModItemTiers;
-import com.misterspalding.spaldingsadditions.items.tools.ModAxe;
-import com.misterspalding.spaldingsadditions.items.tools.ModHoe;
-import com.misterspalding.spaldingsadditions.items.tools.ModPickaxe;
-import com.misterspalding.spaldingsadditions.items.tools.ModShovel;
-import com.misterspalding.spaldingsadditions.items.tools.ModSword;
+import com.misterspalding.spaldingsadditions.objects.items.ModDimensionalCard;
+import com.misterspalding.spaldingsadditions.objects.items.ModFrakHammer;
+import com.misterspalding.spaldingsadditions.objects.items.ModGenericItem;
+import com.misterspalding.spaldingsadditions.objects.items.toolTiers.ModTiers.ModItemTiers;
+import com.misterspalding.spaldingsadditions.objects.items.tools.ModAxe;
+import com.misterspalding.spaldingsadditions.objects.items.tools.ModHoe;
+import com.misterspalding.spaldingsadditions.objects.items.tools.ModPickaxe;
+import com.misterspalding.spaldingsadditions.objects.items.tools.ModShovel;
+import com.misterspalding.spaldingsadditions.objects.items.tools.ModSword;
 
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.RegistryObject;

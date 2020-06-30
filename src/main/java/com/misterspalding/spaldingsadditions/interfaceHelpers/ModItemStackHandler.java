@@ -15,7 +15,7 @@ public class ModItemStackHandler extends ItemStackHandler {
 	      super(size);
 	   }
 
-	   public ModItemStackHandler(NonNullList stacks) {
+	   public ModItemStackHandler(NonNullList<ItemStack> stacks) {
 	      super(stacks);
 	   }
 
@@ -31,7 +31,7 @@ public class ModItemStackHandler extends ItemStackHandler {
 
 	   }
 
-	   public NonNullList getStacks() {
+	   public NonNullList<ItemStack> getStacks() {
 	      return this.stacks;
 	   }
 	}

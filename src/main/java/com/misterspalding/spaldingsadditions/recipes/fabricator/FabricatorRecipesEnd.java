@@ -34,7 +34,8 @@ public class FabricatorRecipesEnd {
 	    	
 	    }
 	    
-	    public void addRecipeForBlock(Block input, ItemStack stack, float experience)
+	    @SuppressWarnings("deprecation")
+		public void addRecipeForBlock(Block input, ItemStack stack, float experience)
 	    {
 	        this.addFabricating(Item.getItemFromBlock(input), stack, experience);
 	    }

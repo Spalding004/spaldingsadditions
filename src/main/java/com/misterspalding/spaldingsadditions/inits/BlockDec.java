@@ -1,23 +1,22 @@
 package com.misterspalding.spaldingsadditions.inits;
 
 import com.misterspalding.spaldingsadditions.SpaldingsAdditions;
-import com.misterspalding.spaldingsadditions.blocks.ModChest;
-import com.misterspalding.spaldingsadditions.blocks.ModEndcroachment;
-import com.misterspalding.spaldingsadditions.blocks.ModEndfectedOre;
-import com.misterspalding.spaldingsadditions.blocks.ModEndfection;
-import com.misterspalding.spaldingsadditions.blocks.ModFenceBlock;
-import com.misterspalding.spaldingsadditions.blocks.ModLeaves;
-import com.misterspalding.spaldingsadditions.blocks.ModLogs;
-import com.misterspalding.spaldingsadditions.blocks.ModOre;
-import com.misterspalding.spaldingsadditions.blocks.ModPlanks;
-import com.misterspalding.spaldingsadditions.blocks.ModStairsBlockStone;
-import com.misterspalding.spaldingsadditions.blocks.ModStairsBlockWood;
-import com.misterspalding.spaldingsadditions.blocks.ModStone;
-import com.misterspalding.spaldingsadditions.blocks.ModWallBlock;
-import com.misterspalding.spaldingsadditions.blocks.machines.ModFabricator;
-import com.misterspalding.spaldingsadditions.blocks.saplings.ModSaplingBeech;
-import com.misterspalding.spaldingsadditions.blocks.saplings.ModSaplingPalm;
-import com.misterspalding.spaldingsadditions.blocks.saplings.ModSaplingYew;
+import com.misterspalding.spaldingsadditions.objects.blocks.ModEndcroachment;
+import com.misterspalding.spaldingsadditions.objects.blocks.ModEndfectedOre;
+import com.misterspalding.spaldingsadditions.objects.blocks.ModEndfection;
+import com.misterspalding.spaldingsadditions.objects.blocks.ModFenceBlock;
+import com.misterspalding.spaldingsadditions.objects.blocks.ModLeaves;
+import com.misterspalding.spaldingsadditions.objects.blocks.ModLogs;
+import com.misterspalding.spaldingsadditions.objects.blocks.ModOre;
+import com.misterspalding.spaldingsadditions.objects.blocks.ModPlanks;
+import com.misterspalding.spaldingsadditions.objects.blocks.ModStairsBlockStone;
+import com.misterspalding.spaldingsadditions.objects.blocks.ModStairsBlockWood;
+import com.misterspalding.spaldingsadditions.objects.blocks.ModStone;
+import com.misterspalding.spaldingsadditions.objects.blocks.ModWallBlock;
+import com.misterspalding.spaldingsadditions.objects.blocks.machines.ModFabricator;
+import com.misterspalding.spaldingsadditions.objects.blocks.saplings.ModSaplingBeech;
+import com.misterspalding.spaldingsadditions.objects.blocks.saplings.ModSaplingPalm;
+import com.misterspalding.spaldingsadditions.objects.blocks.saplings.ModSaplingYew;
 import com.misterspalding.spaldingsadditions.world.gen.features.BeechTree;
 import com.misterspalding.spaldingsadditions.world.gen.features.PalmTree;
 import com.misterspalding.spaldingsadditions.world.gen.features.YewTree;
@@ -32,7 +31,7 @@ public class BlockDec {
 	
 	public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, SpaldingsAdditions.MOD_ID);
 	 
-	public static final RegistryObject<Block> PALM_CHEST = BLOCKS.register("palm_chest", () -> new ModChest());
+
 	
 	
 	//stones

@@ -11,7 +11,6 @@ import com.misterspalding.spaldingsadditions.inits.ItemDec;
 
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
@@ -31,7 +30,8 @@ public class SpecialDropsModifier extends LootModifier {
     @Nonnull
     @Override
     public List<ItemStack> doApply(List<ItemStack> generatedLoot, LootContext context) {
-    	Random random = new Random();
+    	@SuppressWarnings("unused")
+		Random random = new Random();
     	String broken = generatedLoot.toString();
     	ItemStack ctxTool = context.get(LootParameters.TOOL);
     	int enchant_level =  EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, ctxTool);
