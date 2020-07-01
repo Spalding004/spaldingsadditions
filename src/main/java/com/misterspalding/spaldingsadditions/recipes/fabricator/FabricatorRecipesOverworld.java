@@ -6,15 +6,20 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import com.google.common.collect.Maps;
+import com.misterspalding.spaldingsadditions.inits.ItemDec;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.Tag;
+import net.minecraft.util.ResourceLocation;
 
 public class FabricatorRecipesOverworld {
 
-	
+	private final int STANDARD_TIME = 150;
 	
 	 private static final FabricatorRecipesOverworld SMELTING_BASE = new FabricatorRecipesOverworld();
 	    private final Map<ItemStack, ItemStack> smeltingList = Maps.<ItemStack, ItemStack>newHashMap();
@@ -30,12 +35,65 @@ public class FabricatorRecipesOverworld {
 	    
 	    private FabricatorRecipesOverworld() {
 	    	
-	    	this.addFabricating(Items.APPLE, new ItemStack(Items.EMERALD), 100);
-	    	this.addFabricating(Items.EMERALD, new ItemStack(Items.DIAMOND), 120);
+	    	this.addFabricating(ItemDec.CHARGED_CARBON.get(), new ItemStack(Items.DIAMOND), STANDARD_TIME);
+	//    	this.addFabricating(ItemDec.INERT_CRYSTAL.get(), ItemDec.REPLICATING_CRYSTAL.get(), STANDARD_TIME);
+	    	this.addFabricating(Items.DIAMOND, new ItemStack(ItemDec.ENERGETIC_CRYSTAL.get()), STANDARD_TIME);
+	    	this.addFabricating(Items.DIAMOND, new ItemStack(ItemDec.ENERGETIC_CRYSTAL.get()), STANDARD_TIME);
+	    	this.addFabricating(ItemDec.INDIRIUM_INGOT.get(), new ItemStack(Items.IRON_INGOT), STANDARD_TIME);
+	    	this.addFabricating(Items.ROTTEN_FLESH, new ItemStack(Items.LEATHER), STANDARD_TIME);
 	    	
+	    	this.addFabricatingOreItem("ingots/silver", new ItemStack(ItemDec.VENDAR_INGOT.get()), (int) (STANDARD_TIME*1.2));
 	    }
 	    
-	    @SuppressWarnings("deprecation")
+	    @SuppressWarnings("unused")
+	    private void addFabricatingOre(Tag<Item> tag, ItemStack itemStack, int time) {
+			if (tag==null) {
+				return;
+			} else {
+				for (Item item : tag.getAllElements()) {
+
+					this.smeltingList.put(new ItemStack(item, 1), itemStack);
+					this.timeList.put(new ItemStack(item, 1), Float.valueOf(time));
+					this.ingredientList.add(new ItemStack(item, 1));
+
+				}
+			}
+		}
+	    
+	    @SuppressWarnings("unused")
+		private void addFabricatingOreItem(String name, ItemStack itemStack, int time) {
+			Tag<Item> tag = ItemTags.getCollection().get(new ResourceLocation("forge", name));
+			if (tag == null) {
+				return;
+			} else {
+				for (Item item : tag.getAllElements()) {
+					this.smeltingList.put(new ItemStack(item, 1), itemStack);
+					this.timeList.put(new ItemStack(item, 1), Float.valueOf(time));
+					this.ingredientList.add(new ItemStack(item, 1));
+
+				}
+			}
+		}
+	    @SuppressWarnings("unused")
+		private void addFabricatingOreBlock(String name, ItemStack itemStack, int time) {
+			Tag<Block> tag = BlockTags.getCollection().get(new ResourceLocation("forge", name));
+			if (tag==null) {
+				return;
+			} else {
+				for (Block item : tag.getAllElements()) {
+
+					this.smeltingList.put(new ItemStack(item, 1), itemStack);
+					this.timeList.put(new ItemStack(item, 1), Float.valueOf(time));
+					this.ingredientList.add(new ItemStack(item, 1));
+
+				}
+			}
+
+		}
+	    
+	    
+
+		@SuppressWarnings("deprecation")
 		public void addRecipeForBlock(Block input, ItemStack stack, float experience)
 	    {
 	        this.addFabricating(Item.getItemFromBlock(input), stack, experience);

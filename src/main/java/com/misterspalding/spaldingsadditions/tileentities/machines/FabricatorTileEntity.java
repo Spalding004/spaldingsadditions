@@ -17,9 +17,11 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.IIntArray;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 
 public class FabricatorTileEntity extends TileEntityMachineCommon {
@@ -122,7 +124,6 @@ public class FabricatorTileEntity extends TileEntityMachineCommon {
 
 	@Override
 	public void tick() {
-
 		boolean shouldLit = this.isActive();
 		boolean flag1 = false;
 		if (this.currentProcessTime <= 0)

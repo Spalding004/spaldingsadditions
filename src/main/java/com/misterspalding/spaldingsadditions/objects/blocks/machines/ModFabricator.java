@@ -29,6 +29,7 @@ public class ModFabricator extends MachineCommon {
 				TileEntity te = worldIn.getTileEntity(pos);
 				if (te instanceof FabricatorTileEntity) {
 					InventoryHelper.dropItems(worldIn, pos, ((FabricatorTileEntity) te).getItems());
+					worldIn.removeTileEntity(pos);
 				}
 			}
 		}

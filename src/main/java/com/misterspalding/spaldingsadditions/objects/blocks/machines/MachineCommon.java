@@ -77,7 +77,7 @@ public abstract class MachineCommon extends Block {
 	        TileEntity tileEntity = worldIn.getTileEntity(pos);
 	        if (tileEntity instanceof INamedContainerProvider && player instanceof ServerPlayerEntity) {
 	            NetworkHooks.openGui((ServerPlayerEntity) player, (INamedContainerProvider) tileEntity);
-	           
+	            
 	        }
 	        return ActionResultType.SUCCESS;
 	    }

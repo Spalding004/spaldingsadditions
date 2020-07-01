@@ -11,10 +11,15 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.Tag;
+import net.minecraft.util.ResourceLocation;
 
 public class FabricatorRecipesEnd {
 
-	
+	@SuppressWarnings("unused")
+	private int STANDARD_TIME = 350;
 	
 	 private static final FabricatorRecipesEnd SMELTING_BASE = new FabricatorRecipesEnd();
 	    private final Map<ItemStack, ItemStack> smeltingList = Maps.<ItemStack, ItemStack>newHashMap();
@@ -33,6 +38,52 @@ public class FabricatorRecipesEnd {
 	    	this.addFabricating(Items.APPLE, new ItemStack(Items.CHORUS_FRUIT), 100);
 	    	
 	    }
+	    
+	    @SuppressWarnings("unused")
+	    private void addFabricatingOre(Tag<Item> tag, ItemStack itemStack, int time) {
+			if (tag==null) {
+				return;
+			} else {
+				for (Item item : tag.getAllElements()) {
+
+					this.smeltingList.put(new ItemStack(item, 1), itemStack);
+					this.timeList.put(new ItemStack(item, 1), Float.valueOf(time));
+					this.ingredientList.add(new ItemStack(item, 1));
+
+				}
+			}
+		}
+	    
+	    @SuppressWarnings("unused")
+		private void addFabricatingOreItem(String name, ItemStack itemStack, int time) {
+			Tag<Item> tag = ItemTags.getCollection().get(new ResourceLocation("forge", name));
+			if (tag == null) {
+				return;
+			} else {
+				for (Item item : tag.getAllElements()) {
+					this.smeltingList.put(new ItemStack(item, 1), itemStack);
+					this.timeList.put(new ItemStack(item, 1), Float.valueOf(time));
+					this.ingredientList.add(new ItemStack(item, 1));
+
+				}
+			}
+		}
+	    @SuppressWarnings("unused")
+		private void addFabricatingOreBlock(String name, ItemStack itemStack, int time) {
+			Tag<Block> tag = BlockTags.getCollection().get(new ResourceLocation("forge", name));
+			if (tag==null) {
+				return;
+			} else {
+				for (Block item : tag.getAllElements()) {
+
+					this.smeltingList.put(new ItemStack(item, 1), itemStack);
+					this.timeList.put(new ItemStack(item, 1), Float.valueOf(time));
+					this.ingredientList.add(new ItemStack(item, 1));
+
+				}
+			}
+
+		}
 	    
 	    @SuppressWarnings("deprecation")
 		public void addRecipeForBlock(Block input, ItemStack stack, float experience)
