@@ -1,5 +1,5 @@
 {
-#Items
+
 
 "item.spaldingsadditions.vendar_chunk" = "Vendar Ore Chunk",
 "item.spaldingsadditions.iron_chunk" = "Iron Ore Chunk",
@@ -20,7 +20,7 @@
 
 "item.spaldingsadditions.charged_carbon" = "Charged Carbon",
 
-#Tools
+
 
 "item.spaldingsadditions.tool_vendar_pickaxe" = "Vendar Pickaxe",
 "item.spaldingsadditions.tool_vendar_axe" = "Vendar Axe",
@@ -33,7 +33,7 @@
 
 "item.spaldingsadditions.tool_enhanced_handle" = "Enhanced Tool Handle",
 
-#Blocks
+
 
 "block.spaldingsadditions.marcasite" = "Marcasite",
 "block.spaldingsadditions.marcasite_smooth" = "Polished Marcasite",
@@ -105,11 +105,12 @@
 "block.spaldingsadditions.petrified_wall" = "Petrified Wood Wall",
 "block.spaldingsadditions.petrified_stairs" = "Petrified Wood Stairs",
 
-#MISC
+"misc.spaldingsadditions.fuelleft" = "Fuel Remaining: %s%s",
 
 "itemGroup.mod_creative_tab" = "Spalding's Additions",
 
 "death.attack.void_walking" = "%1$s felt the touch of the Void."
+
 
 
 }

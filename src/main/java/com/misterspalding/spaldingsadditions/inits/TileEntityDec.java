@@ -1,7 +1,7 @@
 package com.misterspalding.spaldingsadditions.inits;
 
 import com.misterspalding.spaldingsadditions.SpaldingsAdditions;
-import com.misterspalding.spaldingsadditions.tileentities.FabricatorTileEntity;
+import com.misterspalding.spaldingsadditions.tileentities.machines.FabricatorTileEntity;
 
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.fml.RegistryObject;

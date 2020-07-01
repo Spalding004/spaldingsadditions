@@ -2,7 +2,7 @@ package com.misterspalding.spaldingsadditions.objects.blocks.machines;
 
 import javax.annotation.Nullable;
 
-import com.misterspalding.spaldingsadditions.tileentities.FabricatorTileEntity;
+import com.misterspalding.spaldingsadditions.tileentities.machines.FabricatorTileEntity;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.inventory.InventoryHelper;
@@ -11,7 +11,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
-public class ModFabricator extends ModMachine {
+public class ModFabricator extends MachineCommon {
 
 	 public ModFabricator() {
 	       

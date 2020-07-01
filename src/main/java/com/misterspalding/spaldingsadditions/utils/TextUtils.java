@@ -23,6 +23,12 @@ public class TextUtils {
         String s1 = String.format(ENERGY_FORMAT, amount);
         return translate("misc", "energy", s1);
     }
+    
+    public static ITextComponent fuelPercent(int amount) {
+    	String s1 = String.format(ENERGY_FORMAT, amount);
+    	String s2 = String.format("%s", "%");
+    	return translate("misc", "fuelleft", s1, s2);
+    }
 
     public static ITextComponent energyWithMax(int amount, int max) {
         String s1 = String.format(ENERGY_FORMAT, amount);

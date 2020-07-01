@@ -1,9 +1,9 @@
-package com.misterspalding.spaldingsadditions.tileentities;
+package com.misterspalding.spaldingsadditions.tileentities.machines;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.misterspalding.spaldingsadditions.objects.blocks.machines.ModMachine;
+import com.misterspalding.spaldingsadditions.objects.blocks.machines.MachineCommon;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -24,7 +24,7 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.wrapper.SidedInvWrapper;
 
-public abstract class TileEntityMachine extends TileEntity implements ITickableTileEntity, ISidedInventory, INamedContainerProvider{
+public abstract class TileEntityMachineCommon extends TileEntity implements ITickableTileEntity, ISidedInventory, INamedContainerProvider{
 
 	protected final NonNullList<ItemStack> stacks = NonNullList.withSize(this.getSizeInventory(), ItemStack.EMPTY);
 	
@@ -34,7 +34,7 @@ public abstract class TileEntityMachine extends TileEntity implements ITickableT
 	public double maxFuel;
 	private int cooldown = -1;
 	 
-	public TileEntityMachine(TileEntityType<?> tileEntityTypeIn) {
+	public TileEntityMachineCommon(TileEntityType<?> tileEntityTypeIn) {
 		super(tileEntityTypeIn);
 		
 	}
@@ -132,8 +132,8 @@ public abstract class TileEntityMachine extends TileEntity implements ITickableT
     public void sendUpdate(boolean lit) {
         if (lit) this.cooldown = 15;
         assert this.world != null;
-        boolean flag = this.getBlockState().get(ModMachine.LIT) != lit;
-        if (flag) this.world.setBlockState(this.pos, this.getBlockState().with(ModMachine.LIT, lit));
+        boolean flag = this.getBlockState().get(MachineCommon.LIT) != lit;
+        if (flag) this.world.setBlockState(this.pos, this.getBlockState().with(MachineCommon.LIT, lit));
     }
 
     private LazyOptional<IItemHandlerModifiable>[] itemHandlers = SidedInvWrapper.create(this, Direction.values());

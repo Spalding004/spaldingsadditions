@@ -1,4 +1,4 @@
-package com.misterspalding.spaldingsadditions.tileentities;
+package com.misterspalding.spaldingsadditions.tileentities.machines;
 
 import javax.annotation.Nullable;
 
@@ -6,6 +6,7 @@ import com.misterspalding.spaldingsadditions.containers.FabricatorContainer;
 import com.misterspalding.spaldingsadditions.fuels.LapalFuels;
 import com.misterspalding.spaldingsadditions.inits.ItemDec;
 import com.misterspalding.spaldingsadditions.inits.TileEntityDec;
+import com.misterspalding.spaldingsadditions.objects.items.ModDimensionalCard;
 import com.misterspalding.spaldingsadditions.recipes.fabricator.FabricatorRecipesEnd;
 import com.misterspalding.spaldingsadditions.recipes.fabricator.FabricatorRecipesNether;
 import com.misterspalding.spaldingsadditions.recipes.fabricator.FabricatorRecipesOverworld;
@@ -21,11 +22,11 @@ import net.minecraft.util.IIntArray;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.ITextComponent;
 
-public class FabricatorTileEntity extends TileEntityMachine {
+public class FabricatorTileEntity extends TileEntityMachineCommon {
 
 	public FabricatorTileEntity() {
 		super(TileEntityDec.FABRICATOR.get());
-		// TODO Auto-TileEn constructor stub
+		
 	}
 
 	FabricatorRecipesOverworld recipeInstanceNormal = FabricatorRecipesOverworld.instance();
@@ -87,7 +88,7 @@ public class FabricatorTileEntity extends TileEntityMachine {
 	@Override
 	int[] getInputSlots() {
 		
-		return new int[] {SLOT_INPUT};
+		return new int[] {SLOT_INPUT, SLOT_FUEL, SLOT_CARD};
 	}
 
 	@Override
@@ -219,7 +220,7 @@ public class FabricatorTileEntity extends TileEntityMachine {
 	}
 
 	private boolean isActive() {
-		return this.currentFuel > 0 || this.currentProcessTime > 0;
+		return this.currentProcessTime > 0 && !this.getStackInSlot(SLOT_INPUT).isEmpty();
 	}
 
 	private void handleFuel() {
@@ -326,6 +327,23 @@ public class FabricatorTileEntity extends TileEntityMachine {
 
     @Override
     public boolean canInsertItem(int index, ItemStack itemStackIn, @Nullable Direction direction) {
+    	
+    	if (index == SLOT_INPUT) {
+    		return true;
+    	}
+    	
+    	if (index == SLOT_CARD) {
+    		return itemStackIn.getItem() instanceof ModDimensionalCard;
+    	}
+    	
+    	if (index == SLOT_FUEL) {
+    		return LapalFuels.getFuelStr(itemStackIn) > 0D;
+    	}
+    	
+    	if (index == SLOT_OUTPUT) {
+    		return false;
+    	}
+    	
     	return this.isItemValidForSlot(index, itemStackIn);
     }
 

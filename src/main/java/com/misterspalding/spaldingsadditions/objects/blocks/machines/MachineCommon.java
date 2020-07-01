@@ -28,14 +28,14 @@ import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.network.NetworkHooks;
 
-public abstract class ModMachine extends Block {
+public abstract class MachineCommon extends Block {
 
 	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 	public static final BooleanProperty LIT = BlockStateProperties.LIT;
 
 
 
-	public ModMachine() {
+	public MachineCommon() {
 		super(Block.Properties.create(Material.IRON).hardnessAndResistance(.8f));
 		 this.setDefaultState(this.stateContainer.getBaseState().with(FACING, Direction.NORTH).with(LIT, Boolean.FALSE));
 	    
