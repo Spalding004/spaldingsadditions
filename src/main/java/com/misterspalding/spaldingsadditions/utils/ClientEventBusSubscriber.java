@@ -24,7 +24,7 @@ public class ClientEventBusSubscriber {
 		
 		registerCutouts();
 		
-		ScreenManager.registerFactory(ContainersDec.FABRICATOR.get(), FabricatorScreen::new);
+		ScreenManager.registerFactory(ContainersDec.FABRICATOR, FabricatorScreen::new);
 		
 	}
 	

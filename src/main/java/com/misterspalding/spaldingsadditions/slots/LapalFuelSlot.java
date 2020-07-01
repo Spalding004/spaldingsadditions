@@ -6,12 +6,13 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
 
-public class SlotLapisFuel extends Slot {
-	   public SlotLapisFuel(IInventory handler, int index, int x, int y) {
-	      super(handler, index, x, y);
-	   }
+public class LapalFuelSlot extends Slot {
 
-	   public boolean isItemValid(ItemStack stack) {
+	public LapalFuelSlot(IInventory itemHandler, int index, int xPosition, int yPosition) {
+		super(itemHandler, index, xPosition, yPosition);
+		
+	}
+	public boolean isItemValid(ItemStack stack) {
 	      return LapalFuels.getFuelStr(stack) > 0.0D;
 	   }
-	}
+}

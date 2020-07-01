@@ -71,7 +71,7 @@ public class SpaldingsAdditions {
 		BlockDec.BLOCKS.register(modEventBus);
 		
 		 TileEntityDec.TILES.register(modEventBus);
-		 ContainersDec.CONTAINERS.register(modEventBus);
+		
 		
 		BiomeDec.BIOMES.register(modEventBus);
 		MinecraftForge.EVENT_BUS.register(PlacementsDec.ENDFECTION);

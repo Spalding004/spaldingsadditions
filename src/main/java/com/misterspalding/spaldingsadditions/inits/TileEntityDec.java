@@ -1,7 +1,8 @@
 package com.misterspalding.spaldingsadditions.inits;
 
 import com.misterspalding.spaldingsadditions.SpaldingsAdditions;
-import com.misterspalding.spaldingsadditions.tileentities.FabricatorTile;
+import com.misterspalding.spaldingsadditions.tileentities.FabricatorTileEntity;
+
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -12,8 +13,8 @@ public class TileEntityDec {
 	
 	public static final DeferredRegister<TileEntityType<?>> TILES = new DeferredRegister<>(ForgeRegistries.TILE_ENTITIES, SpaldingsAdditions.MOD_ID);
 	 
-	public static final RegistryObject<TileEntityType<FabricatorTile>> FABRICATOR = TILES
-			.register("fabricator", () -> TileEntityType.Builder.create(FabricatorTile::new, BlockDec.FABRICATOR.get()).build(null));
+	public static final RegistryObject<TileEntityType<FabricatorTileEntity>> FABRICATOR = TILES
+			.register("fabricator", () -> TileEntityType.Builder.create(FabricatorTileEntity::new, BlockDec.FABRICATOR.get()).build(null));
 	
 	
 }
