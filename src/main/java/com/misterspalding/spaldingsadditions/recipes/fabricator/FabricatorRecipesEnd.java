@@ -7,6 +7,7 @@ import java.util.Map.Entry;
 
 import com.google.common.collect.Maps;
 import com.misterspalding.spaldingsadditions.inits.BlockDec;
+import com.misterspalding.spaldingsadditions.inits.ItemDec;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -20,7 +21,7 @@ import net.minecraft.util.ResourceLocation;
 public class FabricatorRecipesEnd {
 
 	@SuppressWarnings("unused")
-	private int STANDARD_TIME = 350;
+	private int STANDARD_TIME = 250;
 	
 	 private static final FabricatorRecipesEnd SMELTING_BASE = new FabricatorRecipesEnd();
 	    private final Map<ItemStack, ItemStack> smeltingList = Maps.<ItemStack, ItemStack>newHashMap();
@@ -40,6 +41,9 @@ public class FabricatorRecipesEnd {
 	    	this.addFabricating(Items.NETHERRACK, new ItemStack(BlockDec.ENDFECTED_NETHERRACK_A.get()), STANDARD_TIME);
 	    	this.addFabricating(Items.APPLE, new ItemStack(Items.CHORUS_FRUIT), STANDARD_TIME);
 	    	this.addFabricatingOreItem("chests/wooden", new ItemStack(Items.SHULKER_BOX), STANDARD_TIME);
+	    	this.addFabricating(ItemDec.INDIRIUM_INGOT.get(), new ItemStack(ItemDec.VIRONIUM_INGOT.get()), STANDARD_TIME);
+	    	this.addFabricating(ItemDec.GELDAR_INGOT.get(), new ItemStack(ItemDec.VIRONIUM_INGOT.get()), STANDARD_TIME);
+	    	//this.addFabricating(ItemDec.VIRONIUM_INGOT.get(), new ItemStack(ItemDec.GELDAR_INGOT.get()), STANDARD_TIME);
 	    }
 	    
 	    @SuppressWarnings("unused")

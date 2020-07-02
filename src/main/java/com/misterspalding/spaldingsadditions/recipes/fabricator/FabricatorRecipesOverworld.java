@@ -9,6 +9,7 @@ import com.google.common.collect.Maps;
 import com.misterspalding.spaldingsadditions.inits.ItemDec;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -16,6 +17,8 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.Tag;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.ForgeRegistry;
 
 public class FabricatorRecipesOverworld {
 
@@ -40,9 +43,12 @@ public class FabricatorRecipesOverworld {
 	    	this.addFabricating(Items.DIAMOND, new ItemStack(ItemDec.ENERGETIC_CRYSTAL.get()), STANDARD_TIME);
 	    	this.addFabricating(Items.DIAMOND, new ItemStack(ItemDec.ENERGETIC_CRYSTAL.get()), STANDARD_TIME);
 	    	this.addFabricating(ItemDec.INDIRIUM_INGOT.get(), new ItemStack(Items.IRON_INGOT), STANDARD_TIME);
+	    	this.addFabricating(ItemDec.GELDAR_INGOT.get(), new ItemStack(ItemDec.INDIRIUM_INGOT.get()), STANDARD_TIME);
+	    	this.addFabricating(ItemDec.VIRONIUM_INGOT.get(), new ItemStack(ItemDec.INDIRIUM_INGOT.get()), STANDARD_TIME);
 	    	this.addFabricating(Items.ROTTEN_FLESH, new ItemStack(Items.LEATHER), STANDARD_TIME);
-	    	
+	    	this.addFabricating(Items.WATER_BUCKET, new ItemStack(Blocks.ICE), STANDARD_TIME);
 	    	this.addFabricatingOreItem("ingots/silver", new ItemStack(ItemDec.VENDAR_INGOT.get()), (int) (STANDARD_TIME*1.2));
+	    	
 	    }
 	    
 	    @SuppressWarnings("unused")

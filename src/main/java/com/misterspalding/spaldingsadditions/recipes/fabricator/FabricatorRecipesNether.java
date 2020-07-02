@@ -20,7 +20,7 @@ import net.minecraft.util.ResourceLocation;
 public class FabricatorRecipesNether {
 
 	@SuppressWarnings("unused")
-	private int STANDARD_TIME = 250;
+	private int STANDARD_TIME = 200;
 
 	private static final FabricatorRecipesNether SMELTING_BASE = new FabricatorRecipesNether();
 	private final Map<ItemStack, ItemStack> smeltingList = Maps.<ItemStack, ItemStack>newHashMap();
@@ -35,10 +35,13 @@ public class FabricatorRecipesNether {
 
 		this.addFabricatingOreItem("glass", new ItemStack(Items.OBSIDIAN), STANDARD_TIME);
 		this.addFabricatingOreItem("sand", new ItemStack(Items.SOUL_SAND), STANDARD_TIME);
-
+		this.addFabricating(Items.WATER_BUCKET, new ItemStack(Items.LAVA_BUCKET), STANDARD_TIME);
 		this.addFabricatingOreItem("bones", new ItemStack(Items.BLAZE_ROD), (int) (STANDARD_TIME * 1.5));
 		this.addFabricatingOreItem("ingots/silver", new ItemStack(Items.GOLD_INGOT), STANDARD_TIME);
 		this.addFabricating(Items.FLINT, new ItemStack(Items.QUARTZ), STANDARD_TIME);
+		this.addFabricating(ItemDec.INDIRIUM_INGOT.get(), new ItemStack(ItemDec.GELDAR_INGOT.get()), STANDARD_TIME);
+    	//this.addFabricating(ItemDec.GELDAR_INGOT.get(), new ItemStack(ItemDec.INDIRIUM_INGOT.get()), STANDARD_TIME);
+    	this.addFabricating(ItemDec.VIRONIUM_INGOT.get(), new ItemStack(ItemDec.GELDAR_INGOT.get()), STANDARD_TIME);
 	}
 
 	@SuppressWarnings("unused")

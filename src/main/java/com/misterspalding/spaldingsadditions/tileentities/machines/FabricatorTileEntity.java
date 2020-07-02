@@ -17,11 +17,9 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.IIntArray;
 import net.minecraft.util.NonNullList;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 
 public class FabricatorTileEntity extends TileEntityMachineCommon {
@@ -160,6 +158,8 @@ public class FabricatorTileEntity extends TileEntityMachineCommon {
 			ItemStack output_content = this.getStackInSlot(SLOT_OUTPUT);
 			ItemStack input_content = this.getStackInSlot(SLOT_INPUT);
 			ItemStack card_item = this.getStackInSlot(SLOT_CARD);
+			ItemStack container_item = input_content;
+			Boolean hasContainer = false;
 
 			if (output_content.getCount() < output_content.getMaxStackSize()) {
 				this.handleFuel();
@@ -170,7 +170,12 @@ public class FabricatorTileEntity extends TileEntityMachineCommon {
 
 					if (this.currentProcessTime >= this.targetProcessTime - 1) {
 						this.currentProcessTime = 0;
+						if (input_content.getItem().hasContainerItem(input_content)) {
+							container_item = input_content.getContainerItem();
+							hasContainer = true;
+						}
 						input_content.shrink(1);
+						if (hasContainer) input_content = container_item;
 
 						if (output_content == ItemStack.EMPTY) {
 
