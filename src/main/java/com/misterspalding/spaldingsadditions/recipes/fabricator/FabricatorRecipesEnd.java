@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import com.google.common.collect.Maps;
+import com.misterspalding.spaldingsadditions.inits.BlockDec;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -35,8 +36,10 @@ public class FabricatorRecipesEnd {
 	    
 	    private FabricatorRecipesEnd() {
 	    	
-	    	this.addFabricating(Items.APPLE, new ItemStack(Items.CHORUS_FRUIT), 100);
-	    	
+	    	this.addFabricating(Items.COBBLESTONE, new ItemStack(Items.END_STONE), STANDARD_TIME);
+	    	this.addFabricating(Items.NETHERRACK, new ItemStack(BlockDec.ENDFECTED_NETHERRACK_A.get()), STANDARD_TIME);
+	    	this.addFabricating(Items.APPLE, new ItemStack(Items.CHORUS_FRUIT), STANDARD_TIME);
+	    	this.addFabricatingOreItem("chests/wooden", new ItemStack(Items.SHULKER_BOX), STANDARD_TIME);
 	    }
 	    
 	    @SuppressWarnings("unused")

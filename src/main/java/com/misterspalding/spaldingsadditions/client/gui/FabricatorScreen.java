@@ -1,13 +1,16 @@
 package com.misterspalding.spaldingsadditions.client.gui;
 
+import java.awt.Color;
 import java.awt.Rectangle;
 
 import com.misterspalding.spaldingsadditions.client.gui.widget.FuelBar;
 import com.misterspalding.spaldingsadditions.containers.FabricatorContainer;
+import com.misterspalding.spaldingsadditions.objects.items.ModDimensionalCard;
 import com.misterspalding.spaldingsadditions.utils.TextUtils;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraftforge.api.distmarker.Dist;
@@ -54,11 +57,12 @@ public class FabricatorScreen extends MachineScreenCommon<FabricatorContainer> {
     
     @Override
     protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-        String s = this.title.getFormattedText();
+    	
+    	String s = this.title.getFormattedText();
         this.font.drawString(s, (float) (this.xSize / 2 - this.font.getStringWidth(s) / 2), 6.0F, 4210752);
         this.font.drawString(this.playerInventory.getDisplayName().getFormattedText(), 8.0F,
                 (float) (this.ySize - 96 + 2), 4210752);
-        
+       
     }
 
     @Override

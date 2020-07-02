@@ -49,6 +49,8 @@ public class FabricatorTileEntity extends TileEntityMachineCommon {
         @Override
         public void set(int index, int value) {
             switch (index) {
+            
+            
                 case 4:
                     FabricatorTileEntity.this.currentFuel = value;
                     break;
@@ -67,7 +69,9 @@ public class FabricatorTileEntity extends TileEntityMachineCommon {
         @Override
         public int get(int index) {
             switch (index) {
-                
+            	case 2:
+            	return FabricatorTileEntity.this.getStackInSlot(SLOT_INPUT).getCount();
+            	
                 case 3:
                     // currentpower
                     return (int) (FabricatorTileEntity.this.currentFuel);
@@ -367,5 +371,7 @@ public class FabricatorTileEntity extends TileEntityMachineCommon {
     public NonNullList<ItemStack> getItems() {
 		return this.stacks;
 	}
+    
+   
 
 }

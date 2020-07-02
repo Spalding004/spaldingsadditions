@@ -27,10 +27,16 @@ public class ItemDec {
 	public static final RegistryObject<Item> VENDAR_CHUNK = ITEMS.register("vendar_chunk", () -> new ModGenericItem());
 	public static final RegistryObject<Item> VENDAR_INGOT = ITEMS.register("vendar_ingot", () -> new ModGenericItem());
 	public static final RegistryObject<Item> VENDAR_NUGGET = ITEMS.register("vendar_nugget", () -> new ModGenericItem());
+	public static final RegistryObject<Item> GELDAR_NUGGET = ITEMS.register("geldar_nugget", () -> new ModGenericItem());
+	public static final RegistryObject<Item> VIRONIUM_NUGGET = ITEMS.register("vironium_nugget", () -> new ModGenericItem());
+	public static final RegistryObject<Item> GELDAR_INGOT = ITEMS.register("geldar_ingot", () -> new ModGenericItem());
+	public static final RegistryObject<Item> VIRONIUM_INGOT = ITEMS.register("vironium_ingot", () -> new ModGenericItem());
 	
 	public static final RegistryObject<Item> IRON_CHUNK = ITEMS.register("iron_chunk", () -> new ModGenericItem());
 	public static final RegistryObject<Item> GOLD_CHUNK = ITEMS.register("gold_chunk", () -> new ModGenericItem());
-	
+	public static final RegistryObject<Item> GELDAR_CHUNK = ITEMS.register("geldar_ore_chunk", () -> new ModGenericItem());
+	public static final RegistryObject<Item> VIRONIUM_CHUNK = ITEMS.register("vironium_ore_chunk", () -> new ModGenericItem());
+
 	public static final RegistryObject<Item> END_ESSENCE = ITEMS.register("end_essence", () -> new ModGenericItem());
 	
 	public static final RegistryObject<Item> CHARGED_CARBON = ITEMS.register("charged_carbon", () -> new ModGenericItem());

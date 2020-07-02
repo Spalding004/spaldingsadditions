@@ -38,6 +38,7 @@ public class FabricatorRecipesNether {
 
 		this.addFabricatingOreItem("bones", new ItemStack(Items.BLAZE_ROD), (int) (STANDARD_TIME * 1.5));
 		this.addFabricatingOreItem("ingots/silver", new ItemStack(Items.GOLD_INGOT), STANDARD_TIME);
+		this.addFabricating(Items.FLINT, new ItemStack(Items.QUARTZ), STANDARD_TIME);
 	}
 
 	@SuppressWarnings("unused")

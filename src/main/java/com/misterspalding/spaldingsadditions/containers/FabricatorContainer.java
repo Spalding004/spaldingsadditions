@@ -97,6 +97,12 @@ public class FabricatorContainer extends CommonContainer {
 		return this.getSlot(1).getStack();
 	}
 	
+	public boolean isCardLoaded() {
+		
+		return this.fields.get(2) > 0;
+		
+	}
+	
 	public int getCurrentFuel() {
 		return this.fields.get(3);
 	}

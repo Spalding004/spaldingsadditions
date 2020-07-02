@@ -43,6 +43,8 @@ public class ModStoneGen {
 			
 			ConfiguredPlacement<CountRangeConfig> config_emerald = Placement.COUNT_RANGE.configure(new CountRangeConfig(1, 1, 0, 16));
 			ConfiguredPlacement<CountRangeConfig> config_indirium = Placement.COUNT_RANGE.configure(new CountRangeConfig(3, 1, 0, 45));
+			ConfiguredPlacement<CountRangeConfig> config_vironium = Placement.COUNT_RANGE.configure(new CountRangeConfig(10, 1, 0, 128));
+			ConfiguredPlacement<CountRangeConfig> config_geldar = Placement.COUNT_RANGE.configure(new CountRangeConfig(10, 1, 0, 256));
 			/*
 			 * 
 		
@@ -116,6 +118,8 @@ public class ModStoneGen {
 							BlockDec.INDIRIUM_ORE.get().getDefaultState(), 6)).withPlacement(config_indirium));
 			
 			
+			
+			
 			biome.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, 
 					Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK, 
 							BlockDec.UMBER.get().getDefaultState(), 33)).withPlacement(config_umber));
@@ -131,10 +135,21 @@ public class ModStoneGen {
 					Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK, 
 							BlockDec.CORMALITE.get().getDefaultState(), 33)).withPlacement(config_cormalite));
 			
+			biome.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, 
+					Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK, 
+							BlockDec.GELDAR_ORE.get().getDefaultState(), 6)).withPlacement(config_geldar));
+			
+			
 			//ore-replacing ore
 			biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, 
 					Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.create("CUSTOM_STONE", null, new BlockMatcher(Blocks.STONE)), 
 							BlockDec.VENDAR_ORE.get().getDefaultState(), 6)).withPlacement(config_vendar));
+			
+			//ore-replacing ore
+			biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, 
+					Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.create("END_STONE", null, new BlockMatcher(Blocks.END_STONE)), 
+							BlockDec.VIRONIUM_ORE.get().getDefaultState(), 6)).withPlacement(config_vironium));
+			
 			
 			//ore-replacing ore
 			biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, 

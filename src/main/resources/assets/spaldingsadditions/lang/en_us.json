@@ -18,8 +18,25 @@
 "item.spaldingsadditions.indirium_ingot" = "Indirium Ingot",
 "item.spaldingsadditions.indirium_chunk" = "Indirium Ore Chunk",
 
+"item.spaldingsadditions.vironium_nugget" = "Vironium Nugget",
+"item.spaldingsadditions.vironium_ingot" = "Vironium Ingot",
+"item.spaldingsadditions.vironium_chunk" = "Vironium Ore Chunk",
+
+"item.spaldingsadditions.geldar_nugget" = "Geldar Nugget",
+"item.spaldingsadditions.geldar_ingot" = "Geldar Ingot",
+"item.spaldingsadditions.geldar_chunk" = "Geldar Ore Chunk",
+
+"item.spaldingsadditions.indirium_nugget" = "Indirium Nugget",
+"item.spaldingsadditions.indirium_ingot" = "Indirium Ingot",
+"item.spaldingsadditions.indirium_chunk" = "Indirium Ore Chunk",
+
 "item.spaldingsadditions.charged_carbon" = "Charged Carbon",
 
+"item.spaldingsadditions.dimension_card_blank" = "Dimensional Card (Overworld)",
+"item.spaldingsadditions.dimension_card_nether" = "Dimensional Card (Nether)",
+"item.spaldingsadditions.dimension_card_end" = "Dimensional Card (End)",
+
+"item.spaldingsadditions.dimension_card_wither" = "Withered Card",
 
 
 "item.spaldingsadditions.tool_vendar_pickaxe" = "Vendar Pickaxe",
@@ -105,8 +122,13 @@
 "block.spaldingsadditions.petrified_wall" = "Petrified Wood Wall",
 "block.spaldingsadditions.petrified_stairs" = "Petrified Wood Stairs",
 
-"misc.spaldingsadditions.fuelleft" = "Fuel Remaining: %s%s",
+"block.spaldingsadditions.fabricator" = "Dimensional Fabricator",
 
+"block.spaldingsadditions.vironium_ore" = "Vironium Ore",
+"block.spaldingsadditions.geldar_ore" = "Geldar Ore",
+
+"misc.spaldingsadditions.fuelleft" = "Fuel Remaining: %s%s",
+"container.spaldingsadditions.fabricator" = "Dimensional Fabricator",
 "itemGroup.mod_creative_tab" = "Spalding's Additions",
 
 "death.attack.void_walking" = "%1$s felt the touch of the Void."

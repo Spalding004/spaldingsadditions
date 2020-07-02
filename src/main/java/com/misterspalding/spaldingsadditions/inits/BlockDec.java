@@ -73,6 +73,8 @@ public class BlockDec {
 	public static final RegistryObject<Block> UMBER_GOLD_ORE = BLOCKS.register("umber_gold_ore", () -> new ModOre(2));
 	
 	public static final RegistryObject<Block> INDIRIUM_ORE = BLOCKS.register("indirium_ore", () -> new ModOre(2));
+	public static final RegistryObject<Block> GELDAR_ORE = BLOCKS.register("geldar_ore", () -> new ModOre(2));
+	public static final RegistryObject<Block> VIRONIUM_ORE = BLOCKS.register("vironium_ore", () -> new ModOre(2));
 	
 	
 	

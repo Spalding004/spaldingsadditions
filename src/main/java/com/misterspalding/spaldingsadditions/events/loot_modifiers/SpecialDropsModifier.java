@@ -70,6 +70,8 @@ public class SpecialDropsModifier extends LootModifier {
     	ArrayList<ItemStack> listReturn = new ArrayList<ItemStack>();
     	Random random = new Random();
     	
+    	
+    	
     	String checkedOre = "vendar";
     	if (broken.contains(checkedOre+"_ore")) {
     		
@@ -97,6 +99,21 @@ public class SpecialDropsModifier extends LootModifier {
     		return listReturn;
     	}
     	
+    	checkedOre = "vironium";
+    	if (broken.contains(checkedOre+"_ore")) {
+    		
+    		listReturn.add(new ItemStack(ItemDec.VIRONIUM_CHUNK.get(), 1 + random.nextInt(1 + enchant)));
+    		
+    		return listReturn;
+    	}
+    	
+    	checkedOre = "geldar";
+    	if (broken.contains(checkedOre+"_ore")) {
+    		
+    		listReturn.add(new ItemStack(ItemDec.GELDAR_CHUNK.get(), 1 + random.nextInt(1 + enchant)));
+    		
+    		return listReturn;
+    	}
     	
     	if (broken.contains("coal") && !broken.contains("coal_ore_")) {
     		listReturn = (ArrayList<ItemStack>) generatedLoot;
