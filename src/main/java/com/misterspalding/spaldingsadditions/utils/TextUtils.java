@@ -19,6 +19,13 @@ public class TextUtils {
 
     // Energy
 
+    public static ITextComponent toolTipWithValue(int value, String type) {
+		String s1 = String.format(ENERGY_FORMAT, value);
+		
+    	return translate("tooltip", type, s1);
+    	
+    }
+    
     public static ITextComponent energy(int amount) {
         String s1 = String.format(ENERGY_FORMAT, amount);
         return translate("misc", "energy", s1);

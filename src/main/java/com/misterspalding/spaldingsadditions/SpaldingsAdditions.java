@@ -8,6 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.misterspalding.spaldingsadditions.events.loot_modifiers.SpecialDropsModifier;
+import com.misterspalding.spaldingsadditions.handlers.LapalFuelToolTipHandler;
 import com.misterspalding.spaldingsadditions.inits.BiomeDec;
 import com.misterspalding.spaldingsadditions.inits.BlockDec;
 import com.misterspalding.spaldingsadditions.inits.DamagesDec;
@@ -69,11 +70,12 @@ public class SpaldingsAdditions {
 		
 		BlockDec.BLOCKS.register(modEventBus);
 		
-		 TileEntityDec.TILES.register(modEventBus);
+		TileEntityDec.TILES.register(modEventBus);
 		
 		
 		BiomeDec.BIOMES.register(modEventBus);
 		MinecraftForge.EVENT_BUS.register(PlacementsDec.ENDFECTION);
+		MinecraftForge.EVENT_BUS.register(new LapalFuelToolTipHandler());
 		instance = this;
 
 		MinecraftForge.EVENT_BUS.register(this);

@@ -21,7 +21,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class FabricatorRecipes {
 
-	private final int STANDARD_TIME = 150;
+	
 
 	private static final FabricatorRecipes SMELTING_BASE = new FabricatorRecipes();
 
@@ -47,12 +47,17 @@ public class FabricatorRecipes {
 
 	private FabricatorRecipes() {
 
+		/*
+		 * 
+		 * Overworld Recipes
+		 * 
+		 */
+		
 		Item forCard = ItemDec.CARD_BASIC.get();
-
+		int STANDARD_TIME = 60;
 		this.addFabricating(ItemDec.CHARGED_CARBON.get(), new ItemStack(Items.DIAMOND), STANDARD_TIME, forCard);
-		// this.addFabricating(ItemDec.INERT_CRYSTAL.get(),
-		// ItemDec.REPLICATING_CRYSTAL.get(), STANDARD_TIME);
-		this.addFabricating(Items.DIAMOND, new ItemStack(ItemDec.ENERGETIC_CRYSTAL.get()), STANDARD_TIME, forCard);
+		
+		this.addFabricating(Items.DIAMOND, new ItemStack(ItemDec.ENERGETIC_CRYSTAL.get()), STANDARD_TIME*5, forCard);
 	
 		this.addFabricating(ItemDec.INDIRIUM_INGOT.get(), new ItemStack(Items.IRON_INGOT), STANDARD_TIME, forCard);
 		this.addFabricating(ItemDec.GELDAR_INGOT.get(), new ItemStack(ItemDec.INDIRIUM_INGOT.get()), STANDARD_TIME,
@@ -64,7 +69,14 @@ public class FabricatorRecipes {
 		this.addFabricatingOreItem("ingots/silver", new ItemStack(ItemDec.VENDAR_INGOT.get()),
 				(int) (STANDARD_TIME * 1.2), forCard);
 
+		/*
+		 * 
+		 * NETHER RECIPES
+		 * 
+		 */
+		
 		forCard = ItemDec.CARD_NETHER.get();
+		STANDARD_TIME = 75;
 
 		this.addFabricatingOreItem("glass", new ItemStack(Items.OBSIDIAN), STANDARD_TIME, forCard);
 		this.addFabricatingOreItem("sand", new ItemStack(Items.SOUL_SAND), STANDARD_TIME, forCard);
@@ -74,11 +86,18 @@ public class FabricatorRecipes {
 		this.addFabricating(Items.FLINT, new ItemStack(Items.QUARTZ), STANDARD_TIME, forCard);
 		this.addFabricating(ItemDec.INDIRIUM_INGOT.get(), new ItemStack(ItemDec.GELDAR_INGOT.get()), STANDARD_TIME,
 				forCard);
-		
 		this.addFabricating(ItemDec.VIRONIUM_INGOT.get(), new ItemStack(ItemDec.GELDAR_INGOT.get()), STANDARD_TIME,
 				forCard);
-
+		this.addFabricating(Items.ENDER_PEARL, new ItemStack(ItemDec.NETHER_PEARL.get()), STANDARD_TIME, forCard);
+		
+		/*
+		 * 
+		 * END RECIPES
+		 * 
+		 */
+		
 		forCard = ItemDec.CARD_END.get();
+		STANDARD_TIME = 90;
 
 		this.addFabricating(Items.COBBLESTONE, new ItemStack(Items.END_STONE), STANDARD_TIME, forCard);
 		this.addFabricating(Items.NETHERRACK, new ItemStack(BlockDec.ENDFECTED_NETHERRACK_A.get()), STANDARD_TIME,

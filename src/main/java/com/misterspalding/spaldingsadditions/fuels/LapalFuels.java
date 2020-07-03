@@ -25,13 +25,13 @@ public class LapalFuels {
 		}
 
 		if (item == (ItemDec.ENERGETIC_CRYSTAL.get())) {
-			str = 10.0D;
+			str = 15.0D;
 		}
 
 		if (item == (ItemDec.CHARGED_CARBON.get())) {
-			str = 75.0D;
+			str = 45.0D;
 		}
 
-		return str * 100;
+		return str * 25;
 	}
 }

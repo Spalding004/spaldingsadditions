@@ -4,6 +4,8 @@ import com.misterspalding.spaldingsadditions.SpaldingsAdditions;
 import com.misterspalding.spaldingsadditions.objects.items.ModDimensionalCard;
 import com.misterspalding.spaldingsadditions.objects.items.ModFrakHammer;
 import com.misterspalding.spaldingsadditions.objects.items.ModGenericItem;
+import com.misterspalding.spaldingsadditions.objects.items.ModNetherGaze;
+import com.misterspalding.spaldingsadditions.objects.items.ModNetherPearl;
 import com.misterspalding.spaldingsadditions.objects.items.toolTiers.ModTiers.ModItemTiers;
 import com.misterspalding.spaldingsadditions.objects.items.tools.ModAxe;
 import com.misterspalding.spaldingsadditions.objects.items.tools.ModHoe;
@@ -38,6 +40,8 @@ public class ItemDec {
 	public static final RegistryObject<Item> VIRONIUM_CHUNK = ITEMS.register("vironium_ore_chunk", () -> new ModGenericItem());
 
 	public static final RegistryObject<Item> END_ESSENCE = ITEMS.register("end_essence", () -> new ModGenericItem());
+	public static final RegistryObject<Item> NETHER_PEARL = ITEMS.register("nether_pearl", () -> new ModNetherPearl());
+	public static final RegistryObject<Item> NETHER_GAZE = ITEMS.register("nether_gaze", () -> new ModNetherGaze());
 	
 	public static final RegistryObject<Item> CHARGED_CARBON = ITEMS.register("charged_carbon", () -> new ModGenericItem());
 	public static final RegistryObject<Item> ENERGETIC_CRYSTAL = ITEMS.register("energetic_crystal", () -> new ModGenericItem());

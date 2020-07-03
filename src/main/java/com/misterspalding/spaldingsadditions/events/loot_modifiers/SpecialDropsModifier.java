@@ -117,7 +117,7 @@ public class SpecialDropsModifier extends LootModifier {
     	
     	if (broken.contains("coal") && !broken.contains("coal_ore_")) {
     		listReturn = (ArrayList<ItemStack>) generatedLoot;
-    		if (random.nextInt(20+enchant*2) >= 19) listReturn.add(new ItemStack(ItemDec.CHARGED_CARBON.get()));
+    		if (random.nextInt(200+enchant*2) >= 195) listReturn.add(new ItemStack(ItemDec.CHARGED_CARBON.get()));
     		
     		
     		return listReturn;

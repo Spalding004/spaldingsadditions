@@ -32,11 +32,12 @@
 
 "item.spaldingsadditions.charged_carbon" = "Charged Carbon",
 
-"item.spaldingsadditions.dimension_card_blank" = "Dimensional Card (Overworld)",
-"item.spaldingsadditions.dimension_card_nether" = "Dimensional Card (Nether)",
-"item.spaldingsadditions.dimension_card_end" = "Dimensional Card (End)",
+"item.spaldingsadditions.card_basic" = "Dimensional Card (Overworld)",
+"item.spaldingsadditions.card_nether" = "Dimensional Card (Nether)",
+"item.spaldingsadditions.card_end" = "Dimensional Card (End)",
 
 "item.spaldingsadditions.dimension_card_wither" = "Withered Card",
+"item.spaldingsadditions.energetic_crystal" = "Energetic Crystal",
 
 
 "item.spaldingsadditions.tool_vendar_pickaxe" = "Vendar Pickaxe",
@@ -49,7 +50,8 @@
 "item.spaldingsadditions.tool_iron_frakhammer" = "Iron Frakhammer",
 
 "item.spaldingsadditions.tool_enhanced_handle" = "Enhanced Tool Handle",
-
+"item.spaldingsadditions.nether_pearl" = "Nethered Pearl",
+"item.spaldingsadditions.nether_gaze" = "Nether Gaze",
 
 
 "block.spaldingsadditions.marcasite" = "Marcasite",
@@ -127,11 +129,19 @@
 "block.spaldingsadditions.vironium_ore" = "Vironium Ore",
 "block.spaldingsadditions.geldar_ore" = "Geldar Ore",
 
+"block.spaldingsadditions.vironium_ore_chunk" = "Vironium Ore Chunk",
+"block.spaldingsadditions.geldar_ore_chunk" = "Geldar Ore Chunk",
+
 "misc.spaldingsadditions.fuelleft" = "Fuel Remaining: %s%s",
 "container.spaldingsadditions.fabricator" = "Dimensional Fabricator",
 "itemGroup.mod_creative_tab" = "Spalding's Additions",
 
-"death.attack.void_walking" = "%1$s felt the touch of the Void."
+"death.attack.void_walking" = "%1$s felt the touch of the Void.",
+"death.attack.nether_gaze" = "%1$s decided to explode. How sad.",
+
+"tooltip.spaldingsadditions.nether_pearl" = "It's hot hot hot!",
+"tooltip.spaldingsadditions.nether_gaze" = "WARNING: Explosive",
+"tooltip.spaldingsadditions.lapal_fuel" = "Lapal Fuel (%s LE)"
 
 
 
