@@ -7,9 +7,7 @@ import com.misterspalding.spaldingsadditions.fuels.LapalFuels;
 import com.misterspalding.spaldingsadditions.inits.ItemDec;
 import com.misterspalding.spaldingsadditions.inits.TileEntityDec;
 import com.misterspalding.spaldingsadditions.objects.items.ModDimensionalCard;
-import com.misterspalding.spaldingsadditions.recipes.fabricator.FabricatorRecipesEnd;
-import com.misterspalding.spaldingsadditions.recipes.fabricator.FabricatorRecipesNether;
-import com.misterspalding.spaldingsadditions.recipes.fabricator.FabricatorRecipesOverworld;
+import com.misterspalding.spaldingsadditions.recipes.fabricator.FabricatorRecipes;
 import com.misterspalding.spaldingsadditions.utils.TextUtils;
 
 import net.minecraft.entity.player.PlayerEntity;
@@ -29,9 +27,8 @@ public class FabricatorTileEntity extends TileEntityMachineCommon {
 		
 	}
 
-	FabricatorRecipesOverworld recipeInstanceNormal = FabricatorRecipesOverworld.instance();
-	FabricatorRecipesEnd recipeInstanceEnd = FabricatorRecipesEnd.instance();
-	FabricatorRecipesNether recipeInstanceNether = FabricatorRecipesNether.instance();
+	FabricatorRecipes recipeInstance = FabricatorRecipes.instance();
+
 
 	private int SLOT_INPUT = 0;
 	private int SLOT_CARD = 1;
@@ -288,23 +285,10 @@ public class FabricatorTileEntity extends TileEntityMachineCommon {
 		ItemStack input_card = this.getStackInSlot(SLOT_CARD);
 		float toReturn = 0;
 
-		if (input_card.getItem() == ItemDec.CARD_BASIC.get()) {
+	
+			toReturn = recipeInstance.getProcessTime(input_contents, input_card.getItem());
 
-			toReturn = recipeInstanceNormal.getProcessTime(input_contents);
-
-		}
-
-		if (input_card.getItem() == ItemDec.CARD_NETHER.get()) {
-
-			toReturn = recipeInstanceNether.getProcessTime(input_contents);
-
-		}
-
-		if (input_card.getItem() == ItemDec.CARD_END.get()) {
-
-			toReturn = recipeInstanceEnd.getProcessTime(input_contents);
-
-		}
+		
 		return toReturn;
 	}
 
@@ -312,23 +296,10 @@ public class FabricatorTileEntity extends TileEntityMachineCommon {
 		ItemStack input_card = this.getStackInSlot(SLOT_CARD);
 		ItemStack toReturn = ItemStack.EMPTY;
 
-		if (input_card.getItem() == ItemDec.CARD_BASIC.get()) {
+		
+			toReturn = recipeInstance.getResult(input_contents, input_card.getItem());
 
-			toReturn = recipeInstanceNormal.getResult(input_contents);
-
-		}
-
-		if (input_card.getItem() == ItemDec.CARD_NETHER.get()) {
-
-			toReturn = recipeInstanceNether.getResult(input_contents);
-
-		}
-
-		if (input_card.getItem() == ItemDec.CARD_END.get()) {
-
-			toReturn = recipeInstanceEnd.getResult(input_contents);
-
-		}
+		
 
 		return toReturn;
 	}

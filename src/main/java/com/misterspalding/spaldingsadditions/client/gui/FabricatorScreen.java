@@ -19,7 +19,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 @OnlyIn(Dist.CLIENT)
 public class FabricatorScreen extends MachineScreenCommon<FabricatorContainer> {
 
-    private static final ResourceLocation TEXTURES = new ResourceLocation("spaldingsadditions:textures/gui/lapal_infuser.png");
+    public static final ResourceLocation TEXTURES = new ResourceLocation("spaldingsadditions:textures/gui/lapal_infuser.png");
     
 
     public FabricatorScreen(FabricatorContainer screenContainer, PlayerInventory inv, ITextComponent titleIn) {
