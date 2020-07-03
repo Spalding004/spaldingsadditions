@@ -10,7 +10,6 @@ import org.apache.logging.log4j.Logger;
 import com.misterspalding.spaldingsadditions.events.loot_modifiers.SpecialDropsModifier;
 import com.misterspalding.spaldingsadditions.inits.BiomeDec;
 import com.misterspalding.spaldingsadditions.inits.BlockDec;
-import com.misterspalding.spaldingsadditions.inits.ContainersDec;
 import com.misterspalding.spaldingsadditions.inits.DamagesDec;
 import com.misterspalding.spaldingsadditions.inits.FeaturesDec;
 import com.misterspalding.spaldingsadditions.inits.ItemDec;
@@ -20,9 +19,6 @@ import com.misterspalding.spaldingsadditions.world.gen.ModStoneGen;
 import com.misterspalding.spaldingsadditions.world.gen.ModStructGen;
 import com.misterspalding.spaldingsadditions.world.gen.ModTreeGen;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -38,12 +34,15 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.IForgeRegistry;
 
 @SuppressWarnings("deprecation")

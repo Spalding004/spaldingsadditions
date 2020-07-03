@@ -1,16 +1,13 @@
 package com.misterspalding.spaldingsadditions.client.gui;
 
-import java.awt.Color;
 import java.awt.Rectangle;
 
 import com.misterspalding.spaldingsadditions.client.gui.widget.FuelBar;
 import com.misterspalding.spaldingsadditions.containers.FabricatorContainer;
-import com.misterspalding.spaldingsadditions.objects.items.ModDimensionalCard;
 import com.misterspalding.spaldingsadditions.utils.TextUtils;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraftforge.api.distmarker.Dist;

@@ -30,7 +30,8 @@ public abstract class MachineScreenCommon<T extends CommonContainer> extends Con
         this.renderHoveredToolTip(x, y);
     }
 
-    @Override
+    @SuppressWarnings("unused")
+	@Override
     protected void renderHoveredToolTip(int mouseX, int mouseY) {
         super.renderHoveredToolTip(mouseX, mouseY);
         for (Widget widget : this.buttons) {

@@ -1,7 +1,6 @@
 package com.misterspalding.spaldingsadditions.objects.blocks;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.FenceBlock;
 import net.minecraft.block.WallBlock;
 import net.minecraft.block.material.Material;
 import net.minecraftforge.common.ToolType;

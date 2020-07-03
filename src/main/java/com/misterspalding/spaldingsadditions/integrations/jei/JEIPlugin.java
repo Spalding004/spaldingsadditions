@@ -2,7 +2,6 @@ package com.misterspalding.spaldingsadditions.integrations.jei;
 
 import com.misterspalding.spaldingsadditions.SpaldingsAdditions;
 import com.misterspalding.spaldingsadditions.client.gui.FabricatorScreen;
-import com.misterspalding.spaldingsadditions.containers.FabricatorContainer;
 import com.misterspalding.spaldingsadditions.inits.BlockDec;
 import com.misterspalding.spaldingsadditions.integrations.jei.fabricator.FabricatorRecipeCategory;
 import com.misterspalding.spaldingsadditions.integrations.jei.fabricator.recipes.FabricatorRecipeJEI;
@@ -18,7 +17,6 @@ import mezz.jei.api.registration.IRecipeRegistration;
 import mezz.jei.api.registration.IRecipeTransferRegistration;
 import mezz.jei.api.registration.ISubtypeRegistration;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
 
 

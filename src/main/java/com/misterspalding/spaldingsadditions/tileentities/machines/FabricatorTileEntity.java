@@ -4,7 +4,6 @@ import javax.annotation.Nullable;
 
 import com.misterspalding.spaldingsadditions.containers.FabricatorContainer;
 import com.misterspalding.spaldingsadditions.fuels.LapalFuels;
-import com.misterspalding.spaldingsadditions.inits.ItemDec;
 import com.misterspalding.spaldingsadditions.inits.TileEntityDec;
 import com.misterspalding.spaldingsadditions.objects.items.ModDimensionalCard;
 import com.misterspalding.spaldingsadditions.recipes.fabricator.FabricatorRecipes;

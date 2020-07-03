@@ -12,15 +12,12 @@ import com.misterspalding.spaldingsadditions.tileentities.machines.TileEntityMac
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Slot;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIntArray;
 import net.minecraft.util.IntArray;
-import net.minecraft.world.World;
 
 public class FabricatorContainer extends CommonContainer {
 
-	private World world;
 	private static int numSlots = 4;
 
 	public FabricatorContainer(int id, PlayerInventory playerInventory) {
@@ -30,8 +27,6 @@ public class FabricatorContainer extends CommonContainer {
 	public FabricatorContainer(int id, PlayerInventory playerInventory, TileEntityMachineCommon tileEntity, IIntArray fields,
 			int size) {
 		super(ContainersDec.FABRICATOR, id, playerInventory, tileEntity, fields, numSlots);
-		this.world = playerInventory.player.world;
-
 		// input
 		this.addSlot(new DimCardSlot(tileEntity, 1, 9, 44));
 		// fuel
