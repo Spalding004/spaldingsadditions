@@ -7,8 +7,7 @@
   ],
   "key": {
     "G": {
-       "type": "forge:ore_dict",
-      "ore": "gearVendar"
+       "item": "spaldingsadditions:vendar_gear"
     },
     "I": {
        "item": "minecraft:redstone"

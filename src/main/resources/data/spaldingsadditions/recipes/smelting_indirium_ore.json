@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "spaldingsadditions:indirium_ore"
+  },
+  "result": {
+  "item": "spaldingsadditions:indirium_ingot",
+  "count": 1
+  },
+  "experience": 0.7,
+  "cookingtime": 200
+}

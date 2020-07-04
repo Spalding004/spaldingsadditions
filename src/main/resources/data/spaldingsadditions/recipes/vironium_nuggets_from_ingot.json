@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "spaldingsadditions:vironium_ingot"
+		}
+	],
+	"result": {
+		"item": "spaldingsadditions:vironium_nugget",
+		"count": 9
+	}
+}

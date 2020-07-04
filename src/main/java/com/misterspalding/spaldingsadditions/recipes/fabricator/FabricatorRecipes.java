@@ -68,6 +68,7 @@ public class FabricatorRecipes {
 		this.addFabricating(Items.WATER_BUCKET, new ItemStack(Blocks.ICE), STANDARD_TIME, forCard);
 		this.addFabricatingOreItem("ingots/silver", new ItemStack(ItemDec.VENDAR_INGOT.get()),
 				(int) (STANDARD_TIME * 1.2), forCard);
+		this.addFabricating(Items.COAL, new ItemStack(ItemDec.CHARGED_CARBON.get()), STANDARD_TIME*7, forCard);
 
 		/*
 		 * 

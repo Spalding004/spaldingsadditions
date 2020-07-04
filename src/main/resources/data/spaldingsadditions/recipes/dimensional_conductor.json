@@ -7,12 +7,10 @@
   ],
   "key": {
     "V": {
-       "type": "forge:ore_dict",
-      "ore": "ingotVendar"
+       "item": "spaldingsadditions:vendar_ingot"
     },
     "D": {
-       "type": "forge:ore_dict",
-      "ore": "gemDiamond"
+       "tag": "forge:gems/diamond"
     }
   },
   "result": {

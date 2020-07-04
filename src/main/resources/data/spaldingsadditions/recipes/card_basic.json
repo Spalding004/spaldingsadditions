@@ -1,26 +1,22 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "N N",
+    "XNX",
     "GDG",
-    "XNX"
+    "N N"
   ],
   "key": {
     "N": {
-      "type": "forge:ore_dict",
-      "ore": "nuggetVendar"
+      "item": "spaldingsadditions:vendar_nugget"
     },
     "G": {
-      "type": "forge:ore_dict",
-      "ore": "nuggetGold"
+      "tag": "forge:nuggets/gold"
     },
     "D": {
-      "type": "forge:ore_dict",
-      "ore": "gemDiamond"
+      "tag": "forge:gems/diamond"
     },
     "X": {
-      "item": "minecraft:stone",
-      "data": 0
+      "item": "spaldingsadditions:indirium_ingot"
     }
   },
   "result": {

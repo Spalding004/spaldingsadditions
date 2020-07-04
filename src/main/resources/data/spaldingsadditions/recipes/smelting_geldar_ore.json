@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "spaldingsadditions:geldar_ore"
+  },
+  "result": {
+  "item": "spaldingsadditions:geldar_ingot",
+  "count": 1
+  },
+  "experience": 0.7,
+  "cookingtime": 200
+}

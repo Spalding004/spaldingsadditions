@@ -43,8 +43,8 @@ public class ModStoneGen {
 			
 			ConfiguredPlacement<CountRangeConfig> config_emerald = Placement.COUNT_RANGE.configure(new CountRangeConfig(1, 1, 0, 16));
 			ConfiguredPlacement<CountRangeConfig> config_indirium = Placement.COUNT_RANGE.configure(new CountRangeConfig(3, 1, 0, 45));
-			ConfiguredPlacement<CountRangeConfig> config_vironium = Placement.COUNT_RANGE.configure(new CountRangeConfig(10, 1, 0, 128));
-			ConfiguredPlacement<CountRangeConfig> config_geldar = Placement.COUNT_RANGE.configure(new CountRangeConfig(10, 1, 0, 256));
+			ConfiguredPlacement<CountRangeConfig> config_vironium = Placement.COUNT_RANGE.configure(new CountRangeConfig(20, 1, 0, 128));
+			ConfiguredPlacement<CountRangeConfig> config_geldar = Placement.COUNT_RANGE.configure(new CountRangeConfig(20, 1, 0, 256));
 			/*
 			 * 
 		

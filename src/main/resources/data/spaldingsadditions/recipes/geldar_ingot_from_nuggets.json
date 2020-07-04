@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SSS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "spaldingsadditions:geldar_nugget",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "spaldingsadditions:geldar_ingot",
+    "count": 1
+  }
+}
+

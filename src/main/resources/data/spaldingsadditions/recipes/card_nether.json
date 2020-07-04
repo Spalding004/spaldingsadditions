@@ -1,34 +1,22 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "NCN",
+    "XNX",
     "GDG",
-    "XEX"
+    "N N"
   ],
   "key": {
     "N": {
-      "type": "forge:ore_dict",
-      "ore": "nuggetVendar"
+      "item": "spaldingsadditions:vendar_nugget"
     },
     "G": {
-      "type": "forge:ore_dict",
-      "ore": "nuggetGold"
-    },
-    "E": {
-      "type": "forge:ore_dict",
-      "ore": "gemDiamond"
-    },
-    "C": {
-      "item": "spaldingsadditions:energetic_crystal",
-      "data": 0
+      "tag": "forge:nuggets/gold"
     },
     "D": {
-      "item": "spaldingsadditions:card_basic",
-      "data": 0
+      "tag": "forge:gems/diamond"
     },
     "X": {
-      "item": "minecraft:netherrack",
-      "data": 0
+      "item": "spaldingsadditions:geldar_ingot"
     }
   },
   "result": {

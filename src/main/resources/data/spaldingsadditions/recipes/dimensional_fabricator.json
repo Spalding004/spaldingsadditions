@@ -7,8 +7,7 @@
   ],
   "key": {
     "V": {
-       "type": "forge:ore_dict",
-      "ore": "ingotVendar"
+       "item": "spaldingsadditions:indirium_ingot"
     },
     "Q": {
        "item": "minecraft:quartz",
