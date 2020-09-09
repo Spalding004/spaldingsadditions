@@ -12,10 +12,17 @@ public class LapalFuels {
 	public static double getFuelStr(ItemStack fuel) {
 		Item item = fuel.getItem();
 		double str = 0.0D;
+		
 		if (item == (Items.LAPIS_LAZULI).getItem()) {
 			str = 1.0D;
 		}
-
+		
+	/*
+		if (item == (ItemDec.FRACTURED_LAPIS).get()) {
+			str = 3.0D;
+		}
+	 */
+		
 		if (item == (new ItemStack(Blocks.LAPIS_BLOCK)).getItem()) {
 			str = 10.0D;
 		}

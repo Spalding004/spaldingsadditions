@@ -144,7 +144,6 @@ public class FabricatorRecipes {
 		}
 	}
 
-	@SuppressWarnings("unused")
 	private void addFabricatingOreItem(String name, ItemStack itemStack, int time, Item card) {
 		Tag<Item> tag = ItemTags.getCollection().get(new ResourceLocation("forge", name));
 		if (tag == null) {

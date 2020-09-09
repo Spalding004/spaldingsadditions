@@ -3,7 +3,7 @@
   "pattern": [
     " VI",
     " HV",
-    "H"
+    " H "
   ],
   "key": {
     "V": {
@@ -15,7 +15,7 @@
       "data": 0
     },
     "I": {
-      "item": "spaldingsadditions:indium_ingot",
+      "item": "spaldingsadditions:indirium_ingot",
       "data": 0
     }
   },
