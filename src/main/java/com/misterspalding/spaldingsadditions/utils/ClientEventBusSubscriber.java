@@ -1,6 +1,7 @@
 package com.misterspalding.spaldingsadditions.utils;
 
 import com.misterspalding.spaldingsadditions.SpaldingsAdditions;
+import com.misterspalding.spaldingsadditions.client.gui.AutoFrakScreen;
 import com.misterspalding.spaldingsadditions.client.gui.FabricatorScreen;
 import com.misterspalding.spaldingsadditions.inits.ContainersDec;
 
@@ -25,7 +26,7 @@ public class ClientEventBusSubscriber {
 		registerCutouts();
 		
 		ScreenManager.registerFactory(ContainersDec.FABRICATOR, FabricatorScreen::new);
-		
+		ScreenManager.registerFactory(ContainersDec.AUTOFRAK, AutoFrakScreen::new);
 	}
 	
 	public static void registerCutouts() {

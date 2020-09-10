@@ -2,11 +2,11 @@ package com.misterspalding.spaldingsadditions.tileentities.machines;
 
 import javax.annotation.Nullable;
 
-import com.misterspalding.spaldingsadditions.containers.FabricatorContainer;
+import com.misterspalding.spaldingsadditions.containers.AutoFrakContainer;
 import com.misterspalding.spaldingsadditions.fuels.LapalFuels;
 import com.misterspalding.spaldingsadditions.inits.TileEntityDec;
-import com.misterspalding.spaldingsadditions.objects.items.ModDimensionalCard;
-import com.misterspalding.spaldingsadditions.recipes.fabricator.FabricatorRecipes;
+import com.misterspalding.spaldingsadditions.objects.items.ModFrakHammer;
+import com.misterspalding.spaldingsadditions.recipes.fabricator.AutoFrakRecipes;
 import com.misterspalding.spaldingsadditions.utils.TextUtils;
 
 import net.minecraft.entity.player.PlayerEntity;
@@ -19,14 +19,14 @@ import net.minecraft.util.IIntArray;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.ITextComponent;
 
-public class FabricatorTileEntity extends TileEntityMachineCommon {
+public class AutoFrakTileEntity extends TileEntityMachineCommon {
 
-	public FabricatorTileEntity() {
-		super(TileEntityDec.FABRICATOR.get());
+	public AutoFrakTileEntity() {
+		super(TileEntityDec.AUTOFRAK.get());
 		
 	}
 
-	FabricatorRecipes recipeInstance = FabricatorRecipes.instance();
+	AutoFrakRecipes recipeInstance = AutoFrakRecipes.instance();
 
 
 	private int SLOT_INPUT = 0;
@@ -46,16 +46,16 @@ public class FabricatorTileEntity extends TileEntityMachineCommon {
             
             
                 case 4:
-                    FabricatorTileEntity.this.currentFuel = value;
+                    AutoFrakTileEntity.this.currentFuel = value;
                     break;
                 case 5:
-                	FabricatorTileEntity.this.maxFuel = value;
+                	AutoFrakTileEntity.this.maxFuel = value;
                     break;
                 case 6:
-                	FabricatorTileEntity.this.targetProcessTime = value;
+                	AutoFrakTileEntity.this.targetProcessTime = value;
                     break;
                 case 7:
-                	FabricatorTileEntity.this.currentProcessTime = value;
+                	AutoFrakTileEntity.this.currentProcessTime = value;
                     break;
             }
         }
@@ -64,20 +64,20 @@ public class FabricatorTileEntity extends TileEntityMachineCommon {
         public int get(int index) {
             switch (index) {
             	case 2:
-            	return FabricatorTileEntity.this.getStackInSlot(SLOT_INPUT).getCount();
+            	return AutoFrakTileEntity.this.getStackInSlot(SLOT_INPUT).getCount();
             	
                 case 3:
                     // currentpower
-                    return (int) (FabricatorTileEntity.this.currentFuel);
+                    return (int) (AutoFrakTileEntity.this.currentFuel);
                 case 4:
                     // max power
-                    return (int) FabricatorTileEntity.this.maxFuel;
+                    return (int) AutoFrakTileEntity.this.maxFuel;
                 case 5:
                     // Process time
-                    return (int) FabricatorTileEntity.this.currentProcessTime;
+                    return (int) AutoFrakTileEntity.this.currentProcessTime;
                 case 6:
                     // Total process time
-                    return (int) FabricatorTileEntity.this.targetProcessTime;
+                    return (int) AutoFrakTileEntity.this.targetProcessTime;
                 
                 default:
                     return 0;
@@ -313,7 +313,7 @@ public class FabricatorTileEntity extends TileEntityMachineCommon {
     	}
     	
     	if (index == SLOT_CARD) {
-    		return itemStackIn.getItem() instanceof ModDimensionalCard;
+    		return itemStackIn.getItem() instanceof ModFrakHammer;
     	}
     	
     	if (index == SLOT_FUEL) {
@@ -334,13 +334,13 @@ public class FabricatorTileEntity extends TileEntityMachineCommon {
 
     @Override
     public ITextComponent getDisplayName() {
-        return TextUtils.translate("container", "fabricator");
+        return TextUtils.translate("container", "autofrak");
     }
 
     @Nullable
     @Override
     public Container createMenu(int id, PlayerInventory playerInventory, PlayerEntity playerEntity) {
-        return new FabricatorContainer(id, playerInventory, this, this.fields, this.getSizeInventory());
+        return new AutoFrakContainer(id, playerInventory, this, this.fields, this.getSizeInventory());
     }
     
     public NonNullList<ItemStack> getItems() {

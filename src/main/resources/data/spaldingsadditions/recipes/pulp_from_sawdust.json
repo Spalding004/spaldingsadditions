@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "DDD",
+    "DWD",
+    "DDD"
+  ],
+  "key": {
+    "W": {
+      "item": "minecraft:water_bucket",
+      "data": 0
+    },
+    "D": {
+      "item": "spaldingsadditions:sawdust",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "spaldingsadditions:wood_pulp",
+    "count": 3
+  }
+}

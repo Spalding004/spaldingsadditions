@@ -13,6 +13,7 @@ import com.misterspalding.spaldingsadditions.objects.blocks.ModStairsBlockStone;
 import com.misterspalding.spaldingsadditions.objects.blocks.ModStairsBlockWood;
 import com.misterspalding.spaldingsadditions.objects.blocks.ModStone;
 import com.misterspalding.spaldingsadditions.objects.blocks.ModWallBlock;
+import com.misterspalding.spaldingsadditions.objects.blocks.machines.ModAutoFrak;
 import com.misterspalding.spaldingsadditions.objects.blocks.machines.ModFabricator;
 import com.misterspalding.spaldingsadditions.objects.blocks.saplings.ModSaplingBeech;
 import com.misterspalding.spaldingsadditions.objects.blocks.saplings.ModSaplingPalm;
@@ -117,5 +118,5 @@ public class BlockDec {
 	
 	//machines
 	public static final RegistryObject<Block> FABRICATOR = BLOCKS.register("fabricator", () -> new ModFabricator());
-	
+	public static final RegistryObject<Block> AUTOFRAK = BLOCKS.register("autofrak", () -> new ModAutoFrak());
 }

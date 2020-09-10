@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.google.common.collect.Lists;
 import com.misterspalding.spaldingsadditions.SpaldingsAdditions;
+import com.misterspalding.spaldingsadditions.containers.AutoFrakContainer;
 import com.misterspalding.spaldingsadditions.containers.FabricatorContainer;
 
 import net.minecraft.inventory.container.ContainerType;
@@ -20,6 +21,7 @@ public class ContainersDec {
 	
 	
 	public static final ContainerType<FabricatorContainer> FABRICATOR = register("fabricator", new ContainerType<>(FabricatorContainer::new));
+	public static final ContainerType<AutoFrakContainer> AUTOFRAK = register("autofrak", new ContainerType<>(AutoFrakContainer::new));
 	
 	 private static <T extends ContainerType<?>> T register(String registryName, T containerType) {
 	        containerType.setRegistryName(SpaldingsAdditions.MOD_ID+":"+registryName);

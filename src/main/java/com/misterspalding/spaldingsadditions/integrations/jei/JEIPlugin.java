@@ -1,8 +1,11 @@
 package com.misterspalding.spaldingsadditions.integrations.jei;
 
 import com.misterspalding.spaldingsadditions.SpaldingsAdditions;
+import com.misterspalding.spaldingsadditions.client.gui.AutoFrakScreen;
 import com.misterspalding.spaldingsadditions.client.gui.FabricatorScreen;
 import com.misterspalding.spaldingsadditions.inits.BlockDec;
+import com.misterspalding.spaldingsadditions.integrations.jei.autofrak.AutoFrakRecipeCategory;
+import com.misterspalding.spaldingsadditions.integrations.jei.autofrak.AutoFrakRecipeJEI;
 import com.misterspalding.spaldingsadditions.integrations.jei.fabricator.FabricatorRecipeCategory;
 import com.misterspalding.spaldingsadditions.integrations.jei.fabricator.recipes.FabricatorRecipeJEI;
 
@@ -34,6 +37,7 @@ public class JEIPlugin implements IModPlugin {
 		IGuiHelper guiHelper = registration.getJeiHelpers().getGuiHelper();
 		
 		registration.addRecipeCategories(new FabricatorRecipeCategory(guiHelper));
+		registration.addRecipeCategories(new AutoFrakRecipeCategory(guiHelper));
 	}
 
 	@Override
@@ -48,6 +52,7 @@ public class JEIPlugin implements IModPlugin {
 	public void registerRecipes(IRecipeRegistration registration) {
 		IJeiHelpers helpers = registration.getJeiHelpers();
 		registration.addRecipes(FabricatorRecipeJEI.getRecipes(helpers), RecipeCategories.FABRICATOR);
+		registration.addRecipes(AutoFrakRecipeJEI.getRecipes(helpers), RecipeCategories.AUTOFRAK);
 		
 		
 		
@@ -56,6 +61,7 @@ public class JEIPlugin implements IModPlugin {
 	 @Override
 	    public void registerGuiHandlers(IGuiHandlerRegistration registration) {
 	        registration.addRecipeClickArea(FabricatorScreen.class, 84, 40, 27, 17, RecipeCategories.FABRICATOR);
+	        registration.addRecipeClickArea(AutoFrakScreen.class, 84, 40, 27, 17, RecipeCategories.AUTOFRAK);
 	    }
 
 	 @Override
@@ -66,6 +72,6 @@ public class JEIPlugin implements IModPlugin {
 	 @Override
 	    public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
 	        registration.addRecipeCatalyst(new ItemStack(BlockDec.FABRICATOR.get()), RecipeCategories.FABRICATOR);
-	      
+	        registration.addRecipeCatalyst(new ItemStack(BlockDec.AUTOFRAK.get()), RecipeCategories.AUTOFRAK);
 	    }
 }

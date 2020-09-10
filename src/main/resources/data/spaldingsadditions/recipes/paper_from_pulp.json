@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "DD",
+    "DD",
+    "DD"
+  ],
+  "key": {
+    "D": {
+      "item": "spaldingsadditions:wood_pulp",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "minecraft:paper",
+    "count": 8
+  }
+}

@@ -79,8 +79,8 @@ public class ItemDec {
 	public static final RegistryObject<Item> CARD_END = ITEMS.register("card_end", () -> new ModDimensionalCard(48));
 	
 	public static final RegistryObject<Item> POLISHING_STONE = ITEMS.register("polishing_stone", () -> new ModGenericItem());
-	
-	
+	public static final RegistryObject<Item> SAWDUST = ITEMS.register("sawdust", () -> new ModGenericItem());
+	public static final RegistryObject<Item> WOOD_PULP = ITEMS.register("wood_pulp", () -> new ModGenericItem());
 	
 
 }
