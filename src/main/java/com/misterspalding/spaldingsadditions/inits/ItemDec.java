@@ -14,6 +14,7 @@ import com.misterspalding.spaldingsadditions.objects.items.tools.ModShovel;
 import com.misterspalding.spaldingsadditions.objects.items.tools.ModSword;
 
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemTier;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -68,8 +69,8 @@ public class ItemDec {
 	public static final RegistryObject<Item> TOOL_VENDAR_HOE = ITEMS.register("tool_vendar_hoe", () -> new ModHoe(ModItemTiers.VENDAR));
 	public static final RegistryObject<Item> TOOL_VENDAR_SHOVEL = ITEMS.register("tool_vendar_shovel", () -> new ModShovel(ModItemTiers.VENDAR));
 	
-	public static final RegistryObject<Item> TOOL_VENDAR_FRAKHAMMER = ITEMS.register("tool_vendar_frakhammer", () -> new ModFrakHammer(512));
-	public static final RegistryObject<Item> IRON_FRAKHAMMER = ITEMS.register("iron_frakhammer", () -> new ModFrakHammer(126));
+	public static final RegistryObject<Item> TOOL_VENDAR_FRAKHAMMER = ITEMS.register("tool_vendar_frakhammer", () -> new ModFrakHammer(512, 3.0F, 9.0F, ModItemTiers.VENDAR));
+	public static final RegistryObject<Item> IRON_FRAKHAMMER = ITEMS.register("iron_frakhammer", () -> new ModFrakHammer(126, 3.0F, -6.0F, ItemTier.IRON));
 	
 	
 	

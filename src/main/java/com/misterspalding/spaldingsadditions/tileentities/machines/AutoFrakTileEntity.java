@@ -182,7 +182,17 @@ public class AutoFrakTileEntity extends TileEntityMachineCommon {
 						if (this.getStackInSlot(SLOT_OUTPUT).getItem() == getRecipeOutput(getStackInSlot(SLOT_INPUT))
 								.getItem()) {
 
-							output_content.grow(getRecipeOutput(getStackInSlot(SLOT_INPUT)).getCount());
+							int countToGrow = getRecipeOutput(getStackInSlot(SLOT_INPUT)).getCount();
+							int maxStack = getRecipeOutput(getStackInSlot(SLOT_INPUT)).getItem().getMaxStackSize();
+							
+							if ((output_content.getCount() + countToGrow) > maxStack ) {
+								output_content.setCount(maxStack);
+							} else  {
+								output_content.grow(countToGrow);
+							}
+							
+							//output_content.grow(getRecipeOutput(getStackInSlot(SLOT_INPUT)).getCount());
+
 
 						} else {
 							if (output_content.getCount() > 0) {

@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 
 import com.google.common.collect.Maps;
+import com.misterspalding.spaldingsadditions.SpaldingsAdditions;
 import com.misterspalding.spaldingsadditions.inits.BlockDec;
 import com.misterspalding.spaldingsadditions.inits.ItemDec;
 
@@ -40,6 +42,7 @@ public class AutoFrakRecipes {
 	private final List<ItemStack> allIngredients = new ArrayList<ItemStack>();
 	private final List<ItemStack> allOutputs = new ArrayList<ItemStack>();
 	private final List<ItemStack> allCards = new ArrayList<ItemStack>();
+	private final Set<Block> allBlocks = null;
 
 	public static AutoFrakRecipes instance() {
 		return SMELTING_BASE;
@@ -47,6 +50,8 @@ public class AutoFrakRecipes {
 
 	private AutoFrakRecipes() {
 
+		
+		
 		/*
 		 * 
 		 * Iron Recipes
@@ -55,6 +60,7 @@ public class AutoFrakRecipes {
 		
 		Item forCard = ItemDec.IRON_FRAKHAMMER.get();
 		int STANDARD_TIME = 45;
+		this.addFabricating(Items.LAPIS_ORE, new ItemStack(ItemDec.LAPIS_SHARD.get(), 12), STANDARD_TIME, forCard);
 		this.addFabricating(Items.LAPIS_LAZULI, new ItemStack(ItemDec.LAPIS_SHARD.get(), 4), STANDARD_TIME, forCard);
 		this.addFabricating(Items.COBBLESTONE, new ItemStack(Items.GRAVEL), STANDARD_TIME, forCard);
 		this.addFabricating(Items.GRAVEL, new ItemStack(Items.CLAY), STANDARD_TIME, forCard);
@@ -69,11 +75,28 @@ public class AutoFrakRecipes {
 		
 		forCard = ItemDec.TOOL_VENDAR_FRAKHAMMER.get();
 		STANDARD_TIME = 30;
+		this.addFabricating(Items.LAPIS_ORE, new ItemStack(ItemDec.FRACTURED_LAPIS.get(), 3), STANDARD_TIME, forCard);
+		
 		this.addFabricating(Items.LAPIS_LAZULI, new ItemStack(ItemDec.FRACTURED_LAPIS.get()), STANDARD_TIME, forCard);
 		this.addFabricating(Items.COBBLESTONE, new ItemStack(Items.GRAVEL), STANDARD_TIME, forCard);
 		this.addFabricating(Items.GRAVEL, new ItemStack(Items.CLAY), STANDARD_TIME, forCard);
 		this.addFabricating(Items.CLAY, new ItemStack(Items.SAND), STANDARD_TIME, forCard);
 		this.addFabricatingOreBlockMC("logs", new ItemStack(ItemDec.SAWDUST.get(), 2), STANDARD_TIME, forCard);
+		this.addFabricating(Items.ENDER_PEARL, new ItemStack(ItemDec.END_ESSENCE.get()), STANDARD_TIME*1.5f, forCard);
+		
+		
+		//add block inputs to block set
+		
+		for (ItemStack itemstack : this.getInputs()) {
+			
+			Block itemToCheck = Block.getBlockFromItem(itemstack.getItem());
+			
+			if (itemToCheck != null) {
+				SpaldingsAdditions.HAMMER_BLOCKS.add(itemToCheck);
+				
+			}
+		}
+		
 	}
 
 	@SuppressWarnings("unused")
@@ -334,6 +357,10 @@ public class AutoFrakRecipes {
 
 	public List<ItemStack> getCards() {
 		return this.allCards;
+	}
+	
+	public Set<Block> getBlockInputs() {
+		return this.allBlocks;
 	}
 
 }

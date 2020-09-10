@@ -40,10 +40,10 @@ minecraft {
             workingDirectory project.file('run')
 
             // Recommended logging data for a userdev environment
-   //         property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
 
             // Recommended logging level for the console
-//            property 'forge.logging.console.level', 'debug'
+            property 'forge.logging.console.level', 'debug'
 
             mods {
                 spaldingsadditions{
@@ -56,10 +56,10 @@ minecraft {
             workingDirectory project.file('run')
 
             // Recommended logging data for a userdev environment
-    //        property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+          property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
 
             // Recommended logging level for the console
-      //      property 'forge.logging.console.level', 'debug'
+            property 'forge.logging.console.level', 'debug'
 
             mods {
                 spaldingsadditions {
@@ -72,12 +72,12 @@ minecraft {
             workingDirectory project.file('run')
 
             // Recommended logging data for a userdev environment
-//            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+         property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
 
 //            // Recommended logging level for the console
-//            property 'forge.logging.console.level', 'debug'
+          property 'forge.logging.console.level', 'debug'
 
-        //    args '--mod', 'spaldingsadditions', '--all', '--output', file('src/generated/resources/')
+           args '--mod', 'spaldingsadditions', '--all', '--output', file('src/generated/resources/')
 
             mods {
                 spaldingsadditions{

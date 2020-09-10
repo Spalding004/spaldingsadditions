@@ -7,10 +7,15 @@ import java.util.Random;
 import javax.annotation.Nonnull;
 
 import com.google.gson.JsonObject;
+import com.misterspalding.spaldingsadditions.SpaldingsAdditions;
 import com.misterspalding.spaldingsadditions.inits.ItemDec;
+import com.misterspalding.spaldingsadditions.objects.items.ModFrakHammer;
+import com.misterspalding.spaldingsadditions.recipes.fabricator.AutoFrakRecipes;
 
+import net.minecraft.block.Block;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
@@ -23,9 +28,14 @@ import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class SpecialDropsModifier extends LootModifier {
-    public SpecialDropsModifier(ILootCondition[] conditionsIn) {
+    
+	//AutoFrakRecipes recipeInstance = AutoFrakRecipes.instance();
+	
+	public SpecialDropsModifier(ILootCondition[] conditionsIn) {
         super(conditionsIn);
     }
+    
+    
 
     @Nonnull
     @Override
@@ -40,7 +50,11 @@ public class SpecialDropsModifier extends LootModifier {
     		return generatedLoot;
     		
     	}
-    	ArrayList<ItemStack> ret = checkloots(generatedLoot, broken, enchant_level);
+    	
+    	
+    	
+    	ArrayList<ItemStack> ret = checkloots(generatedLoot, broken, enchant_level, ctxTool);
+    	
     		if (generatedLoot.get(0).getItem() == ret.get(0).getItem() || EnchantmentHelper.getEnchantmentLevel(Enchantments.SILK_TOUCH, ctxTool) != 0) {
     			
     			return generatedLoot;
@@ -66,10 +80,43 @@ public class SpecialDropsModifier extends LootModifier {
      */
    
 
-    private ArrayList<ItemStack> checkloots(List<ItemStack> generatedLoot, String broken, int enchant) {
+    private ArrayList<ItemStack> checkloots(List<ItemStack> generatedLoot, String broken, int enchant, ItemStack tool) {
     	ArrayList<ItemStack> listReturn = new ArrayList<ItemStack>();
     	Random random = new Random();
     	
+
+    	if (tool.getItem() instanceof ModFrakHammer) {
+    		
+    		for (Block block : SpaldingsAdditions.HAMMER_BLOCKS) {
+    			
+    			if (generatedLoot.get(0).getItem() == Item.getItemFromBlock(block)) {
+    				
+    				listReturn.add(AutoFrakRecipes.instance().getResult(generatedLoot.get(0), tool.getItem()));
+    				return listReturn;
+    			}
+    			
+    		if (broken.contains("lapis")) {
+    			
+    			if (tool.getItem() == ItemDec.TOOL_VENDAR_FRAKHAMMER.get()) {
+    				listReturn.add(new ItemStack(ItemDec.FRACTURED_LAPIS.get(), 2 + random.nextInt(3)));
+    				return listReturn;
+    			}
+    			
+    			if (tool.getItem() == ItemDec.IRON_FRAKHAMMER.get()) {
+    				listReturn.add(new ItemStack(ItemDec.LAPIS_SHARD.get(), 8 + random.nextInt(6)));
+    				return listReturn;
+    			}
+    			
+    		}
+    		
+    		if (broken.contains("clay")) {
+    			listReturn.add(new ItemStack(Items.SAND));
+    			return listReturn;
+    		}
+    			
+    		}
+    		
+    	}
     	
     	
     	String checkedOre = "vendar";

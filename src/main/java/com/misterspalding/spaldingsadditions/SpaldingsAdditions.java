@@ -54,7 +54,8 @@ public class SpaldingsAdditions {
 	public static final String MOD_ID = "spaldingsadditions";
 	public static SpaldingsAdditions instance;
 	public static ArrayList<Block> CUT_OUT_BLOCKS = new ArrayList<Block>();
-
+	public static ArrayList<Block> HAMMER_BLOCKS = new ArrayList<Block>();
+	
 	final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
 	public SpaldingsAdditions() {
